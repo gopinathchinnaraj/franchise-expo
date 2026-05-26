@@ -1,0 +1,307 @@
+.page {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    width: 100%;
+    height: 280px;
+    background: #011b2e;
+    display: flex;
+    align-items: center;
+}
+
+.heroTitle {
+    font-family: "Oswald", sans-serif;
+    font-size: 72px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
+.aboutSection {
+    padding: 100px 0;
+}
+
+.aboutGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.badge {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: rgba(26, 183, 208, 0.1);
+    color: #1ab7d0;
+
+    padding: 10px 18px;
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 28px;
+}
+
+.content h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 52px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #011b2e;
+    margin-bottom: 28px;
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #444444;
+    margin-bottom: 22px;
+}
+
+.logoBox {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.logoBox img {
+    width: 170px;
+    object-fit: contain;
+}
+
+.socialSection p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #011b2e;
+    margin-bottom: 20px;
+}
+
+.socialIcons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.socialIcons a {
+    width: 56px;
+    height: 56px;
+
+    border-radius: 50%;
+    background: #011b2e;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    transition: 0.3s ease;
+}
+
+.socialIcons a:hover {
+    transform: translateY(-5px);
+    background: #1ab7d0;
+}
+
+/* =========================================================
+   IMAGE CARD
+========================================================= */
+
+.imageCard {
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+
+    min-height: 620px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.imageCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imageOverlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(to top,
+            rgba(1, 27, 46, 0.85),
+            rgba(1, 27, 46, 0.1));
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 40px;
+}
+
+.imageOverlay span {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.imageOverlay h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 42px;
+    color: #ffffff;
+    margin-top: 8px;
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contactSection {
+    padding-bottom: 100px;
+}
+
+.contactCard {
+    background: linear-gradient(135deg,
+            #011b2e,
+            #063b61);
+
+    border-radius: 30px;
+    padding: 70px 40px;
+
+    text-align: center;
+}
+
+.contactCard h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 48px;
+    text-transform: uppercase;
+    color: #ffffff;
+
+    margin-bottom: 20px;
+}
+
+.contactCard p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.82);
+
+    margin-bottom: 26px;
+}
+
+.contactCard a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px 28px;
+
+    background: #1ab7d0;
+    color: #ffffff;
+
+    border-radius: 999px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.contactCard a:hover {
+    transform: translateY(-4px);
+    background: #14a4bc;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .aboutGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .heroTitle {
+        font-size: 56px;
+    }
+
+    .content h2 {
+        font-size: 42px;
+    }
+
+    .imageCard {
+        min-height: 500px;
+    }
+
+}
+
+@media (max-width: 640px) {
+
+    .hero {
+        height: 220px;
+    }
+
+    .heroTitle {
+        font-size: 40px;
+    }
+
+    .aboutSection {
+        padding: 70px 0;
+    }
+
+    .content h2 {
+        font-size: 34px;
+    }
+
+    .content p {
+        font-size: 16px;
+    }
+
+    .imageCard {
+        min-height: 380px;
+    }
+
+    .imageOverlay {
+        padding: 24px;
+    }
+
+    .imageOverlay h3 {
+        font-size: 28px;
+    }
+
+    .contactCard {
+        padding: 50px 24px;
+    }
+
+    .contactCard h3 {
+        font-size: 34px;
+    }
+
+    .contactCard a {
+        width: 100%;
+        font-size: 16px;
+    }
+
+}

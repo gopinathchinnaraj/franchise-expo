@@ -1,0 +1,88 @@
+.introPara {
+  max-width: 840px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.introPara p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Cards */
+.cardsGrid {}
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s ease;
+}
+
+.cardImg {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-color: #dde8ef;
+  transition: 0.4s ease;
+}
+
+.infoCard:hover .cardImg {
+  transform: scale(1.02);
+}
+
+.cardTitle {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #011b2e;
+  text-align: center;
+  margin-bottom: 12px !important;
+}
+
+.cardCta {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1cb7cf;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: auto;
+}
+
+/* CTA Banner */
+.ctaBanner {
+  background: #011b2e;
+  padding: 56px 24px;
+}
+
+.ctaContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.ctaTitle {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.ctaText {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .ctaContent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

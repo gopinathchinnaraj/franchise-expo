@@ -1,0 +1,335 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/connect/about-us/AboutUs.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************/
+.AboutUs_page__uhLma {
+    width: 100%;
+    overflow: hidden;
+    background: #f5f7fb;
+}
+
+.AboutUs_container__FQeOg {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+/* HERO */
+
+.AboutUs_hero__cgK_a {
+    position: relative;
+    min-height: 420px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(rgba(1, 27, 46, 0.82),
+            rgba(1, 27, 46, 0.88)),
+        url("https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2070&auto=format&fit=crop") center/cover no-repeat;
+}
+
+.AboutUs_overlay__ujQVo {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at top right,
+            rgba(0, 168, 200, 0.22),
+            transparent 40%);
+}
+
+.AboutUs_heroContent__46DrX {
+    position: relative;
+    z-index: 2;
+
+    max-width: 760px;
+}
+
+.AboutUs_tag__7XxdK {
+    display: inline-flex;
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 24px;
+}
+
+.AboutUs_heroContent__46DrX h1 {
+    font-size: 82px;
+    line-height: 1;
+
+    color: white;
+
+    margin-bottom: 24px;
+
+    font-family: "Oswald", sans-serif;
+}
+
+.AboutUs_heroContent__46DrX p {
+    font-size: 18px;
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    max-width: 620px;
+}
+
+/* INTRO */
+
+.AboutUs_introSection__xLnkH {
+    padding: 110px 0;
+}
+
+.AboutUs_introGrid__vBhwb {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 60px;
+    gap: 60px;
+
+    align-items: center;
+}
+
+.AboutUs_introContent__SZl4U h2 {
+    font-size: 54px;
+    line-height: 1.1;
+
+    color: #011b2e;
+
+    margin-bottom: 28px;
+
+    font-family: "Oswald", sans-serif;
+}
+
+.AboutUs_introContent__SZl4U p {
+    font-size: 17px;
+    line-height: 1.9;
+
+    color: #5f6b76;
+
+    margin-bottom: 20px;
+}
+
+.AboutUs_introImage__IErBW {
+    position: relative;
+
+    width: 100%;
+    height: 520px;
+
+    overflow: hidden;
+
+    border-radius: 32px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.AboutUs_image__2hk4k {
+    object-fit: cover;
+}
+
+/* MEMBER */
+
+.AboutUs_memberSection__P_A_z {
+    padding: 40px 0 100px;
+}
+
+.AboutUs_sectionTop__Lr3tI {
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+.AboutUs_sectionTop__Lr3tI span {
+    color: #00a8c8;
+
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.AboutUs_sectionTop__Lr3tI h2 {
+    font-size: 54px;
+
+    color: #011b2e;
+
+    margin-top: 16px;
+
+    font-family: "Oswald", sans-serif;
+}
+
+.AboutUs_memberGrid__jpoIs {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-gap: 30px;
+
+    gap: 30px;
+}
+
+.AboutUs_memberCard__ooH90 {
+    background: white;
+
+    border-radius: 28px;
+
+    padding: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 260px;
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+}
+
+/* EXPO */
+
+.AboutUs_expoSection___loAf {
+    padding: 0 0 120px;
+}
+
+.AboutUs_cardGrid__RmqbD {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-gap: 32px;
+
+    gap: 32px;
+}
+
+.AboutUs_card__aRe3P {
+    overflow: hidden;
+
+    border-radius: 32px;
+
+    background: white;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+
+    transition: 0.4s ease;
+}
+
+.AboutUs_card__aRe3P:hover {
+    transform: translateY(-10px);
+}
+
+.AboutUs_cardImage__xqpOs {
+    position: relative;
+
+    width: 100%;
+    height: 300px;
+}
+
+.AboutUs_cardContent__9x3W9 {
+    padding: 36px;
+}
+
+.AboutUs_cardContent__9x3W9 h3 {
+    font-size: 34px;
+    line-height: 1.2;
+
+    color: #011b2e;
+
+    margin-bottom: 20px;
+
+    font-family: "Oswald", sans-serif;
+}
+
+.AboutUs_cardContent__9x3W9 p {
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: #5f6b76;
+
+    margin-bottom: 24px;
+}
+
+.AboutUs_cardContent__9x3W9 a {
+    display: inline-flex;
+
+    padding: 14px 24px;
+
+    border-radius: 999px;
+
+    background: #011b2e;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.AboutUs_cardContent__9x3W9 a:hover {
+    background: #00a8c8;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+
+    .AboutUs_heroContent__46DrX h1 {
+        font-size: 58px;
+    }
+
+    .AboutUs_introGrid__vBhwb,
+    .AboutUs_cardGrid__RmqbD,
+    .AboutUs_memberGrid__jpoIs {
+        grid-template-columns: 1fr;
+    }
+
+    .AboutUs_sectionTop__Lr3tI h2,
+    .AboutUs_introContent__SZl4U h2 {
+        font-size: 42px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .AboutUs_hero__cgK_a {
+        min-height: 340px;
+    }
+
+    .AboutUs_heroContent__46DrX h1 {
+        font-size: 42px;
+    }
+
+    .AboutUs_heroContent__46DrX p {
+        font-size: 16px;
+    }
+
+    .AboutUs_introSection__xLnkH {
+        padding: 80px 0;
+    }
+
+    .AboutUs_introImage__IErBW {
+        height: 340px;
+    }
+
+    .AboutUs_cardContent__9x3W9 {
+        padding: 28px;
+    }
+
+    .AboutUs_cardContent__9x3W9 h3 {
+        font-size: 28px;
+    }
+
+}

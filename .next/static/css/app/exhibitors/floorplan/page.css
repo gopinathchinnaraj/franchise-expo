@@ -1,0 +1,334 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/exhibitors/floorplan/FloorPlan.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************/
+.FloorPlan_page__sS8Fw {
+    width: 100%;
+    overflow: hidden;
+    background: #f3f3f3;
+}
+
+/* CONTAINER */
+
+.FloorPlan_container__xliyb {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+/* HERO */
+
+.FloorPlan_hero__gOBtA {
+    position: relative;
+
+    height: 280px;
+
+    background:
+        linear-gradient(90deg,
+            #0a4b97 0%,
+            #1f2a6b 100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.FloorPlan_heroOverlay__PJKEw {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at center,
+            rgba(255, 255, 255, 0.05),
+            transparent 60%);
+}
+
+.FloorPlan_hero__gOBtA h1 {
+    position: relative;
+    z-index: 2;
+
+    color: white;
+
+    font-size: 96px;
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    font-family: "Oswald", sans-serif;
+}
+
+/* FORM */
+
+.FloorPlan_formSection__uGbD_ {
+    padding: 80px 0 120px;
+}
+
+.FloorPlan_formWrapper__lt_hT {
+    width: 100%;
+
+    background: transparent;
+}
+
+.FloorPlan_formWrapper__lt_hT h2 {
+    font-size: 72px;
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    color: #151515;
+
+    margin-bottom: 40px;
+
+    font-family: "Oswald", sans-serif;
+
+    max-width: 900px;
+}
+
+.FloorPlan_form__xel_S {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.FloorPlan_form__xel_S input {
+    width: 100%;
+
+    height: 74px;
+
+    border: none;
+
+    background: #eceeef;
+
+    padding: 0 24px;
+
+    font-size: 18px;
+
+    outline: none;
+}
+
+.FloorPlan_checkboxGroup__MJoBa {
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+.FloorPlan_checkbox__tW2L8 {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 16px;
+
+    font-size: 18px;
+    line-height: 1.8;
+
+    color: #444;
+}
+
+.FloorPlan_checkbox__tW2L8 input {
+    width: 22px;
+    height: 22px;
+
+    margin-top: 6px;
+}
+
+.FloorPlan_note__8K1fl {
+    margin-top: 10px;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: #666;
+
+    font-style: italic;
+}
+
+.FloorPlan_form__xel_S button {
+    margin-top: 20px;
+
+    width: -moz-fit-content;
+
+    width: fit-content;
+
+    padding: 22px 80px;
+
+    border: none;
+
+    background: #ffbb43;
+
+    color: white;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.FloorPlan_form__xel_S button:hover {
+    background: #111;
+}
+
+/* CTA */
+
+.FloorPlan_cardGrid___E5gQ {
+    margin-top: 80px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-gap: 30px;
+
+    gap: 30px;
+}
+
+.FloorPlan_card__ttwt5 {
+    background: white;
+
+    padding: 60px;
+
+    min-height: 260px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.FloorPlan_card__ttwt5 a {
+    width: -moz-fit-content;
+    width: fit-content;
+
+    padding: 18px 42px;
+
+    background: #ffbb43;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+}
+
+.FloorPlan_card__ttwt5 a:hover {
+    background: #111;
+}
+
+.FloorPlan_card__ttwt5 h3 {
+    font-size: 52px;
+    line-height: 1.1;
+
+    text-transform: uppercase;
+
+    color: #151515;
+
+    font-family: "Oswald", sans-serif;
+
+    max-width: 420px;
+}
+
+/* SOCIAL */
+
+.FloorPlan_socialFixed__bO6rX {
+    position: fixed;
+
+    top: 50%;
+    right: 18px;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+
+    z-index: 9999;
+}
+
+.FloorPlan_socialBtn__H8p27 {
+    width: 74px;
+    height: 74px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #111;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+    transition: 0.3s ease;
+}
+
+.FloorPlan_socialBtn__H8p27:hover {
+    transform: translateX(-5px);
+
+    background: #111;
+    color: white;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+
+    .FloorPlan_hero__gOBtA h1 {
+        font-size: 70px;
+    }
+
+    .FloorPlan_formWrapper__lt_hT h2 {
+        font-size: 48px;
+    }
+
+    .FloorPlan_card__ttwt5 h3 {
+        font-size: 38px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .FloorPlan_hero__gOBtA {
+        height: 220px;
+    }
+
+    .FloorPlan_hero__gOBtA h1 {
+        font-size: 48px;
+    }
+
+    .FloorPlan_formWrapper__lt_hT h2 {
+        font-size: 36px;
+    }
+
+    .FloorPlan_cardGrid___E5gQ {
+        grid-template-columns: 1fr;
+    }
+
+    .FloorPlan_card__ttwt5 {
+        padding: 40px;
+    }
+
+    .FloorPlan_card__ttwt5 h3 {
+        font-size: 30px;
+    }
+
+    .FloorPlan_socialBtn__H8p27 {
+        width: 58px;
+        height: 58px;
+    }
+
+}

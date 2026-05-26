@@ -1,0 +1,339 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/attendees/testimonials/AttendeesTestimonials.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************/
+.AttendeesTestimonials_page__TXSs_ {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.AttendeesTestimonials_container__bx3qn {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.AttendeesTestimonials_hero__2_X2n {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    background: #011b2e;
+    display: flex;
+    align-items: center;
+}
+
+.AttendeesTestimonials_heroOverlay__OXGl2 {
+    width: 100%;
+}
+
+.AttendeesTestimonials_heroTitle__7XK4r {
+    font-family: "Oswald", sans-serif;
+    font-size: 72px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0;
+    align-self: center;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.AttendeesTestimonials_introSection__qJahm {
+    padding: 90px 0;
+    background: #ffffff;
+}
+
+.AttendeesTestimonials_introGrid__xF_qM {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 60px;
+    gap: 60px;
+    align-items: stretch;
+}
+
+.AttendeesTestimonials_content__wi9MT {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.AttendeesTestimonials_content__wi9MT h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 48px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #011b2e;
+    margin-bottom: 24px;
+}
+
+.AttendeesTestimonials_content__wi9MT h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 32px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #011b2e;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.AttendeesTestimonials_content__wi9MT p {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #4d4d4d;
+    margin-bottom: 18px;
+}
+
+/* =========================================================
+   SMALL TESTIMONIALS
+========================================================= */
+
+.AttendeesTestimonials_smallTestimonials__aBjNw {
+    margin-top: 30px;
+}
+
+.AttendeesTestimonials_smallCard__UwbpY {
+    margin-bottom: 28px;
+}
+
+.AttendeesTestimonials_smallCard__UwbpY p {
+    font-size: 20px;
+    line-height: 1.9;
+    color: #011b2e;
+    margin-bottom: 10px;
+}
+
+.AttendeesTestimonials_smallCard__UwbpY span {
+    font-size: 16px;
+    color: #666666;
+}
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.AttendeesTestimonials_videoWrap__WW1kQ {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.AttendeesTestimonials_videoContainer__8JMy2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 620px;
+    overflow: hidden;
+}
+
+.AttendeesTestimonials_videoContainer__8JMy2 iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.AttendeesTestimonials_videoCredit__yYTmu {
+    margin-top: 14px;
+    font-size: 14px;
+    color: #666666;
+}
+
+.AttendeesTestimonials_videoCredit__yYTmu a {
+    color: #0067b2;
+    text-decoration: none;
+}
+
+.AttendeesTestimonials_videoCredit__yYTmu a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   TESTIMONIAL SECTION
+========================================================= */
+
+.AttendeesTestimonials_testimonialSection__hO0PV {
+    background: #0067b2;
+    padding: 100px 0;
+}
+
+.AttendeesTestimonials_testimonialHeader__RqyI6 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    margin-bottom: 70px;
+}
+
+.AttendeesTestimonials_testimonialHeader__RqyI6 img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 22px;
+}
+
+.AttendeesTestimonials_testimonialHeader__RqyI6 h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 58px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0;
+    text-align: center;
+    max-width: 900px;
+}
+
+/* =========================================================
+   TESTIMONIAL GRID
+========================================================= */
+
+.AttendeesTestimonials_testimonialGrid__E8SaB {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.AttendeesTestimonials_testimonialCard__6LgSX {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 320px;
+
+    padding: 40px 30px;
+
+    text-align: center;
+}
+
+.AttendeesTestimonials_quote__0iNA8 {
+    font-size: 21px;
+    line-height: 1.9;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.AttendeesTestimonials_author__EjEMZ {
+    margin-top: auto;
+}
+
+.AttendeesTestimonials_author__EjEMZ h4 {
+    font-family: "Oswald", sans-serif;
+    font-size: 24px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.AttendeesTestimonials_author__EjEMZ span {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .AttendeesTestimonials_testimonialHeader__RqyI6 h2 {
+        font-size: 50px;
+    }
+
+    .AttendeesTestimonials_testimonialGrid__E8SaB {
+        gap: 30px;
+    }
+
+}
+
+@media (max-width: 992px) {
+
+    .AttendeesTestimonials_introGrid__xF_qM {
+        grid-template-columns: 1fr;
+    }
+
+    .AttendeesTestimonials_videoContainer__8JMy2 {
+        min-height: 450px;
+    }
+
+    .AttendeesTestimonials_testimonialGrid__E8SaB {
+        grid-template-columns: 1fr;
+    }
+
+    .AttendeesTestimonials_heroTitle__7XK4r {
+        font-size: 56px;
+    }
+
+    .AttendeesTestimonials_content__wi9MT h2 {
+        font-size: 42px;
+    }
+
+    .AttendeesTestimonials_testimonialHeader__RqyI6 h2 {
+        font-size: 42px;
+    }
+
+}
+
+@media (max-width: 640px) {
+
+    .AttendeesTestimonials_hero__2_X2n {
+        height: 220px;
+    }
+
+    .AttendeesTestimonials_heroTitle__7XK4r {
+        font-size: 42px;
+    }
+
+    .AttendeesTestimonials_introSection__qJahm {
+        padding: 60px 0;
+    }
+
+    .AttendeesTestimonials_content__wi9MT h2 {
+        font-size: 34px;
+    }
+
+    .AttendeesTestimonials_content__wi9MT h3 {
+        font-size: 26px;
+    }
+
+    .AttendeesTestimonials_content__wi9MT p {
+        font-size: 16px;
+    }
+
+    .AttendeesTestimonials_smallCard__UwbpY p {
+        font-size: 18px;
+    }
+
+    .AttendeesTestimonials_videoContainer__8JMy2 {
+        min-height: 300px;
+    }
+
+    .AttendeesTestimonials_testimonialSection__hO0PV {
+        padding: 70px 0;
+    }
+
+    .AttendeesTestimonials_testimonialHeader__RqyI6 h2 {
+        font-size: 34px;
+    }
+
+    .AttendeesTestimonials_quote__0iNA8 {
+        font-size: 18px;
+        line-height: 1.8;
+    }
+
+}

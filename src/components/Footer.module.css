@@ -1,0 +1,188 @@
+.footer {
+  background: #011b2e;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Poppins', sans-serif;
+}
+
+.footerTop {
+  padding: 64px 24px 48px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+/* Column */
+.footerCol {}
+
+.colLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #1cb7cf;
+  margin-bottom: 16px;
+}
+
+/* Brand */
+.brandName {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.brandTagline {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Social */
+.socialLinks {
+  display: flex;
+  gap: 12px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
+  transition: 0.25s ease;
+}
+
+.socialLink:hover {
+  background: #1cb7cf;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Venue */
+.venueList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.9;
+}
+
+.venueList li strong {
+  color: #ffffff;
+}
+
+/* Opening Times */
+.openingTime {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  font-size: 0.85rem;
+}
+
+.openingTime strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.openingTime span {
+  color: rgba(255,255,255,0.6);
+  margin-top: 2px;
+}
+
+/* Contact */
+.phone {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.contactGroup {
+  margin-bottom: 18px;
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+.contactGroupLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1cb7cf;
+  margin-bottom: 4px;
+}
+
+.contactGroup p {
+  color: rgba(255,255,255,0.7);
+}
+
+.contactEmail {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.75rem;
+  text-decoration: underline;
+  transition: 0.2s ease;
+}
+
+.contactEmail:hover {
+  color: #1cb7cf;
+}
+
+/* Footer Bottom */
+.footerBottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 20px 24px;
+}
+
+.footerBottomInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.privacyLink {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  transition: 0.2s ease;
+}
+
+.privacyLink:hover {
+  color: #1cb7cf;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.35);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .footerGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footerBottomInner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}

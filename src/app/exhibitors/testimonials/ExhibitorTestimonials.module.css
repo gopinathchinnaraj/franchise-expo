@@ -1,0 +1,201 @@
+.page {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    width: 100%;
+    height: 280px;
+    background: #011b2e;
+    display: flex;
+    align-items: center;
+}
+
+.heroTitle {
+    font-family: "Oswald", sans-serif;
+    font-size: 72px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.introSection {
+    padding: 90px 0;
+}
+
+.introGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.introContent h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 48px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #011b2e;
+    margin-bottom: 30px;
+}
+
+.introContent p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #444444;
+    margin-bottom: 20px;
+}
+
+.videoWrapper {
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.videoWrapper iframe {
+    width: 100%;
+    height: 420px;
+    border: none;
+}
+
+/* =========================================================
+   TESTIMONIALS
+========================================================= */
+
+.testimonialsSection {
+    padding: 100px 0;
+    background: #1ab7d0;
+}
+
+.testimonialsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.testimonialCard {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    padding: 40px;
+    border-radius: 24px;
+
+    transition: 0.3s ease;
+}
+
+.testimonialCard:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.quoteIcon {
+    font-size: 52px;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.testimonialCard h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 30px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.company {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .introGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonialsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .heroTitle {
+        font-size: 56px;
+    }
+
+    .introContent h2 {
+        font-size: 40px;
+    }
+
+}
+
+@media (max-width: 640px) {
+
+    .hero {
+        height: 220px;
+    }
+
+    .heroTitle {
+        font-size: 40px;
+    }
+
+    .introSection {
+        padding: 60px 0;
+    }
+
+    .testimonialsSection {
+        padding: 70px 0;
+    }
+
+    .introContent h2 {
+        font-size: 32px;
+    }
+
+    .introContent p {
+        font-size: 16px;
+    }
+
+    .videoWrapper iframe {
+        height: 240px;
+    }
+
+    .testimonialCard {
+        padding: 28px;
+    }
+
+    .testimonialCard h3 {
+        font-size: 24px;
+    }
+
+}

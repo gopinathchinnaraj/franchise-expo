@@ -1,0 +1,268 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/components/PageBanner.module.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************/
+.PageBanner_banner__z9den {
+  position: relative;
+  background: linear-gradient(135deg, #011b2e 0%, #222b60 100%);
+  padding: 80px 24px;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.PageBanner_overlay__bc10D {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(28, 183, 207, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Decorative half-circle accent matching original */
+.PageBanner_banner__z9den::after {
+  content: '';
+  position: absolute;
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 2px solid rgba(28, 183, 207, 0.15);
+  pointer-events: none;
+}
+
+.PageBanner_content__NaKMM {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.PageBanner_title__SeB6l {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+}
+
+.PageBanner_subtitle__3TsX0 {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .PageBanner_banner__z9den {
+    padding: 60px 24px;
+    min-height: 160px;
+  }
+}
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/attendees/emerging-brand-pavilion/page.module.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************/
+/* ── Intro Block ── */
+.page_introBlock__5b3vv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 56px;
+  gap: 56px;
+  align-items: center;
+}
+
+.page_introText__fzhNg {
+  background: #011b2e;
+  padding: 48px;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.page_introHeading__plup9 {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.page_introBody__llquz {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+}
+
+.page_introImage__2cmly {
+  height: 420px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  background-color: #dde8ef;
+  position: relative;
+  overflow: hidden;
+}
+
+.page_introImage__2cmly::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 2px rgba(28, 183, 207, 0.2);
+}
+
+/* ── Features ── */
+.page_featuresHeading__V328o {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page_featuresGrid__2iUCG {}
+
+.page_featureItem__4qLB2 {
+  display: flex;
+  gap: 20px;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+  align-items: flex-start;
+}
+
+.page_featureItem__4qLB2:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.page_featureIcon__QSb_J {
+  font-size: 2rem;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(28, 183, 207, 0.1);
+  border-radius: 8px;
+}
+
+.page_featureHeading__p7cyw {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #011b2e;
+  margin-bottom: 10px;
+}
+
+.page_featureBody__8gU76 {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* ── Contact Card ── */
+.page_contactCard__12pol {
+  background: linear-gradient(135deg, #222b60 0%, #011b2e 100%);
+  border-radius: 12px;
+  padding: 56px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 48px;
+  gap: 48px;
+  align-items: center;
+}
+
+.page_contactLeft__jqZae {}
+
+.page_contactTitle__vVvqG {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.page_contactDesc__cRTJq {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+.page_contactRight__jKCdD {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.page_contactName__NSHFz {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fd7122;
+}
+
+.page_contactPhone__zmh2o {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.page_contactEmail__vaE07 {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  text-decoration: underline;
+  transition: 0.2s ease;
+}
+
+.page_contactEmail__vaE07:hover {
+  color: #1cb7cf;
+}
+
+.page_contactCta__Fx0hR {
+  margin-top: 16px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .page_introBlock__5b3vv {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .page_introImage__2cmly {
+    height: 280px;
+    order: -1;
+  }
+
+  .page_contactCard__12pol {
+    grid-template-columns: 1fr;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page_featureItem__4qLB2 {
+    padding: 24px;
+  }
+
+  .page_contactCard__12pol {
+    padding: 32px 24px;
+  }
+}
+

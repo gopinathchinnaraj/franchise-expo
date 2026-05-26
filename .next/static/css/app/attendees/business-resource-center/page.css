@@ -1,0 +1,448 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/attendees/business-resource-center/EmergingBrandPavilion.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************/
+/* =========================================================
+   PAGE
+========================================================= */
+
+.EmergingBrandPavilion_page__P4WTu {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.EmergingBrandPavilion_container__4v73L {
+    width: 100%;
+    max-width: 1320px;
+    margin: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.EmergingBrandPavilion_hero__6l5vN {
+    position: relative;
+    width: 100%;
+    height: 720px;
+    overflow: hidden;
+    display: flex;
+    background: #123f8c;
+}
+
+.EmergingBrandPavilion_heroMedia__rc_XC {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.EmergingBrandPavilion_heroVideo__fUKK_ {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.EmergingBrandPavilion_heroOverlayPanel__F_yfR {
+    position: relative;
+    z-index: 2;
+    width: 58%;
+    height: 100%;
+    background: #123f8c;
+
+    -webkit-clip-path: polygon(0 0,
+            82% 0,
+            100% 50%,
+            82% 100%,
+            0 100%);
+
+            clip-path: polygon(0 0,
+            82% 0,
+            100% 50%,
+            82% 100%,
+            0 100%);
+
+    display: flex;
+    align-items: center;
+}
+
+.EmergingBrandPavilion_heroContent__yvWRg {
+    width: 100%;
+    max-width: 760px;
+    padding-left: 70px;
+    padding-right: 110px;
+    color: white;
+}
+
+.EmergingBrandPavilion_heroDate__xGxRu {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.EmergingBrandPavilion_heroTitle__nq_tb {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(70px, 8vw, 120px);
+    line-height: 0.92;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.EmergingBrandPavilion_heroSub__Gp1d_ {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    line-height: 1.7;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 560px;
+}
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.EmergingBrandPavilion_statsBar__9Ppa7 {
+    background: #f4f4f4;
+    padding: 40px 50px;
+}
+
+.EmergingBrandPavilion_statsGrid__yvPIZ {
+    max-width: 1400px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+    gap: 40px;
+}
+
+.EmergingBrandPavilion_statItem__oEMqY {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.EmergingBrandPavilion_statIcon__bLCbM {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+
+    border-radius: 50%;
+    background: #9ee8f2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+}
+
+.EmergingBrandPavilion_statItem__oEMqY h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 76px;
+    line-height: 1;
+    font-weight: 700;
+    margin: 0;
+    color: #111111;
+}
+
+.EmergingBrandPavilion_statItem__oEMqY p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    line-height: 1.15;
+    text-transform: uppercase;
+    margin: 0;
+    color: #555555;
+}
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
+.EmergingBrandPavilion_aboutSection__05ons {
+    padding: 110px 0;
+    background: #ffffff;
+}
+
+.EmergingBrandPavilion_aboutGrid__n__6h {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    grid-gap: 70px;
+    gap: 70px;
+    align-items: center;
+}
+
+.EmergingBrandPavilion_aboutContent__X1PRY {
+    display: flex;
+    flex-direction: column;
+}
+
+.EmergingBrandPavilion_sectionTitle__GBtDt {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(42px, 5vw, 70px);
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #011b2e;
+    margin-bottom: 30px;
+}
+
+.EmergingBrandPavilion_aboutContent__X1PRY p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+.EmergingBrandPavilion_featureList__6JFJL {
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.EmergingBrandPavilion_featureItem__efn_K {
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.EmergingBrandPavilion_featureItem__efn_K h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #123f8c;
+    margin-bottom: 12px;
+}
+
+.EmergingBrandPavilion_featureItem__efn_K p {
+    margin: 0;
+}
+
+.EmergingBrandPavilion_aboutImageWrap__mPKFi {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.EmergingBrandPavilion_aboutImage__VOc8k {
+    width: 100%;
+    height: 760px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
+
+.EmergingBrandPavilion_contactSection__eVEij {
+    padding-bottom: 120px;
+}
+
+.EmergingBrandPavilion_contactCard__GlyxF {
+    background: linear-gradient(135deg,
+            #123f8c,
+            #0d2f68);
+
+    border-radius: 20px;
+
+    padding: 70px;
+
+    color: white;
+}
+
+.EmergingBrandPavilion_contactCard__GlyxF h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(40px, 4vw, 70px);
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+
+.EmergingBrandPavilion_contactCard__GlyxF p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 760px;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.EmergingBrandPavilion_contactInfo__ktQAw {
+    margin-top: 40px;
+}
+
+.EmergingBrandPavilion_contactInfo__ktQAw h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 34px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.EmergingBrandPavilion_contactInfo__ktQAw a {
+    font-size: 24px;
+    font-weight: 600;
+    color: #9ee8f2;
+    text-decoration: none;
+}
+
+.EmergingBrandPavilion_contactInfo__ktQAw a:hover {
+    color: #ffffff;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .EmergingBrandPavilion_heroOverlayPanel__F_yfR {
+        width: 65%;
+    }
+
+    .EmergingBrandPavilion_heroTitle__nq_tb {
+        font-size: 90px;
+    }
+
+    .EmergingBrandPavilion_aboutGrid__n__6h {
+        gap: 50px;
+    }
+
+}
+
+@media (max-width: 992px) {
+
+    .EmergingBrandPavilion_hero__6l5vN {
+        height: auto;
+        min-height: 700px;
+    }
+
+    .EmergingBrandPavilion_heroOverlayPanel__F_yfR {
+        width: 100%;
+
+        -webkit-clip-path: none;
+
+                clip-path: none;
+
+        background: linear-gradient(to top,
+                rgba(18, 63, 140, 0.98),
+                rgba(18, 63, 140, 0.75));
+    }
+
+    .EmergingBrandPavilion_heroContent__yvWRg {
+        padding: 130px 28px 90px;
+    }
+
+    .EmergingBrandPavilion_heroTitle__nq_tb {
+        font-size: 64px;
+    }
+
+    .EmergingBrandPavilion_heroSub__Gp1d_ {
+        font-size: 18px;
+    }
+
+    .EmergingBrandPavilion_statsGrid__yvPIZ {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .EmergingBrandPavilion_aboutGrid__n__6h {
+        grid-template-columns: 1fr;
+    }
+
+    .EmergingBrandPavilion_aboutImage__VOc8k {
+        height: 500px;
+    }
+
+    .EmergingBrandPavilion_contactCard__GlyxF {
+        padding: 50px 35px;
+    }
+
+}
+
+@media (max-width: 640px) {
+
+    .EmergingBrandPavilion_hero__6l5vN {
+        min-height: 620px;
+    }
+
+    .EmergingBrandPavilion_heroContent__yvWRg {
+        padding: 110px 22px 70px;
+    }
+
+    .EmergingBrandPavilion_heroDate__xGxRu {
+        font-size: 14px;
+    }
+
+    .EmergingBrandPavilion_heroTitle__nq_tb {
+        font-size: 50px;
+    }
+
+    .EmergingBrandPavilion_heroSub__Gp1d_ {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .EmergingBrandPavilion_statsBar__9Ppa7 {
+        padding: 30px 20px;
+    }
+
+    .EmergingBrandPavilion_statItem__oEMqY {
+        gap: 18px;
+    }
+
+    .EmergingBrandPavilion_statIcon__bLCbM {
+        width: 58px;
+        height: 58px;
+        min-width: 58px;
+        font-size: 22px;
+    }
+
+    .EmergingBrandPavilion_statItem__oEMqY h3 {
+        font-size: 50px;
+    }
+
+    .EmergingBrandPavilion_statItem__oEMqY p {
+        font-size: 18px;
+    }
+
+    .EmergingBrandPavilion_sectionTitle__GBtDt {
+        font-size: 42px;
+    }
+
+    .EmergingBrandPavilion_featureItem__efn_K h4 {
+        font-size: 22px;
+    }
+
+    .EmergingBrandPavilion_aboutImage__VOc8k {
+        height: 400px;
+    }
+
+    .EmergingBrandPavilion_contactCard__GlyxF {
+        padding: 40px 24px;
+    }
+
+    .EmergingBrandPavilion_contactInfo__ktQAw h3 {
+        font-size: 28px;
+    }
+
+    .EmergingBrandPavilion_contactInfo__ktQAw a {
+        font-size: 20px;
+    }
+
+}

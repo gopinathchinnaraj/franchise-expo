@@ -1,0 +1,259 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.headerWrap {
+  width: 100%;
+}
+
+.headerInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 72px;
+}
+
+/* Logo */
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logoContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoText {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #011b2e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.logoDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoLocation {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #1cb7cf;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.logoDates {
+  font-size: 0.65rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Desktop Nav */
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #011b2e;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: 0.2s ease;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  color: #1cb7cf;
+  background: rgba(28, 183, 207, 0.06);
+}
+
+.chevron {
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  min-width: 220px;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  border: 1px solid rgba(0,0,0,0.06);
+  animation: dropdownIn 0.15s ease forwards;
+  z-index: 200;
+}
+
+@keyframes dropdownIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdownLink {
+  display: block;
+  padding: 10px 18px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.dropdownLink:hover {
+  background: rgba(28, 183, 207, 0.08);
+  color: #1cb7cf;
+  padding-left: 24px;
+}
+
+/* CTA Buttons */
+.headerCtas {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: auto;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #011b2e;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* Mobile Nav */
+.mobileNav {
+  background: #ffffff;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.mobileNavList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobileNavItem {
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.mobileNavToggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: none;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #011b2e;
+  cursor: pointer;
+  text-align: left;
+}
+
+.mobileDropdown {
+  background: #f8f8f8;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobileDropdownLink {
+  display: block;
+  padding: 12px 32px;
+  font-size: 0.825rem;
+  color: #444;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.mobileDropdownLink:hover {
+  color: #1cb7cf;
+  background: rgba(28, 183, 207, 0.05);
+}
+
+.mobileCtas {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .headerCtas {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .headerInner {
+    height: 64px;
+  }
+}

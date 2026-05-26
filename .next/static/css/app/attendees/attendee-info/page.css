@@ -1,0 +1,160 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/components/PageBanner.module.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************/
+.PageBanner_banner__z9den {
+  position: relative;
+  background: linear-gradient(135deg, #011b2e 0%, #222b60 100%);
+  padding: 80px 24px;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.PageBanner_overlay__bc10D {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(28, 183, 207, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Decorative half-circle accent matching original */
+.PageBanner_banner__z9den::after {
+  content: '';
+  position: absolute;
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 2px solid rgba(28, 183, 207, 0.15);
+  pointer-events: none;
+}
+
+.PageBanner_content__NaKMM {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.PageBanner_title__SeB6l {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+}
+
+.PageBanner_subtitle__3TsX0 {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .PageBanner_banner__z9den {
+    padding: 60px 24px;
+    min-height: 160px;
+  }
+}
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/attendees/attendee-info/page.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************/
+.page_introPara__GaMT1 {
+  max-width: 840px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.page_introPara__GaMT1 p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Cards */
+.page_cardsGrid__BKTWV {}
+
+.page_infoCard__v0cPU {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s ease;
+}
+
+.page_cardImg__jHmeb {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-color: #dde8ef;
+  transition: 0.4s ease;
+}
+
+.page_infoCard__v0cPU:hover .page_cardImg__jHmeb {
+  transform: scale(1.02);
+}
+
+.page_cardTitle__sSX0b {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #011b2e;
+  text-align: center;
+  margin-bottom: 12px !important;
+}
+
+.page_cardCta__ApyIz {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1cb7cf;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: auto;
+}
+
+/* CTA Banner */
+.page_ctaBanner__2kJFr {
+  background: #011b2e;
+  padding: 56px 24px;
+}
+
+.page_ctaContent__gaQeW {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.page_ctaTitle__bQ_9C {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.page_ctaText__Wjk6E {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .page_ctaContent__gaQeW {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+

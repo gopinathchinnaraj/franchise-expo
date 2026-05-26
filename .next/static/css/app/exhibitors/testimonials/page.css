@@ -1,0 +1,207 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/exhibitors/testimonials/ExhibitorTestimonials.module.css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************/
+.ExhibitorTestimonials_page__A_f2h {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.ExhibitorTestimonials_container__uDeGJ {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.ExhibitorTestimonials_hero__TcEtE {
+    width: 100%;
+    height: 280px;
+    background: #011b2e;
+    display: flex;
+    align-items: center;
+}
+
+.ExhibitorTestimonials_heroTitle__7nzfX {
+    font-family: "Oswald", sans-serif;
+    font-size: 72px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.ExhibitorTestimonials_introSection__BEfNy {
+    padding: 90px 0;
+}
+
+.ExhibitorTestimonials_introGrid___k6hR {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 60px;
+    gap: 60px;
+    align-items: center;
+}
+
+.ExhibitorTestimonials_introContent__8PeFO h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 48px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #011b2e;
+    margin-bottom: 30px;
+}
+
+.ExhibitorTestimonials_introContent__8PeFO p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #444444;
+    margin-bottom: 20px;
+}
+
+.ExhibitorTestimonials_videoWrapper__bx3Ug {
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.ExhibitorTestimonials_videoWrapper__bx3Ug iframe {
+    width: 100%;
+    height: 420px;
+    border: none;
+}
+
+/* =========================================================
+   TESTIMONIALS
+========================================================= */
+
+.ExhibitorTestimonials_testimonialsSection__qU9Kw {
+    padding: 100px 0;
+    background: #1ab7d0;
+}
+
+.ExhibitorTestimonials_testimonialsGrid__1rWdv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 32px;
+    gap: 32px;
+}
+
+.ExhibitorTestimonials_testimonialCard__a5oMi {
+    background: rgba(255, 255, 255, 0.12);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    padding: 40px;
+    border-radius: 24px;
+
+    transition: 0.3s ease;
+}
+
+.ExhibitorTestimonials_testimonialCard__a5oMi:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.ExhibitorTestimonials_quoteIcon__HHu3x {
+    font-size: 52px;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.ExhibitorTestimonials_testimonialCard__a5oMi h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 30px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.ExhibitorTestimonials_company__KVO5N {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.ExhibitorTestimonials_description__ynQeN {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .ExhibitorTestimonials_introGrid___k6hR {
+        grid-template-columns: 1fr;
+    }
+
+    .ExhibitorTestimonials_testimonialsGrid__1rWdv {
+        grid-template-columns: 1fr;
+    }
+
+    .ExhibitorTestimonials_heroTitle__7nzfX {
+        font-size: 56px;
+    }
+
+    .ExhibitorTestimonials_introContent__8PeFO h2 {
+        font-size: 40px;
+    }
+
+}
+
+@media (max-width: 640px) {
+
+    .ExhibitorTestimonials_hero__TcEtE {
+        height: 220px;
+    }
+
+    .ExhibitorTestimonials_heroTitle__7nzfX {
+        font-size: 40px;
+    }
+
+    .ExhibitorTestimonials_introSection__BEfNy {
+        padding: 60px 0;
+    }
+
+    .ExhibitorTestimonials_testimonialsSection__qU9Kw {
+        padding: 70px 0;
+    }
+
+    .ExhibitorTestimonials_introContent__8PeFO h2 {
+        font-size: 32px;
+    }
+
+    .ExhibitorTestimonials_introContent__8PeFO p {
+        font-size: 16px;
+    }
+
+    .ExhibitorTestimonials_videoWrapper__bx3Ug iframe {
+        height: 240px;
+    }
+
+    .ExhibitorTestimonials_testimonialCard__a5oMi {
+        padding: 28px;
+    }
+
+    .ExhibitorTestimonials_testimonialCard__a5oMi h3 {
+        font-size: 24px;
+    }
+
+}

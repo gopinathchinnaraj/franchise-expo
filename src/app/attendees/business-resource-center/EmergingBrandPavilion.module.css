@@ -1,0 +1,435 @@
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+    width: 100%;
+    max-width: 1320px;
+    margin: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 720px;
+    overflow: hidden;
+    display: flex;
+    background: #123f8c;
+}
+
+.heroMedia {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.heroVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.heroOverlayPanel {
+    position: relative;
+    z-index: 2;
+    width: 58%;
+    height: 100%;
+    background: #123f8c;
+
+    clip-path: polygon(0 0,
+            82% 0,
+            100% 50%,
+            82% 100%,
+            0 100%);
+
+    display: flex;
+    align-items: center;
+}
+
+.heroContent {
+    width: 100%;
+    max-width: 760px;
+    padding-left: 70px;
+    padding-right: 110px;
+    color: white;
+}
+
+.heroDate {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 28px;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.heroTitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(70px, 8vw, 120px);
+    line-height: 0.92;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.heroSub {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    line-height: 1.7;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 560px;
+}
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.statsBar {
+    background: #f4f4f4;
+    padding: 40px 50px;
+}
+
+.statsGrid {
+    max-width: 1400px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.statItem {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.statIcon {
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+
+    border-radius: 50%;
+    background: #9ee8f2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+}
+
+.statItem h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 76px;
+    line-height: 1;
+    font-weight: 700;
+    margin: 0;
+    color: #111111;
+}
+
+.statItem p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    line-height: 1.15;
+    text-transform: uppercase;
+    margin: 0;
+    color: #555555;
+}
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
+.aboutSection {
+    padding: 110px 0;
+    background: #ffffff;
+}
+
+.aboutGrid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.aboutContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionTitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(42px, 5vw, 70px);
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #011b2e;
+    margin-bottom: 30px;
+}
+
+.aboutContent p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+.featureList {
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.featureItem {
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.featureItem h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #123f8c;
+    margin-bottom: 12px;
+}
+
+.featureItem p {
+    margin: 0;
+}
+
+.aboutImageWrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.aboutImage {
+    width: 100%;
+    height: 760px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
+
+.contactSection {
+    padding-bottom: 120px;
+}
+
+.contactCard {
+    background: linear-gradient(135deg,
+            #123f8c,
+            #0d2f68);
+
+    border-radius: 20px;
+
+    padding: 70px;
+
+    color: white;
+}
+
+.contactCard h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(40px, 4vw, 70px);
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+
+.contactCard p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 760px;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.contactInfo {
+    margin-top: 40px;
+}
+
+.contactInfo h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 34px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.contactInfo a {
+    font-size: 24px;
+    font-weight: 600;
+    color: #9ee8f2;
+    text-decoration: none;
+}
+
+.contactInfo a:hover {
+    color: #ffffff;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .heroOverlayPanel {
+        width: 65%;
+    }
+
+    .heroTitle {
+        font-size: 90px;
+    }
+
+    .aboutGrid {
+        gap: 50px;
+    }
+
+}
+
+@media (max-width: 992px) {
+
+    .hero {
+        height: auto;
+        min-height: 700px;
+    }
+
+    .heroOverlayPanel {
+        width: 100%;
+
+        clip-path: none;
+
+        background: linear-gradient(to top,
+                rgba(18, 63, 140, 0.98),
+                rgba(18, 63, 140, 0.75));
+    }
+
+    .heroContent {
+        padding: 130px 28px 90px;
+    }
+
+    .heroTitle {
+        font-size: 64px;
+    }
+
+    .heroSub {
+        font-size: 18px;
+    }
+
+    .statsGrid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .aboutGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .aboutImage {
+        height: 500px;
+    }
+
+    .contactCard {
+        padding: 50px 35px;
+    }
+
+}
+
+@media (max-width: 640px) {
+
+    .hero {
+        min-height: 620px;
+    }
+
+    .heroContent {
+        padding: 110px 22px 70px;
+    }
+
+    .heroDate {
+        font-size: 14px;
+    }
+
+    .heroTitle {
+        font-size: 50px;
+    }
+
+    .heroSub {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .statsBar {
+        padding: 30px 20px;
+    }
+
+    .statItem {
+        gap: 18px;
+    }
+
+    .statIcon {
+        width: 58px;
+        height: 58px;
+        min-width: 58px;
+        font-size: 22px;
+    }
+
+    .statItem h3 {
+        font-size: 50px;
+    }
+
+    .statItem p {
+        font-size: 18px;
+    }
+
+    .sectionTitle {
+        font-size: 42px;
+    }
+
+    .featureItem h4 {
+        font-size: 22px;
+    }
+
+    .aboutImage {
+        height: 400px;
+    }
+
+    .contactCard {
+        padding: 40px 24px;
+    }
+
+    .contactInfo h3 {
+        font-size: 28px;
+    }
+
+    .contactInfo a {
+        font-size: 20px;
+    }
+
+}

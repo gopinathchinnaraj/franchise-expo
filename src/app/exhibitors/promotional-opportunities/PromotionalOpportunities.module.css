@@ -1,0 +1,254 @@
+.page {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    width: 100%;
+    height: 280px;
+    background: #011b2e;
+    display: flex;
+    align-items: center;
+}
+
+.heroTitle {
+    font-family: "Oswald", sans-serif;
+    font-size: 72px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.introSection {
+    padding: 90px 0 40px;
+}
+
+.introContent {
+    max-width: 1000px;
+}
+
+.introContent p {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #444444;
+    margin-bottom: 20px;
+}
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.cardsSection {
+    padding-bottom: 100px;
+}
+
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 34px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+
+    border: 1px solid #e8e8e8;
+
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.imageWrap {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+}
+
+.imageWrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.cardContent {
+    padding: 28px;
+}
+
+.cardContent h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 28px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #011b2e;
+    margin-bottom: 18px;
+}
+
+.cardContent p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555555;
+    margin-bottom: 18px;
+}
+
+.cardContent span {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    background: rgba(0, 103, 178, 0.1);
+    color: #0067b2;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contactSection {
+    padding-bottom: 100px;
+}
+
+.contactCard {
+    background: linear-gradient(135deg,
+            #011b2e,
+            #063b61);
+
+    border-radius: 30px;
+    padding: 70px 40px;
+
+    text-align: center;
+}
+
+.contactCard h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 52px;
+    text-transform: uppercase;
+    color: #ffffff;
+
+    margin-bottom: 20px;
+}
+
+.contactCard p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.82);
+
+    margin-bottom: 26px;
+}
+
+.contactCard a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px 30px;
+
+    background: #1ab7d0;
+    color: #ffffff;
+
+    border-radius: 999px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.contactCard a:hover {
+    transform: translateY(-4px);
+    background: #14a4bc;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .cardsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .heroTitle {
+        font-size: 56px;
+    }
+
+}
+
+@media (max-width: 640px) {
+
+    .hero {
+        height: 220px;
+    }
+
+    .heroTitle {
+        font-size: 40px;
+    }
+
+    .introSection {
+        padding: 70px 0 30px;
+    }
+
+    .introContent p {
+        font-size: 16px;
+    }
+
+    .cardsGrid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .imageWrap {
+        height: 220px;
+    }
+
+    .cardContent h3 {
+        font-size: 24px;
+    }
+
+    .contactCard {
+        padding: 50px 24px;
+    }
+
+    .contactCard h2 {
+        font-size: 34px;
+    }
+
+    .contactCard a {
+        width: 100%;
+        font-size: 16px;
+    }
+
+}

@@ -1,0 +1,287 @@
+.page {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    width: 100%;
+    min-height: 280px;
+
+    display: flex;
+    align-items: center;
+
+    background: linear-gradient(135deg,
+            #011b2e,
+            #063b61);
+}
+
+.heroTitle {
+    max-width: 900px;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 68px;
+    line-height: 1.1;
+    text-transform: uppercase;
+
+    color: #ffffff;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.contentSection {
+    padding: 100px 0;
+}
+
+.contentCard {
+    background: #ffffff;
+
+    border-radius: 30px;
+
+    padding: 70px;
+
+    border: 1px solid #ebebeb;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+.mainText {
+    font-size: 20px;
+    line-height: 2;
+    text-align: center;
+
+    color: #333333;
+
+    font-weight: 500;
+
+    max-width: 1100px;
+
+    margin: 0 auto 70px;
+}
+
+.sectionTitle {
+    font-family: "Oswald", sans-serif;
+    font-size: 48px;
+    text-transform: uppercase;
+    text-align: center;
+
+    color: #011b2e;
+
+    margin-bottom: 50px;
+}
+
+.deadlineGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 28px;
+
+    margin-bottom: 70px;
+}
+
+.deadlineCard {
+    background: linear-gradient(135deg,
+            #00a8c8,
+            #007e97);
+
+    border-radius: 24px;
+
+    padding: 35px 28px;
+
+    min-height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    transition: 0.35s ease;
+}
+
+.deadlineCard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.deadlineCard p {
+    color: #ffffff;
+
+    font-size: 18px;
+    line-height: 1.8;
+
+    font-weight: 600;
+}
+
+.fredSection {
+    text-align: center;
+}
+
+.fredSection p {
+    font-size: 22px;
+    line-height: 1.8;
+
+    color: #444444;
+
+    margin-bottom: 35px;
+}
+
+.fredButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px 38px;
+
+    border-radius: 999px;
+
+    background: #011b2e;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.fredButton:hover {
+    background: #00a8c8;
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+   VENUE
+========================================================= */
+
+.venueSection {
+    padding-bottom: 100px;
+}
+
+.venueCard {
+    background: linear-gradient(135deg,
+            #011b2e,
+            #032d4a);
+
+    border-radius: 30px;
+
+    padding: 70px 40px;
+
+    text-align: center;
+}
+
+.venueCard h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 52px;
+    text-transform: uppercase;
+
+    color: #ffffff;
+
+    margin-bottom: 30px;
+}
+
+.venueInfo p {
+    font-size: 20px;
+    line-height: 1.9;
+
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .heroTitle {
+        font-size: 54px;
+    }
+
+    .contentCard {
+        padding: 50px 40px;
+    }
+
+    .deadlineGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .deadlineCard {
+        min-height: auto;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 220px;
+    }
+
+    .heroTitle {
+        font-size: 38px;
+    }
+
+    .contentSection {
+        padding: 70px 0;
+    }
+
+    .contentCard {
+        padding: 35px 22px;
+        border-radius: 22px;
+    }
+
+    .mainText {
+        font-size: 17px;
+        line-height: 1.9;
+
+        margin-bottom: 50px;
+    }
+
+    .sectionTitle {
+        font-size: 34px;
+    }
+
+    .deadlineCard {
+        padding: 28px 20px;
+    }
+
+    .deadlineCard p {
+        font-size: 16px;
+    }
+
+    .fredSection p {
+        font-size: 18px;
+    }
+
+    .fredButton {
+        width: 100%;
+    }
+
+    .venueCard {
+        padding: 50px 24px;
+    }
+
+    .venueCard h2 {
+        font-size: 34px;
+    }
+
+    .venueInfo p {
+        font-size: 17px;
+    }
+
+}

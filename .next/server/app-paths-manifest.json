@@ -1,0 +1,9 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/exhibitors/why-exhibit/page": "app/exhibitors/why-exhibit/page.js",
+  "/resources/show-gallery/page": "app/resources/show-gallery/page.js",
+  "/exhibitors/floorplan/page": "app/exhibitors/floorplan/page.js",
+  "/exhibitors/travel-information/page": "app/exhibitors/travel-information/page.js",
+  "/attendees/attendee-info/page": "app/attendees/attendee-info/page.js",
+  "/page": "app/page.js"
+}

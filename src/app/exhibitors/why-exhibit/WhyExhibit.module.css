@@ -1,0 +1,406 @@
+.page {
+    width: 100%;
+    overflow: hidden;
+    background: #f5f7fb;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+/* HERO */
+
+.hero {
+    position: relative;
+
+    min-height: 420px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(rgba(1, 27, 46, 0.82),
+            rgba(1, 27, 46, 0.88)),
+        url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2070&auto=format&fit=crop") center/cover no-repeat;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at top right,
+            rgba(255, 187, 67, 0.22),
+            transparent 40%);
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+
+    max-width: 760px;
+}
+
+.tag {
+    display: inline-flex;
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 24px;
+}
+
+.heroContent h1 {
+    font-size: 82px;
+    line-height: 1;
+
+    color: white;
+
+    margin-bottom: 24px;
+
+    font-family: "Oswald", sans-serif;
+}
+
+.heroContent p {
+    font-size: 18px;
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    max-width: 620px;
+}
+
+/* OPPORTUNITIES */
+
+.opportunities {
+    padding: 100px 0 50px;
+}
+
+.opportunityGrid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 32px;
+}
+
+.opportunityCard {
+    background: white;
+
+    padding: 50px;
+
+    border-radius: 32px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.opportunityCard h2 {
+    font-size: 42px;
+
+    color: #011b2e;
+
+    margin-bottom: 24px;
+
+    font-family: "Oswald", sans-serif;
+}
+
+.opportunityCard p {
+    color: #5f6b76;
+
+    font-size: 16px;
+    line-height: 1.9;
+
+    margin-bottom: 18px;
+}
+
+/* FORM */
+
+.formSection {
+    padding: 50px 0 120px;
+}
+
+.formWrapper {
+    display: grid;
+
+    grid-template-columns: 420px 1fr;
+
+    gap: 60px;
+
+    background: white;
+
+    padding: 60px;
+
+    border-radius: 40px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.formLeft span {
+    color: #ffbb43;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.formLeft h2 {
+    font-size: 58px;
+    line-height: 1.1;
+
+    color: #011b2e;
+
+    margin: 20px 0;
+
+    font-family: "Oswald", sans-serif;
+}
+
+.formLeft p {
+    color: #5f6b76;
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+.row {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.form input {
+    width: 100%;
+
+    padding: 18px 20px;
+
+    border: none;
+
+    border-radius: 18px;
+
+    background: #f5f7fb;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.checkboxSection {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.label {
+    color: #011b2e;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.checkboxGroup,
+.eventGrid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #5f6b76;
+
+    font-size: 15px;
+}
+
+.checkbox input {
+    width: 18px;
+    height: 18px;
+}
+
+.form button {
+    width: fit-content;
+
+    padding: 18px 42px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background: #ffbb43;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.form button:hover {
+    background: #011b2e;
+}
+
+/* BENEFITS */
+
+.benefits {
+    padding: 0 0 120px;
+}
+
+.heading {
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+.heading span {
+    color: #ffbb43;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.heading h2 {
+    font-size: 64px;
+
+    color: #011b2e;
+
+    margin-top: 18px;
+
+    font-family: "Oswald", sans-serif;
+}
+
+.benefitsGrid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 28px;
+}
+
+.benefitCard {
+    background: white;
+
+    padding: 40px 32px;
+
+    border-radius: 28px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+
+    transition: 0.4s ease;
+}
+
+.benefitCard:hover {
+    transform: translateY(-10px);
+}
+
+.icon {
+    width: 70px;
+    height: 70px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 187, 67, 0.12);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffbb43;
+
+    margin-bottom: 24px;
+}
+
+.benefitCard h3 {
+    font-size: 28px;
+
+    color: #011b2e;
+
+    margin-bottom: 16px;
+
+    font-family: "Oswald", sans-serif;
+}
+
+.benefitCard p {
+    color: #5f6b76;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1200px) {
+
+    .opportunityGrid,
+    .benefitsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .formWrapper {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 340px;
+    }
+
+    .heroContent h1 {
+        font-size: 48px;
+    }
+
+    .opportunityGrid,
+    .benefitsGrid,
+    .row,
+    .eventGrid,
+    .checkboxGroup {
+        grid-template-columns: 1fr;
+    }
+
+    .opportunityCard,
+    .formWrapper {
+        padding: 32px;
+    }
+
+    .formLeft h2,
+    .heading h2 {
+        font-size: 42px;
+    }
+
+}

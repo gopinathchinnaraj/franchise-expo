@@ -1,0 +1,269 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/conference-agenda/workshops/Workshops.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************/
+.Workshops_page___dWFj {
+    width: 100%;
+    overflow: hidden;
+    background: #f7f9fc;
+}
+
+.Workshops_container___1pUX {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.Workshops_hero__xQwVR {
+    min-height: 300px;
+
+    display: flex;
+    align-items: center;
+
+    background: linear-gradient(135deg,
+            #011b2e,
+            #063b61);
+}
+
+.Workshops_heroTitle__06LwH {
+    font-size: 72px;
+    line-height: 1.1;
+
+    color: #ffffff;
+
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif;
+}
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.Workshops_introSection__MEcdC {
+    padding: 100px 0;
+}
+
+.Workshops_introGrid__JZ__Y {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 60px;
+    gap: 60px;
+    align-items: center;
+}
+
+.Workshops_sectionTitle__1HLW4 {
+    font-size: 54px;
+    line-height: 1.1;
+
+    color: #011b2e;
+
+    margin-bottom: 40px;
+
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif;
+}
+
+.Workshops_workshopBlock__ZL871 {
+    margin-bottom: 40px;
+}
+
+.Workshops_workshopBlock__ZL871 h3 {
+    font-size: 28px;
+    color: #011b2e;
+    margin-bottom: 16px;
+}
+
+.Workshops_workshopBlock__ZL871 p {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #555555;
+}
+
+.Workshops_note__1WpV_ {
+    display: inline-block;
+    margin-top: 18px;
+
+    color: #00a8c8;
+    font-weight: 700;
+}
+
+.Workshops_imageBox__CIu8E {
+    width: 100%;
+    height: 600px;
+
+    border-radius: 28px;
+    overflow: hidden;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.Workshops_imageBox__CIu8E img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =====================================================
+   TOPICS
+===================================================== */
+
+.Workshops_topicSection__igL8y {
+    padding-bottom: 100px;
+}
+
+.Workshops_topicTitle__u1Lh_ {
+    font-size: 52px;
+    line-height: 1.2;
+
+    color: #011b2e;
+
+    margin-bottom: 50px;
+
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif;
+}
+
+.Workshops_cardGrid__8s0f0 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 28px;
+    gap: 28px;
+}
+
+.Workshops_topicCard__KQcGd {
+    background: #ffffff;
+
+    border-radius: 28px;
+
+    padding: 35px 30px;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+
+    transition: 0.35s ease;
+}
+
+.Workshops_topicCard__KQcGd:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.09);
+}
+
+.Workshops_icon__C0aVx {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(135deg,
+            #00a8c8,
+            #007891);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    margin-bottom: 24px;
+}
+
+.Workshops_topicCard__KQcGd h3 {
+    font-size: 26px;
+    line-height: 1.3;
+
+    color: #011b2e;
+
+    margin-bottom: 18px;
+}
+
+.Workshops_topicCard__KQcGd p {
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: #666666;
+
+    margin-bottom: 10px;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1024px) {
+
+    .Workshops_heroTitle__06LwH {
+        font-size: 56px;
+    }
+
+    .Workshops_sectionTitle__1HLW4 {
+        font-size: 42px;
+    }
+
+    .Workshops_topicTitle__u1Lh_ {
+        font-size: 42px;
+    }
+
+    .Workshops_introGrid__JZ__Y {
+        grid-template-columns: 1fr;
+    }
+
+    .Workshops_cardGrid__8s0f0 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .Workshops_hero__xQwVR {
+        min-height: 220px;
+    }
+
+    .Workshops_heroTitle__06LwH {
+        font-size: 40px;
+    }
+
+    .Workshops_introSection__MEcdC {
+        padding: 70px 0;
+    }
+
+    .Workshops_sectionTitle__1HLW4 {
+        font-size: 34px;
+    }
+
+    .Workshops_topicTitle__u1Lh_ {
+        font-size: 34px;
+    }
+
+    .Workshops_workshopBlock__ZL871 h3 {
+        font-size: 24px;
+    }
+
+    .Workshops_workshopBlock__ZL871 p {
+        font-size: 16px;
+    }
+
+    .Workshops_imageBox__CIu8E {
+        height: 320px;
+    }
+
+    .Workshops_cardGrid__8s0f0 {
+        grid-template-columns: 1fr;
+    }
+
+    .Workshops_topicCard__KQcGd {
+        padding: 28px 22px;
+    }
+
+    .Workshops_topicCard__KQcGd h3 {
+        font-size: 22px;
+    }
+
+}

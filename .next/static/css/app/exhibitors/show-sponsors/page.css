@@ -1,0 +1,178 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/exhibitors/show-sponsors/ShowSponsors.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************/
+.ShowSponsors_page__K_WqE {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.ShowSponsors_container__CSQXx {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.ShowSponsors_hero__0beX7 {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    background: #011b2e;
+    display: flex;
+    align-items: center;
+}
+
+.ShowSponsors_heroOverlay__QOZLk {
+    width: 100%;
+}
+
+.ShowSponsors_heroTitle__eiWkU {
+    font-family: "Oswald", sans-serif;
+    font-size: 72px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* =========================================================
+   SPONSORS
+========================================================= */
+
+.ShowSponsors_sponsorsSection__s24C0 {
+    padding: 90px 0;
+}
+
+.ShowSponsors_sponsorGroup____qiv {
+    margin-bottom: 100px;
+}
+
+.ShowSponsors_sectionTitle__nNX0_ {
+    font-family: "Oswald", sans-serif;
+    font-size: 46px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #011b2e;
+    margin-bottom: 40px;
+}
+
+.ShowSponsors_sponsorsGrid__9gwxw {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 34px;
+    gap: 34px;
+}
+
+.ShowSponsors_sponsorCard__itSYk {
+    border: 1px solid #e5e5e5;
+    padding: 40px 30px;
+    text-align: center;
+    transition: 0.3s ease;
+    background: #ffffff;
+}
+
+.ShowSponsors_sponsorCard__itSYk:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.ShowSponsors_sponsorImage__cK6k2 {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 28px;
+}
+
+.ShowSponsors_sponsorCard__itSYk h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 26px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: #011b2e;
+    margin-bottom: 18px;
+}
+
+.ShowSponsors_sponsorCard__itSYk a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 24px;
+
+    background: #0067b2;
+    color: #ffffff;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.ShowSponsors_sponsorCard__itSYk a:hover {
+    background: #011b2e;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .ShowSponsors_sponsorsGrid__9gwxw {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ShowSponsors_heroTitle__eiWkU {
+        font-size: 56px;
+    }
+
+    .ShowSponsors_sectionTitle__nNX0_ {
+        font-size: 40px;
+    }
+
+}
+
+@media (max-width: 640px) {
+
+    .ShowSponsors_hero__0beX7 {
+        height: 220px;
+    }
+
+    .ShowSponsors_heroTitle__eiWkU {
+        font-size: 42px;
+    }
+
+    .ShowSponsors_sponsorsSection__s24C0 {
+        padding: 60px 0;
+    }
+
+    .ShowSponsors_sectionTitle__nNX0_ {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .ShowSponsors_sponsorsGrid__9gwxw {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .ShowSponsors_sponsorCard__itSYk {
+        padding: 30px 20px;
+    }
+
+    .ShowSponsors_sponsorCard__itSYk h3 {
+        font-size: 22px;
+    }
+
+    .ShowSponsors_sponsorImage__cK6k2 {
+        height: 100px;
+    }
+
+}
