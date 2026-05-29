@@ -1,7 +1,6 @@
 {
-  "/attendees/emerging-brand-pavilion/page": "app/attendees/emerging-brand-pavilion/page.js",
-  "/attendees/business-resource-center/page": "app/attendees/business-resource-center/page.js",
-  "/attendees/testimonials/page": "app/attendees/testimonials/page.js",
-  "/attendees/attendee-info/page": "app/attendees/attendee-info/page.js",
-  "/attendees/travel-information/page": "app/attendees/travel-information/page.js"
+  "/exhibitors/exhibitor-list/page": "app/exhibitors/exhibitor-list/page.js",
+  "/exhibitors/ife-unplugged/page": "app/exhibitors/ife-unplugged/page.js",
+  "/page": "app/page.js",
+  "/exhibitors/promotional-opportunities/page": "app/exhibitors/promotional-opportunities/page.js"
 }

@@ -780,15 +780,24 @@ ul {
 
   white-space: nowrap;
   line-height: 1;
+  transition: color 0.2s ease;
 }
+
 .Header_navLink__Q_hTB:hover {
   color: #1cb7cf;
 }
 
 .Header_chevron__PPQVD {
+  display: inline-flex;
+  align-items: center;
   font-size: 1rem;
   color: #1d2357;
   margin-top: -1px;
+  transition: transform 0.2s ease;
+}
+
+.Header_navItem__wfLp8:hover .Header_chevron__PPQVD svg path {
+  fill: #1cb7cf;
 }
 
 /* ── Dropdown ── */
@@ -804,20 +813,7 @@ ul {
   padding: 6px 0;
   margin: 0;
   border: 1px solid rgba(0, 0, 0, 0.07);
-  animation: Header_fadeDown__YKvoM 0.12s ease forwards;
   z-index: 200;
-}
-
-@keyframes Header_fadeDown__YKvoM {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .Header_dropdownLink__TaEc0 {
@@ -828,7 +824,7 @@ ul {
   font-weight: 500;
   color: #333;
   text-decoration: none;
-  transition: background 0.12s, color 0.12s, padding-left 0.12s;
+  transition: background 0.15s ease, color 0.15s ease, padding-left 0.2s ease;
 }
 
 .Header_dropdownLink__TaEc0:hover {
@@ -837,7 +833,7 @@ ul {
   padding-left: 24px;
 }
 
-/* ── CTA Buttons — defined as LOCAL classes, no :global needed ── */
+/* ── CTA Buttons ── */
 .Header_headerCtas__kWWpP {
   display: flex;
   gap: 6px;
@@ -872,7 +868,9 @@ ul {
   border: none !important;
 
   flex-shrink: 0;
+  transition: all 0.2s ease;
 }
+
 .Header_ctaBtn__t8pxu:hover {
   opacity: 0.88;
   transform: translateY(-1px);
@@ -909,7 +907,14 @@ ul {
   font-weight: 400;
 
   border: 2px solid #1d2357;
+  transition: all 0.2s ease;
 }
+
+.Header_ctaBtn__t8pxu:hover .Header_ctaBtnArrow__t4uJv {
+  background: #ffffff;
+  transform: translateY(-50%) scale(1.02);
+}
+
 /* ── Hamburger ── */
 .Header_hamburger___6DdG {
   display: none;
@@ -920,6 +925,7 @@ ul {
   cursor: pointer;
   padding: 4px;
   margin-left: auto;
+  z-index: 101;
 }
 
 .Header_hamburger___6DdG span {
@@ -928,7 +934,7 @@ ul {
   height: 2px;
   background: #011b2e;
   border-radius: 2px;
-  transition: 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 .Header_hamburgerOpen__74VR7 {
@@ -937,10 +943,28 @@ ul {
 
 /* ── Mobile Nav ── */
 .Header_mobileNav__J0kLN {
+  position: fixed;
+  top: 66px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: #ffffff;
   border-top: 1px solid rgba(0, 0, 0, 0.07);
-  max-height: 80vh;
   overflow-y: auto;
+  z-index: 100;
+  animation: Header_slideIn__pUvuL 0.3s ease;
+}
+
+@keyframes Header_slideIn__pUvuL {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .Header_mobileNavList__tYVgn {
@@ -968,6 +992,17 @@ ul {
   letter-spacing: 0.05em;
   color: #011b2e;
   cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.Header_mobileNavToggle__8hWvk:hover {
+  background: rgba(28, 183, 207, 0.05);
+}
+
+.Header_mobileNavToggleIcon__ImKK3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1cb7cf;
 }
 
 .Header_mobileDropdown__r9opH {
@@ -975,6 +1010,19 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  animation: Header_fadeIn__ehE4K 0.2s ease;
+}
+
+@keyframes Header_fadeIn__ehE4K {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .Header_mobileDropdownLink__do22B {
@@ -1014,6 +1062,7 @@ ul {
   letter-spacing: 0.1em;
   text-decoration: none;
   text-align: center;
+  transition: all 0.2s ease;
 }
 
 .Header_mobileCtaBtnPrimary__UZ0_J {
@@ -1021,9 +1070,17 @@ ul {
   color: #ffffff;
 }
 
+.Header_mobileCtaBtnPrimary__UZ0_J:hover {
+  background: #159eb3;
+}
+
 .Header_mobileCtaBtnSecondary__cigdH {
   background: #011b2e;
   color: #ffffff;
+}
+
+.Header_mobileCtaBtnSecondary__cigdH:hover {
+  background: #022a44;
 }
 
 /* ── Responsive ── */
@@ -1054,6 +1111,16 @@ ul {
 
   .Header_logoDivider__MyaZk {
     display: none;
+  }
+
+  .Header_logoMarkMid__mfhaB {
+    font-size: 2.5rem;
+  }
+
+  .Header_logoExpo__kRnn2,
+  .Header_logoSlash__nK4_L,
+  .Header_logoCity__Wi38h {
+    font-size: 0.85rem;
   }
 }
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\

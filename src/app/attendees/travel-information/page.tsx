@@ -1,30 +1,31 @@
 "use client";
 
+import PageBanner from "@/components/PageBanner";
 import styles from "./TravelInformation.module.css";
 
 const hotels = [
     {
         name: "HYATT PLACE New York City / Times Square",
         address: "350 W. 39th Street, New York City, NY 10018",
-        image: "/images/hyatt-place.webp",
+        image: "https://www.franchiseexpo.com/images/ife/Hyatt-Place-New-York-City-Times-Square-P013-Exterior.4x3.webp",
         link: "#",
     },
     {
         name: "EVEN Hotel New York - Times Square South",
         address: "321 West 35th Street, New York City, NY 10001",
-        image: "/images/even-hotel.webp",
+        image: "https://www.franchiseexpo.com/images/ife/even-hotel-times-square.jpg",
         link: "#",
     },
     {
         name: "Crowne Plaza HY36 Midtown Manhattan",
         address: "320 West 36th Street, New York City, NY 10018",
-        image: "/images/crowne-plaza.webp",
+        image: "https://www.franchiseexpo.com/images/ife/crowne-plaza-new-york-5519815692-2x1.jpg",
         link: "#",
     },
     {
         name: "Four Points by Sheraton Manhattan Midtown West",
         address: "444 10th Ave, New York City, NY 10001",
-        image: "/images/four-points.webp",
+        image: "https://www.franchiseexpo.com/images/7565f357.jpg",
         link: "#",
     },
 ];
@@ -32,17 +33,7 @@ const hotels = [
 export default function TravelInformation() {
     return (
         <main className={styles.page}>
-
-            {/* HERO */}
-            <section className={styles.hero}>
-                <div className={styles.heroOverlay}>
-                    <div className={styles.container}>
-                        <h1 className={styles.heroTitle}>
-                            Travel Information
-                        </h1>
-                    </div>
-                </div>
-            </section>
+            <PageBanner title="Travel Information" />
 
             {/* INTRO */}
             <section className={styles.introSection}>
@@ -84,11 +75,19 @@ export default function TravelInformation() {
 
                                     <p>{hotel.address}</p>
 
-                                    <a
-                                        href={hotel.link}
-                                        className={styles.hotelBtn}
-                                    >
-                                        MAKE YOUR RESERVATION
+                                    <a href="#" className={styles.hotelBtn}>
+                                        <span>Make Your Reservation</span>
+
+                                        <span className={styles.hotelBtnIcon}>
+                                            <svg
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                strokeWidth="3"
+                                            >
+                                                <path d="M9 18L15 12L9 6" />
+                                            </svg>
+                                        </span>
                                     </a>
                                 </div>
 

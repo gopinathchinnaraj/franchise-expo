@@ -76,66 +76,95 @@
 }
 
 /* =========================================================
-   TESTIMONIALS
+   EXHIBITOR SECTION - FULL CENTERING
 ========================================================= */
-
-.testimonialsSection {
+.exhibitorSection {
+    background: #0067b2;
     padding: 100px 0;
-    background: #1ab7d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.testimonialsGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+.exhibitorSection .container {
+    width: 100%;
+    text-align: center;
+    /* This centers everything inside */
 }
 
-.testimonialCard {
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(10px);
-
-    border: 1px solid rgba(255, 255, 255, 0.18);
-
-    padding: 40px;
-    border-radius: 24px;
-
-    transition: 0.3s ease;
+.exhibitorHeader {
+    text-align: center;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centers the icon and title horizontally */
+    justify-content: center;
 }
 
-.testimonialCard:hover {
-    transform: translateY(-6px);
-    background: rgba(255, 255, 255, 0.18);
+.exhibitorHeader img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 22px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* Centers the icon */
 }
 
-.quoteIcon {
-    font-size: 52px;
-    color: #ffffff;
-    line-height: 1;
-    margin-bottom: 20px;
-}
-
-.testimonialCard h3 {
+.exhibitorHeader h2 {
     font-family: "Oswald", sans-serif;
-    font-size: 30px;
+    font-size: 58px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0 auto;
+    max-width: 900px;
+    text-align: center;
+}
+
+/* Single testimonial - PERFECTLY CENTERED */
+.exhibitorTestimonial {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.exhibitorQuote {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 35px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.exhibitorAuthor {
+    text-align: center;
+}
+
+.exhibitorAuthor h4 {
+    font-family: "Oswald", sans-serif;
+    font-size: 24px;
     line-height: 1.2;
     text-transform: uppercase;
     color: #ffffff;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
 }
 
-.company {
+.exhibitorAuthor span {
+    font-family: "Poppins", sans-serif;
     font-size: 16px;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
 }
-
-.description {
-    font-size: 16px;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.92);
-}
-
 /* =========================================================
    RESPONSIVE
 ========================================================= */

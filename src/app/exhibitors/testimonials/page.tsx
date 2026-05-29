@@ -1,5 +1,6 @@
 "use client";
 
+import PageBanner from "@/components/PageBanner";
 import styles from "./ExhibitorTestimonials.module.css";
 
 const testimonials = [
@@ -30,15 +31,7 @@ export default function ExhibitorTestimonials() {
         <main className={styles.page}>
 
             {/* HERO */}
-            <section className={styles.hero}>
-                <div className={styles.heroOverlay}>
-                    <div className={styles.container}>
-                        <h1 className={styles.heroTitle}>
-                            Exhibitors Testimonials
-                        </h1>
-                    </div>
-                </div>
-            </section>
+      <PageBanner title="Exhibitor Testimonials" />
 
             {/* INTRO */}
             <section className={styles.introSection}>
@@ -82,34 +75,29 @@ export default function ExhibitorTestimonials() {
             </section>
 
             {/* TESTIMONIALS */}
-            <section className={styles.testimonialsSection}>
+            <section className={styles.exhibitorSection}>
                 <div className={styles.container}>
-
-                    <div className={styles.testimonialsGrid}>
-                        {testimonials.map((item, index) => (
-                            <div
-                                key={index}
-                                className={styles.testimonialCard}
-                            >
-                                <div className={styles.quoteIcon}>
-                                    ❝
-                                </div>
-
-                                <h3>{item.title}</h3>
-
-                                <p className={styles.company}>
-                                    {item.company}
-                                </p>
-
-                                <p className={styles.description}>
-                                    {item.text}
-                                </p>
-                            </div>
-                        ))}
+                    <div className={styles.exhibitorHeader}>
+                        <img
+                            src="https://www.franchiseexpo.com/images/template/quote-icon.svg"
+                            alt="Quote icon"
+                        />
+                        <h2>HEAR WHAT OUR EXHIBITORS HAVE TO SAY</h2>
                     </div>
 
+                    <div className={styles.exhibitorTestimonial}>
+                        <p className={styles.exhibitorQuote}>
+                            "We know that there's a lot of great investors, people looking for franchises coming through the show. MFV Expositions and their expos are very reputable, and out of all the shows we go to this is one of them where we get the best results."
+                        </p>
+                        <div className={styles.exhibitorAuthor}>
+                            <h4>Dan Doulen</h4>
+                            <span>Wings and Rings</span>
+                        </div>
+                    </div>
                 </div>
             </section>
+            <br/>
+            <br /><br />
 
         </main>
     );

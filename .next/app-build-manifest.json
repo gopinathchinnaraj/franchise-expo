@@ -12,11 +12,11 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/attendees/attendee-info/page": [
+    "/exhibitors/ife-unplugged/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/attendees/attendee-info/page.css",
-      "static/chunks/app/attendees/attendee-info/page.js"
+      "static/css/app/exhibitors/ife-unplugged/page.css",
+      "static/chunks/app/exhibitors/ife-unplugged/page.js"
     ],
     "/exhibitors/exhibitor-list/page": [
       "static/chunks/webpack.js",
@@ -24,65 +24,11 @@
       "static/css/app/exhibitors/exhibitor-list/page.css",
       "static/chunks/app/exhibitors/exhibitor-list/page.js"
     ],
-    "/attendees/emerging-brand-pavilion/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/attendees/emerging-brand-pavilion/page.css",
-      "static/chunks/app/attendees/emerging-brand-pavilion/page.js"
-    ],
-    "/attendees/business-resource-center/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/attendees/business-resource-center/page.css",
-      "static/chunks/app/attendees/business-resource-center/page.js"
-    ],
-    "/attendees/testimonials/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/attendees/testimonials/page.css",
-      "static/chunks/app/attendees/testimonials/page.js"
-    ],
-    "/attendees/travel-information/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/attendees/travel-information/page.css",
-      "static/chunks/app/attendees/travel-information/page.js"
-    ],
-    "/exhibitors/why-exhibit/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/exhibitors/why-exhibit/page.css",
-      "static/chunks/app/exhibitors/why-exhibit/page.js"
-    ],
-    "/exhibitors/show-sponsors/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/exhibitors/show-sponsors/page.css",
-      "static/chunks/app/exhibitors/show-sponsors/page.js"
-    ],
-    "/exhibitors/testimonials/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/exhibitors/testimonials/page.css",
-      "static/chunks/app/exhibitors/testimonials/page.js"
-    ],
-    "/exhibitors/ife-unplugged/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/exhibitors/ife-unplugged/page.css",
-      "static/chunks/app/exhibitors/ife-unplugged/page.js"
-    ],
     "/exhibitors/promotional-opportunities/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/exhibitors/promotional-opportunities/page.css",
       "static/chunks/app/exhibitors/promotional-opportunities/page.js"
-    ],
-    "/exhibitors/travel-information/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/exhibitors/travel-information/page.css",
-      "static/chunks/app/exhibitors/travel-information/page.js"
     ]
   }
 }

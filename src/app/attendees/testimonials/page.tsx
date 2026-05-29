@@ -16,41 +16,39 @@ export default function AttendeesTestimonials() {
             <section className={styles.introSection}>
                 <div className={styles.container}>
                     <div className={styles.introGrid}>
-                        {/* LEFT CONTENT - TEXT LIKE THE IMAGE */}
-                        <div className={styles.content}>
-                            <h2>WHAT DO OUR ATTENDEES HAVE TO SAY?</h2>
+
+                        <div className={styles.introContent}>
+                            <h2>
+                                What Do Our Exhibitors Have To Say?
+                            </h2>
+
                             <p>
-                                Our attendees leave inspired, informed, and ready to take the
-                                next step toward franchise ownership. Here's what they had to
-                                say about their experience:
+                                MFV Expositions' franchise expos are among the largest
+                                franchise exhibitions within the U.S, offering the largest
+                                selection of franchise brands all under one roof.
                             </p>
-                            <h3>Stories of Success and Discovery</h3>
 
-                            {/* Quotes exactly like the image - inline text */}
-                            <div className={styles.quoteList}>
-                                <p className={styles.quoteItem}>
-                                    “Attending the expo gave me the clarity I needed to move forward with a franchise” <span className={styles.quoteAuthor}>- C. Syma</span>
-                                </p>
-                                <p className={styles.quoteItem}>
-                                    “The ability to connect directly with franchisors was invaluable. I got all my questions answered in one day!” <span className={styles.quoteAuthor}>- L. Michaels</span>
-                                </p>
-                            </div>
+                            <p>
+                                Since 1991 MFV Expositions has been hosting expos and franchise
+                                owners have come to our shows to seek out their perfect
+                                franchise.
+                            </p>
+
+                            <p>
+                                But don’t take our word for it, take a look at what some of our
+                                exhibitors have to say about us!
+                            </p>
                         </div>
 
-                        {/* VIDEO WRAPPER */}
-                        <div className={styles.videoWrap}>
-                            <div className={styles.videoContainer}>
-                                <iframe
-                                    src="https://player.vimeo.com/video/855383917?h=7a0e97a924"
-                                    title="Attendees Testimonials"
-                                    allow="autoplay; fullscreen; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            </div>
-                            <div className={styles.videoCredit}>
-                                Filmed & Produced by <a href="#">FranchiseFilming</a>
-                            </div>
+                        <div className={styles.videoWrapper}>
+                            <iframe
+                                src="https://player.vimeo.com/video/855373079?h=140bc3b8a1"
+                                title="Exhibitor Testimonials"
+                                allow="autoplay; fullscreen; picture-in-picture"
+                                allowFullScreen
+                            />
                         </div>
+
                     </div>
                 </div>
             </section>

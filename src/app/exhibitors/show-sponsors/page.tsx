@@ -1,11 +1,12 @@
 "use client";
 
+import PageBanner from "@/components/PageBanner";
 import styles from "./ShowSponsors.module.css";
 
 const platinumSponsors = [
     {
         name: "Entrepreneur",
-        image: "/images/sponsors/entrepreneur.webp",
+        image: "https://www.franchiseexpo.com/media/cache/mod_latestnewsenhanced/thumb_287_254.webp?d379ab892179a7e4eed7ceb2ffa43760",
         link: "#",
     },
 ];
@@ -13,32 +14,32 @@ const platinumSponsors = [
 const goldSponsors = [
     {
         name: "BeTheBoss",
-        image: "/images/sponsors/betheboss.webp",
+        image: "https://www.franchiseexpo.com/media/cache/mod_latestnewsenhanced/thumb_300_275.webp?e984577ea28ed6ee546854c84c655111",
         link: "#",
     },
     {
         name: "BizBuySell",
-        image: "/images/sponsors/bizbuysell.webp",
+        image: "https://www.franchiseexpo.com/images/sponsors/IFE/BizBuySell.svg?e984577ea28ed6ee546854c84c655111",
         link: "#",
     },
     {
         name: "Emma Inc.",
-        image: "/images/sponsors/emma.webp",
+        image: "https://www.franchiseexpo.com/media/cache/mod_latestnewsenhanced/thumb_300_430.jpg?e984577ea28ed6ee546854c84c655111",
         link: "#",
     },
     {
         name: "F.C. Dadson",
-        image: "/images/sponsors/dadson.webp",
+        image: "https://www.franchiseexpo.com/media/cache/mod_latestnewsenhanced/thumb_300_274.webp?e984577ea28ed6ee546854c84c655111",
         link: "#",
     },
     {
         name: "MetAiBlock",
-        image: "/images/sponsors/metaiblock.webp",
+        image: "https://www.franchiseexpo.com/media/cache/mod_latestnewsenhanced/thumb_300_434.png?e984577ea28ed6ee546854c84c655111",
         link: "#",
     },
     {
         name: "Stark and Stark Attorneys at Law",
-        image: "/images/sponsors/stark.webp",
+        image: "https://www.franchiseexpo.com/media/cache/mod_latestnewsenhanced/thumb_300_269.jpg?e984577ea28ed6ee546854c84c655111",
         link: "#",
     },
 ];
@@ -46,27 +47,27 @@ const goldSponsors = [
 const silverSponsors = [
     {
         name: "Guidant",
-        image: "/images/sponsors/guidant.webp",
+        image: "https://www.franchiseexpo.com/media/cache/mod_latestnewsenhanced/thumb_301_280.webp?cf0f6cba0c44610223afbe802530982c",
         link: "#",
     },
     {
         name: "Sesimi",
-        image: "/images/sponsors/sesimi.webp",
+        image: "https://www.franchiseexpo.com/media/cache/mod_latestnewsenhanced/thumb_301_356.png?cf0f6cba0c44610223afbe802530982c",
         link: "#",
     },
     {
         name: "Signation Sign Group",
-        image: "/images/sponsors/signation.webp",
+        image: "https://www.franchiseexpo.com/media/cache/mod_latestnewsenhanced/thumb_301_291.webp?cf0f6cba0c44610223afbe802530982c",
         link: "#",
     },
     {
         name: "The Entrepreneur's Source",
-        image: "/images/sponsors/source.webp",
+        image: "https://www.franchiseexpo.com/media/cache/mod_latestnewsenhanced/thumb_301_406.webp?cf0f6cba0c44610223afbe802530982c",
         link: "#",
     },
     {
         name: "The Franchise Firm",
-        image: "/images/sponsors/franchise-firm.webp",
+        image: "https://www.franchiseexpo.com/media/cache/mod_latestnewsenhanced/thumb_301_288.webp?cf0f6cba0c44610223afbe802530982c",
         link: "#",
     },
 ];
@@ -76,15 +77,7 @@ export default function ShowSponsors() {
         <main className={styles.page}>
 
             {/* HERO */}
-            <section className={styles.hero}>
-                <div className={styles.heroOverlay}>
-                    <div className={styles.container}>
-                        <h1 className={styles.heroTitle}>
-                            Show Sponsors
-                        </h1>
-                    </div>
-                </div>
-            </section>
+           <PageBanner title="Show Sponsors"/>
 
             {/* SPONSORS */}
             <section className={styles.sponsorsSection}>

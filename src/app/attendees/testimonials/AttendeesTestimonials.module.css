@@ -12,120 +12,47 @@
 }
 
 /* =========================================================
-   INTRO SECTION (Attendees)
+   INTRO
 ========================================================= */
+
 .introSection {
     padding: 90px 0;
-    background: #ffffff;
 }
 
 .introGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    align-items: stretch;
+    align-items: center;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.content h2 {
+.introContent h2 {
     font-family: "Oswald", sans-serif;
     font-size: 48px;
     line-height: 1.1;
     text-transform: uppercase;
     color: #011b2e;
-    margin-bottom: 24px;
+    margin-bottom: 30px;
 }
 
-.content p {
-    font-family: "Poppins", sans-serif;
+.introContent p {
     font-size: 18px;
     line-height: 1.8;
-    color: #4d4d4d;
-    margin-bottom: 18px;
-}
-
-.content h3 {
-    font-family: "Oswald", sans-serif;
-    font-size: 32px;
-    line-height: 1.2;
-    text-transform: uppercase;
-    color: #011b2e;
-    margin-top: 40px;
+    color: #444444;
     margin-bottom: 20px;
 }
 
-/* Small testimonials (attendees) */
-.smallTestimonials {
-    margin-top: 30px;
-}
-
-.smallCard {
-    margin-bottom: 28px;
-}
-
-.smallCard p {
-    font-family: "Poppins", sans-serif;
-    font-size: 20px;
-    line-height: 1.9;
-    color: #011b2e;
-    margin-bottom: 10px;
-    font-weight: 500;
-}
-
-.smallCard span {
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    color: #666666;
-}
-
-/* Video section */
-.videoWrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-}
-
-.videoContainer {
-    position: relative;
+.videoWrapper {
     width: 100%;
-    padding-bottom: 56.25%;
-    height: 0;
+    border-radius: 14px;
     overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-.videoContainer iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+.videoWrapper iframe {
     width: 100%;
-    height: 100%;
+    height: 420px;
     border: none;
-}
-
-.videoCredit {
-    margin-top: 14px;
-    font-size: 14px;
-    font-family: "Poppins", sans-serif;
-    color: #666666;
-    text-align: right;
-}
-
-.videoCredit a {
-    color: #0067b2;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.videoCredit a:hover {
-    text-decoration: underline;
 }
 
 /* =========================================================

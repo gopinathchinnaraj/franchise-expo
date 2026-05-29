@@ -1,5 +1,6 @@
 "use client";
 
+import PageBanner from "@/components/PageBanner";
 import styles from "./IFEUnplugged.module.css";
 import { Mic2 } from "lucide-react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
@@ -9,13 +10,7 @@ export default function IFEUnplugged() {
         <main className={styles.page}>
 
             {/* HERO */}
-            <section className={styles.hero}>
-                <div className={styles.container}>
-                    <h1 className={styles.heroTitle}>
-                        IFE Unplugged
-                    </h1>
-                </div>
-            </section>
+            <PageBanner title="IFE Unplugged"/>
 
             {/* ABOUT */}
             <section className={styles.aboutSection}>
@@ -25,11 +20,6 @@ export default function IFEUnplugged() {
 
                         {/* LEFT */}
                         <div className={styles.content}>
-                            <div className={styles.badge}>
-                                <Mic2 size={18} />
-                                Podcast Experience
-                            </div>
-
                             <h2>
                                 About The Podcast
                             </h2>
@@ -48,7 +38,7 @@ export default function IFEUnplugged() {
 
                             <div className={styles.logoBox}>
                                 <img
-                                    src="/images/ife/IFE-Unplugged/ife.webp"
+                                    src="https://www.franchiseexpo.com/images/ife/IFE-Unplugged/ife.webp"
                                     alt="IFE Unplugged"
                                 />
                             </div>
@@ -77,16 +67,9 @@ export default function IFEUnplugged() {
                         {/* RIGHT */}
                         <div className={styles.imageCard}>
                             <img
-                                src="/images/austin/austin-unplugged/podcast.webp"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGb1AD77jEq0Y1GxlBb7wVOTvROV73Ke0RhA&s"
                                 alt="Podcast"
                             />
-
-                            <div className={styles.imageOverlay}>
-                                <div>
-                                    <span>Live Podcast Recording</span>
-                                    <h3>On The Expo Floor</h3>
-                                </div>
-                            </div>
                         </div>
 
                     </div>
@@ -99,16 +82,16 @@ export default function IFEUnplugged() {
                 <div className={styles.container}>
                     <div className={styles.contactCard}>
 
-                        <h3>Get In Touch</h3>
+                        <h3>GET IN TOUCH</h3>
 
                         <p>
                             If you're interested in participating,
-                            please reach out to:
+                            <br />
+                            please reach out to{" "}
+                            <a href="mailto:Linda.Thompson@comexposium.com">
+                                Linda.Thompson@comexposium.com
+                            </a>
                         </p>
-
-                        <a href="mailto:Linda.Thompson@comexposium.com">
-                            Linda.Thompson@comexposium.com
-                        </a>
 
                     </div>
                 </div>

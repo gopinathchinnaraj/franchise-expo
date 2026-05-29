@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import styles from './Header.module.css';
 
@@ -63,6 +63,76 @@ const navItems = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (dropdownTimeoutRef.current) {
+        clearTimeout(dropdownTimeoutRef.current);
+      }
+      if (hoverTimeout) {
+        clearTimeout(hoverTimeout);
+      }
+    };
+  }, [hoverTimeout]);
+
+  // Handle mouse enter on nav item
+  const handleMouseEnter = useCallback((label: string) => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+      dropdownTimeoutRef.current = null;
+    }
+    setOpenDropdown(label);
+  }, []);
+
+  // Handle mouse leave on nav item
+  const handleMouseLeave = useCallback(() => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+      dropdownTimeoutRef.current = null;
+    }, 150); // 150ms delay gives user time to move mouse to dropdown
+  }, []);
+
+  // Handle mouse enter on dropdown to keep it open
+  const handleDropdownMouseEnter = useCallback(() => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+      dropdownTimeoutRef.current = null;
+    }
+  }, []);
+
+  // Handle mouse leave on dropdown
+  const handleDropdownMouseLeave = useCallback(() => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+      dropdownTimeoutRef.current = null;
+    }, 150);
+  }, []);
+
+  // Close mobile menu when screen resizes above breakpoint
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 900 && mobileOpen) {
+        setMobileOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [mobileOpen]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileOpen]);
 
   return (
     <header className={styles.header}>
@@ -95,8 +165,8 @@ export default function Header() {
               <li
                 key={item.label}
                 className={styles.navItem}
-                onMouseEnter={() => setOpenDropdown(item.label)}
-                onMouseLeave={() => setOpenDropdown(null)}
+                onMouseEnter={() => handleMouseEnter(item.label)}
+                onMouseLeave={handleMouseLeave}
               >
                 <Link href={item.href} className={styles.navLink}>
                   {item.label}
@@ -109,7 +179,7 @@ export default function Header() {
                         height="12"
                       >
                         <path
-                          fill="#242559"
+                          fill="currentColor"
                           d="M8.19,5.241L15.56,0l.819.819-8.189,8.517L0,.819l.819-.819,7.371,5.241Z"
                         />
                       </svg>
@@ -117,7 +187,11 @@ export default function Header() {
                   )}
                 </Link>
                 {item.children && openDropdown === item.label && (
-                  <ul className={styles.dropdown}>
+                  <ul
+                    className={styles.dropdown}
+                    onMouseEnter={handleDropdownMouseEnter}
+                    onMouseLeave={handleDropdownMouseLeave}
+                  >
                     {item.children.map((child) => (
                       <li key={child.label}>
                         <Link href={child.href} className={styles.dropdownLink}>
@@ -132,7 +206,7 @@ export default function Header() {
           </ul>
         </nav>
 
-        {/* ── CTA Buttons — local classes only, no globals ── */}
+        {/* ── CTA Buttons ── */}
         <div className={styles.headerCtas}>
           <Link
             href="/register"
@@ -155,6 +229,7 @@ export default function Header() {
           className={styles.hamburger}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
         >
           <span className={mobileOpen ? styles.hamburgerOpen : ''} />
           <span className={mobileOpen ? styles.hamburgerOpen : ''} />
@@ -173,9 +248,12 @@ export default function Header() {
                   onClick={() =>
                     setOpenDropdown(openDropdown === item.label ? null : item.label)
                   }
+                  aria-expanded={openDropdown === item.label}
                 >
                   {item.label}
-                  <span>{openDropdown === item.label ? '−' : '+'}</span>
+                  <span className={styles.mobileNavToggleIcon}>
+                    {openDropdown === item.label ? '−' : '+'}
+                  </span>
                 </button>
                 {openDropdown === item.label && item.children && (
                   <ul className={styles.mobileDropdown}>
@@ -198,12 +276,14 @@ export default function Header() {
               <Link
                 href="/register"
                 className={`${styles.mobileCtaBtn} ${styles.mobileCtaBtnPrimary}`}
+                onClick={() => setMobileOpen(false)}
               >
                 Register to Attend
               </Link>
               <Link
                 href="/exhibitors/why-exhibit"
                 className={`${styles.mobileCtaBtn} ${styles.mobileCtaBtnSecondary}`}
+                onClick={() => setMobileOpen(false)}
                 style={{ marginTop: 8 }}
               >
                 Exhibit / Sponsor
