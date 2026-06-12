@@ -1,0 +1,488 @@
+
+/* ── Root ────────────────────────────────────────────────── */
+.agendaRoot {
+    width: 100%;
+    font-family: var(--ag-font-body);
+    color: var(--ag-text);
+    background: var(--ag-off);
+    border-radius: var(--ag-radius);
+    overflow: hidden;
+}
+
+/* ── Day tabs ────────────────────────────────────────────── */
+.dayTabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--ag-tab-bg);
+    border-bottom: 2px solid var(--ag-border);
+}
+
+.dayTab {
+    padding: 1rem 1.5rem;
+    font-family: var(--ag-font-body);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ag-muted);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: color var(--ag-transition), background var(--ag-transition);
+}
+
+.dayTab:hover {
+    color: var(--ag-text);
+    background: rgba(1, 27, 46, 0.04);
+}
+
+.dayTabActive {
+    color: var(--ag-white);
+    background: var(--ag-tab-active);
+}
+
+.dayTabActive::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--ag-red);
+}
+
+/* ── Body (sidebar + list) ───────────────────────────────── */
+.agendaBody {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    min-height: 500px;
+    align-items: start;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────── */
+.sidebar {
+    background: var(--ag-white);
+    border-right: 1px solid var(--ag-border);
+    padding: 1.25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    position: sticky;
+    top: 0;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Search */
+.searchWrap {
+    position: relative;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 0.65rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    color: var(--ag-muted);
+    pointer-events: none;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 0.55rem 0.75rem 0.55rem 2.1rem;
+    border: 1px solid var(--ag-border);
+    border-radius: 6px;
+    font-family: var(--ag-font-body);
+    font-size: 0.82rem;
+    color: var(--ag-text);
+    background: var(--ag-off);
+    transition: border-color var(--ag-transition), box-shadow var(--ag-transition);
+    box-sizing: border-box;
+    outline: none;
+}
+
+.searchInput:focus {
+    border-color: var(--ag-blue);
+    box-shadow: 0 0 0 3px rgba(27, 79, 138, 0.12);
+}
+
+/* Filter group */
+.filterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.filterLabel {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ag-muted);
+}
+
+.selectWrap {
+    position: relative;
+}
+
+.select {
+    width: 100%;
+    padding: 0.5rem 2rem 0.5rem 0.7rem;
+    border: 1px solid var(--ag-border);
+    border-radius: 6px;
+    font-family: var(--ag-font-body);
+    font-size: 0.82rem;
+    color: var(--ag-text);
+    background: var(--ag-off);
+    appearance: none;
+    cursor: pointer;
+    transition: border-color var(--ag-transition);
+    outline: none;
+    box-sizing: border-box;
+}
+
+.select:focus {
+    border-color: var(--ag-blue);
+    box-shadow: 0 0 0 3px rgba(27, 79, 138, 0.12);
+}
+
+.selectChevron {
+    position: absolute;
+    right: 0.65rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    color: var(--ag-muted);
+    pointer-events: none;
+}
+
+/* Filter meta */
+.filterMeta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--ag-border);
+}
+
+.resultsCount {
+    font-size: 0.78rem;
+    color: var(--ag-muted);
+}
+
+.resultsCount strong {
+    color: var(--ag-text);
+}
+
+.clearBtn {
+    padding: 0.45rem 0;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--ag-muted);
+    background: transparent;
+    border: 1px solid var(--ag-border);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: color var(--ag-transition), border-color var(--ag-transition);
+    text-align: center;
+}
+
+.clearBtn:hover:not(:disabled) {
+    color: var(--ag-red);
+    border-color: var(--ag-red);
+}
+
+.clearBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ── Session list ────────────────────────────────────────── */
+.sessionList {
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--ag-off);
+}
+
+/* ── Empty state ─────────────────────────────────────────── */
+.emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: var(--ag-muted);
+    gap: 1rem;
+}
+
+.emptyIcon {
+    width: 48px;
+    height: 48px;
+    color: var(--ag-border);
+}
+
+.clearBtnAlt {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ag-white);
+    background: var(--ag-blue);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background var(--ag-transition);
+}
+
+.clearBtnAlt:hover {
+    background: var(--ag-navy);
+}
+
+/* ── Time group ──────────────────────────────────────────── */
+.timeGroup {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 0 1.25rem;
+    padding-bottom: 1.75rem;
+    position: relative;
+}
+
+/* Vertical timeline connector */
+.timeGroup::before {
+    content: "";
+    position: absolute;
+    left: 89px;
+    top: 28px;
+    bottom: 0;
+    width: 1px;
+    background: var(--ag-border);
+}
+
+.timeGroup:last-child::before {
+    display: none;
+}
+
+.timeStamp {
+    font-family: var(--ag-font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ag-navy);
+    padding-top: 1.1rem;
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* ── Session cards column ────────────────────────────────── */
+.sessionCards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* ── Single card ─────────────────────────────────────────── */
+.sessionCard {
+    background: var(--ag-white);
+    border: 1px solid var(--ag-border);
+    border-radius: var(--ag-radius);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--ag-shadow);
+    transition: box-shadow var(--ag-transition), transform var(--ag-transition);
+    animation: cardIn 0.3s ease both;
+}
+
+@keyframes cardIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sessionCard:hover {
+    box-shadow: 0 4px 20px rgba(1, 27, 46, 0.13);
+    transform: translateY(-1px);
+}
+
+.cardHeader {
+    margin-bottom: 0.5rem;
+}
+
+.cardTitle {
+    margin: 0;
+    font-family: var(--ag-font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ag-blue-link);
+    line-height: 1.3;
+}
+
+/* Meta row */
+.cardMeta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.metaTime,
+.metaRoom {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    color: var(--ag-muted);
+}
+
+.metaIcon {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+}
+
+.roomDot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Description */
+.cardDesc {
+    margin: 0 0 1rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--ag-text);
+}
+
+/* ── Speaker row (no names) ──────────────────────────────── */
+.speakerRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--ag-border);
+}
+
+.speakerCard {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+}
+
+.avatarInitials {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+}
+
+.speakerInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    min-width: 0;
+}
+
+.speakerRole {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--ag-text);
+    line-height: 1.3;
+}
+
+.speakerOrg {
+    font-size: 0.73rem;
+    font-weight: 700;
+    color: var(--ag-muted);
+    line-height: 1.3;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+    .agendaBody {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--ag-border);
+        position: static;
+        max-height: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem 1rem;
+        padding: 1rem;
+    }
+
+    .filterMeta {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 0.25rem;
+    }
+
+    .searchWrap {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 600px) {
+    .dayTab {
+        font-size: 0.74rem;
+        padding: 0.8rem 0.75rem;
+        letter-spacing: 0.06em;
+    }
+
+    .sessionList {
+        padding: 1rem;
+    }
+
+    .timeGroup {
+        grid-template-columns: 72px 1fr;
+        gap: 0 0.75rem;
+    }
+
+    .timeGroup::before {
+        left: 71px;
+    }
+
+    .timeStamp {
+        font-size: 0.85rem;
+    }
+
+    .sessionCard {
+        padding: 1rem;
+    }
+
+    .sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .speakerCard {
+        flex: 0 0 100%;
+    }
+}

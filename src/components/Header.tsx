@@ -34,15 +34,15 @@ const navItems = [
   },
   {
     label: 'Conference Agenda',
-    href: '/conference-agenda',
+    href: '/conference',
     children: [
-      { label: 'Conference Agenda', href: '/conference-agenda' },
+      { label: 'Conference Agenda', href: '/conference' },
       { label: 'Workshops', href: '/conference-agenda/workshops' },
     ],
   },
   {
     label: 'Resources',
-    href: '/blog',
+    href: '/resources/blog',
     children: [
       { label: 'Blog', href: '/resources/blog' },
       { label: 'Podcasts', href: '/resources/podcasts' },
@@ -64,7 +64,23 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Cleanup timeout on unmount
   useEffect(() => {
@@ -135,7 +151,7 @@ export default function Header() {
   }, [mobileOpen]);
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.headerInner}>
 
         {/* ── Logo ── */}

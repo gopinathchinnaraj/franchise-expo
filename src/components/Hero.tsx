@@ -46,17 +46,6 @@ export default function Hero() {
                     <p>Step into a world of franchise possibilities waiting to be explored.</p>
                     <p>Hear from experts who&apos;ll equip you with the tools to make your business ownership dreams a reality.</p>
                 </div>
-
-                <div className={styles.heroCtas}>
-                    <Link href="/register" className={styles.btnPrimary}>
-                        Register to Attend
-                        <span className={styles.btnArrow}>›</span>
-                    </Link>
-                    <Link href="/exhibitors/why-exhibit" className={styles.btnSecondary}>
-                        Exhibit / Sponsor
-                        <span className={styles.btnArrow}>›</span>
-                    </Link>
-                </div>
             </div>
 
         </section>

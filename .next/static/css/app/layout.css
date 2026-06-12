@@ -624,6 +624,12 @@ ul {
   z-index: 100;
   background: #ffffff;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08), 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scrolled state for header */
+.Header_header__MvnS2.Header_scrolled__s9Ifj {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .Header_headerInner__HzK1Z {
@@ -637,6 +643,13 @@ ul {
 
   gap: 14px;
   height: 116px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scrolled state - REDUCE HEIGHT */
+.Header_header__MvnS2.Header_scrolled__s9Ifj .Header_headerInner__HzK1Z {
+  height: 85px;
+  gap: 10px;
 }
 
 /* ── Logo ── */
@@ -646,6 +659,11 @@ ul {
   gap: 16px;
   text-decoration: none;
   flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logo__j7oID a {
+  gap: 12px;
 }
 
 .Header_logoMark__O8c_Y {
@@ -653,6 +671,7 @@ ul {
   flex-direction: column;
   line-height: 1;
   gap: 1px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .Header_logoMarkTop__YXeJ1 {
@@ -662,6 +681,13 @@ ul {
   color: #011b2e;
   text-transform: uppercase;
   letter-spacing: 0.18em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* SQUEEZE logo top text - make VERY small */
+.Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoMarkTop__YXeJ1 {
+  font-size: 0.45rem;
+  letter-spacing: 0.1em;
 }
 
 .Header_logoMarkMid__mfhaB {
@@ -672,6 +698,14 @@ ul {
   text-transform: uppercase;
   letter-spacing: -1px;
   line-height: 0.82;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* SQUEEZE main logo text - make MUCH smaller */
+.Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoMarkMid__mfhaB {
+  font-size: 1.6rem;
+  line-height: 0.85;
+  letter-spacing: -0.5px;
 }
 
 .Header_logoMarkBot__jGU3m {
@@ -689,6 +723,13 @@ ul {
   background: #011b2e;
   color: #ffffff;
   padding: 1px 5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* SQUEEZE expo badge - make smaller */
+.Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoExpo__kRnn2 {
+  font-size: 0.7rem;
+  padding: 1px 3px;
 }
 
 .Header_logoSlash__nK4_L {
@@ -697,6 +738,11 @@ ul {
   font-weight: 700;
   color: #011b2e;
   padding: 0 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoSlash__nK4_L {
+  font-size: 0.7rem;
 }
 
 .Header_logoCity__Wi38h {
@@ -706,6 +752,11 @@ ul {
   color: #1cb7cf;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoCity__Wi38h {
+  font-size: 0.7rem;
 }
 
 .Header_logoDivider__MyaZk {
@@ -713,14 +764,25 @@ ul {
   height: 44px;
   background: #e0e0e0;
   flex-shrink: 0;
+  transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* SQUEEZE divider */
+.Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoDivider__MyaZk {
+  height: 35px;
 }
 
 .Header_logoDetails__WaZR9 {
   display: flex;
   flex-direction: column;
   gap: 4px;
-
   min-width: 180px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Keep details section relatively larger */
+.Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoDetails__WaZR9 {
+  gap: 2px;
 }
 
 .Header_logoLocation__fXfsF {
@@ -730,6 +792,12 @@ ul {
   color: #333333;
   text-transform: uppercase;
   line-height: 1.1;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Make location text only slightly smaller - keep readable */
+.Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoLocation__fXfsF {
+  font-size: 0.8rem;
 }
 
 .Header_logoDates__PoPak {
@@ -739,6 +807,12 @@ ul {
   color: #222222;
   text-transform: uppercase;
   line-height: 1.1;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Make dates text only slightly smaller - keep prominent */
+.Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoDates__PoPak {
+  font-size: 0.85rem;
 }
 
 /* ── Desktop Nav ── */
@@ -780,7 +854,13 @@ ul {
 
   white-space: nowrap;
   line-height: 1;
-  transition: color 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* SQUEEZE nav links */
+.Header_header__MvnS2.Header_scrolled__s9Ifj .Header_navLink__Q_hTB {
+  font-size: 15px;
+  padding: 6px 8px;
 }
 
 .Header_navLink__Q_hTB:hover {
@@ -868,7 +948,15 @@ ul {
   border: none !important;
 
   flex-shrink: 0;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* SQUEEZE CTA buttons */
+.Header_header__MvnS2.Header_scrolled__s9Ifj .Header_ctaBtn__t8pxu {
+  height: 38px;
+  min-width: 135px;
+  font-size: clamp(0.65rem, 0.6vw, 0.8rem);
+  padding: 0 40px 0 14px;
 }
 
 .Header_ctaBtn__t8pxu:hover {
@@ -907,7 +995,15 @@ ul {
   font-weight: 400;
 
   border: 2px solid #1d2357;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* SQUEEZE CTA arrows */
+.Header_header__MvnS2.Header_scrolled__s9Ifj .Header_ctaBtnArrow__t4uJv {
+  width: 30px;
+  height: 30px;
+  font-size: 1.1rem;
+  border-width: 1.5px;
 }
 
 .Header_ctaBtn__t8pxu:hover .Header_ctaBtnArrow__t4uJv {
@@ -926,6 +1022,11 @@ ul {
   padding: 4px;
   margin-left: auto;
   z-index: 101;
+  transition: gap 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.Header_header__MvnS2.Header_scrolled__s9Ifj .Header_hamburger___6DdG {
+  gap: 4px;
 }
 
 .Header_hamburger___6DdG span {
@@ -937,6 +1038,11 @@ ul {
   transition: all 0.25s ease;
 }
 
+.Header_header__MvnS2.Header_scrolled__s9Ifj .Header_hamburger___6DdG span {
+  width: 22px;
+  height: 2px;
+}
+
 .Header_hamburgerOpen__74VR7 {
   background: #1cb7cf !important;
 }
@@ -944,7 +1050,7 @@ ul {
 /* ── Mobile Nav ── */
 .Header_mobileNav__J0kLN {
   position: fixed;
-  top: 66px;
+  top: 116px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -953,6 +1059,12 @@ ul {
   overflow-y: auto;
   z-index: 100;
   animation: Header_slideIn__pUvuL 0.3s ease;
+  transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Adjust mobile nav position when scrolled */
+.Header_header__MvnS2.Header_scrolled__s9Ifj .Header_mobileNav__J0kLN {
+  top: 85px;
 }
 
 @keyframes Header_slideIn__pUvuL {
@@ -1102,6 +1214,62 @@ ul {
   .Header_headerInner__HzK1Z {
     height: 66px;
   }
+
+  .Header_header__MvnS2.Header_scrolled__s9Ifj .Header_headerInner__HzK1Z {
+    height: 60px;
+  }
+
+  .Header_mobileNav__J0kLN {
+    top: 66px;
+  }
+
+  .Header_header__MvnS2.Header_scrolled__s9Ifj .Header_mobileNav__J0kLN {
+    top: 60px;
+  }
+
+  .Header_logoMarkMid__mfhaB {
+    font-size: 2.5rem;
+  }
+
+  .Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoMarkMid__mfhaB {
+    font-size: 1.4rem;
+  }
+
+  .Header_logoExpo__kRnn2,
+  .Header_logoSlash__nK4_L,
+  .Header_logoCity__Wi38h {
+    font-size: 0.85rem;
+  }
+
+  .Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoExpo__kRnn2,
+  .Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoSlash__nK4_L,
+  .Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoCity__Wi38h {
+    font-size: 0.6rem;
+  }
+
+  .Header_logoMarkTop__YXeJ1 {
+    font-size: 0.55rem;
+  }
+
+  .Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoMarkTop__YXeJ1 {
+    font-size: 0.4rem;
+  }
+
+  .Header_logoLocation__fXfsF {
+    font-size: 0.7rem;
+  }
+
+  .Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoLocation__fXfsF {
+    font-size: 0.65rem;
+  }
+
+  .Header_logoDates__PoPak {
+    font-size: 0.75rem;
+  }
+
+  .Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoDates__PoPak {
+    font-size: 0.7rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1117,10 +1285,20 @@ ul {
     font-size: 2.5rem;
   }
 
+  .Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoMarkMid__mfhaB {
+    font-size: 1.6rem;
+  }
+
   .Header_logoExpo__kRnn2,
   .Header_logoSlash__nK4_L,
   .Header_logoCity__Wi38h {
     font-size: 0.85rem;
+  }
+
+  .Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoExpo__kRnn2,
+  .Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoSlash__nK4_L,
+  .Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoCity__Wi38h {
+    font-size: 0.65rem;
   }
 }
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
