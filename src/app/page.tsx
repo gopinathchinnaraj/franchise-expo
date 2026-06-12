@@ -8,6 +8,8 @@ import Hero from '@/components/Hero';
 import IntroSlider from '@/components/IntroSlider';
 import { useState, useEffect } from 'react';
 import { Users, Mic, Clock3 } from "lucide-react";
+import { SP } from 'next/dist/shared/lib/utils';
+import SponsorsSection from '@/components/sponsor';
 
 export const metadata: Metadata = {
   title: 'FranchiseExpo – New York 2026',
@@ -295,105 +297,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* ── SPONSORS ── */}
-      <section className={styles.sponsorSection}>
-        <div className={styles.sponsorContainer}>
-
-          <h2 className={styles.sponsorMainTitle}>
-            IFE SPONSORS
-          </h2>
-
-          {/* GOLD */}
-          <div className={styles.sponsorGroup}>
-            <h3 className={styles.sponsorGroupTitle}>
-              GOLD SPONSORS
-            </h3>
-
-            <div className={styles.sponsorScroller}>
-
-              <div className={styles.sponsorTrack}>
-
-                <img
-                  src="https://www.franchiseexpo.com/images/sponsors/south/Gold%20Sponsor/BeTheBoss.webp"
-                  alt=""
-                  className={styles.sponsorImg}
-                />
-
-                <img
-                  src="https://www.franchiseexpo.com/images/sponsors/IFE/BizBuySell.svg"
-                  alt=""
-                  className={styles.sponsorImg}
-                />
-
-                <img
-                  src="https://www.franchiseexpo.com/images/slider/cache/82204dc255f327b2c082e10920a35854/Emma_Inc.webp"
-                  alt=""
-                  className={styles.sponsorImg}
-                />
-
-                <img
-                  src="https://www.franchiseexpo.com/images/sponsors/south/Gold%20Sponsor/f.c.dadson.webp"
-                  alt=""
-                  className={styles.sponsorImg}
-                />
-
-                <img
-                  src="https://www.franchiseexpo.com/images/slider/cache/a57bcbf263e0caf5064f6b68d994fb98/MetAiBlock-Logo-Main.webp"
-                  alt=""
-                  className={styles.sponsorImg}
-                />
-
-              </div>
-
-            </div>
-          </div>
-
-          {/* SILVER */}
-          <div className={styles.sponsorGroup}>
-            <h3 className={styles.sponsorGroupTitle}>
-              SILVER SPONSORS
-            </h3>
-
-            <div className={styles.sponsorScroller}>
-
-              <div className={styles.sponsorTrack}>
-
-                <img
-                  src="https://www.franchiseexpo.com/images/slider/cache/8c3cd8564c4e8de443e15f2d8826acf4/Sesimi_Wordmark_RGB_Black_2.webp"
-                  alt=""
-                  className={styles.sponsorImg}
-                />
-
-                <img
-                  src="https://www.franchiseexpo.com/images/slider/cache/8c3cd8564c4e8de443e15f2d8826acf4/Sesimi_Wordmark_RGB_Black_2.webp"
-                  alt=""
-                  className={styles.sponsorImg}
-                />
-
-                <img
-                  src="https://www.franchiseexpo.com/images/slider/cache/2e3e5f1fb622da699d1070964069f259/Signation_Sign_Group.webp"
-                  alt=""
-                  className={styles.sponsorImg}
-                />
-
-                <img
-                  src="https://www.franchiseexpo.com/images/slider/cache/c7eb56813b4ea3a294fa491862e51f8c/The_Entrepreneurs_Source.webp"
-                  alt=""
-                  className={styles.sponsorImg}
-                />
-
-                <img
-                  src="https://www.franchiseexpo.com/images/slider/cache/cfca7d1311f584e56c79c500baf0dc5f/The_Franchise_Firm.webp"
-                  alt=""
-                  className={styles.sponsorImg}
-                />
-
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-      </section>
+      <SponsorsSection/>
     </>
   );
 }

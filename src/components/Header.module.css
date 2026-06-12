@@ -23,18 +23,18 @@
   justify-content: space-between;
 
   gap: 14px;
-  height: 116px;
+  height: 100px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Scrolled state - REDUCE HEIGHT */
 .header.scrolled .headerInner {
-  height: 85px;
+  height: 70px;
   gap: 10px;
 }
 
-/* ── Logo ── */
-.logo a {
+/* ── Logo Container ── */
+.logo {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -43,101 +43,33 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header.scrolled .logo a {
+.header.scrolled .logo {
   gap: 12px;
 }
 
-.logoMark {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-  gap: 1px;
+/* Logo Image - This is the key fix */
+.logoImage {
+  width: 130px;
+  height: auto;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.logoMarkTop {
-  font-family: 'Oswald', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: #011b2e;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* SQUEEZE logo image when scrolled - MAKE IT SMALLER */
+.header.scrolled .logoImage {
+  width: 180px;
 }
 
-/* SQUEEZE logo top text - make VERY small */
-.header.scrolled .logoMarkTop {
-  font-size: 0.45rem;
-  letter-spacing: 0.1em;
-}
-
-.logoMarkMid {
-  font-family: 'Oswald', sans-serif;
-  font-size: 3.4rem;
-  font-weight: 700;
-  color: #0a4ea3;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  line-height: 0.82;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* SQUEEZE main logo text - make MUCH smaller */
-.header.scrolled .logoMarkMid {
-  font-size: 1.6rem;
-  line-height: 0.85;
-  letter-spacing: -0.5px;
-}
-
-.logoMarkBot {
+/* Make sure the first logo div doesn't have double spacing */
+.logo a {
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 16px;
+  text-decoration: none;
+  flex-shrink: 0;
 }
 
-.logoExpo {
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  background: #011b2e;
-  color: #ffffff;
-  padding: 1px 5px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* SQUEEZE expo badge - make smaller */
-.header.scrolled .logoExpo {
-  font-size: 0.7rem;
-  padding: 1px 3px;
-}
-
-.logoSlash {
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #011b2e;
-  padding: 0 2px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.header.scrolled .logoSlash {
-  font-size: 0.7rem;
-}
-
-.logoCity {
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #1cb7cf;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.header.scrolled .logoCity {
-  font-size: 0.7rem;
+.header.scrolled .logo a {
+  gap: 12px;
 }
 
 .logoDivider {
@@ -150,7 +82,7 @@
 
 /* SQUEEZE divider */
 .header.scrolled .logoDivider {
-  height: 35px;
+  height: 32px;
 }
 
 .logoDetails {
@@ -161,7 +93,7 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Keep details section relatively larger */
+/* Keep details section relatively larger - only slightly reduce */
 .header.scrolled .logoDetails {
   gap: 2px;
 }
@@ -178,7 +110,7 @@
 
 /* Make location text only slightly smaller - keep readable */
 .header.scrolled .logoLocation {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
 }
 
 .logoDates {
@@ -193,7 +125,7 @@
 
 /* Make dates text only slightly smaller - keep prominent */
 .header.scrolled .logoDates {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
 }
 
 /* ── Desktop Nav ── */
@@ -334,10 +266,10 @@
 
 /* SQUEEZE CTA buttons */
 .header.scrolled .ctaBtn {
-  height: 38px;
-  min-width: 135px;
+  height: 36px;
+  min-width: 130px;
   font-size: clamp(0.65rem, 0.6vw, 0.8rem);
-  padding: 0 40px 0 14px;
+  padding: 0 38px 0 14px;
 }
 
 .ctaBtn:hover {
@@ -381,9 +313,9 @@
 
 /* SQUEEZE CTA arrows */
 .header.scrolled .ctaBtnArrow {
-  width: 30px;
-  height: 30px;
-  font-size: 1.1rem;
+  width: 28px;
+  height: 28px;
+  font-size: 1rem;
   border-width: 1.5px;
 }
 
@@ -431,7 +363,7 @@
 /* ── Mobile Nav ── */
 .mobileNav {
   position: fixed;
-  top: 116px;
+  top: 100px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -445,7 +377,7 @@
 
 /* Adjust mobile nav position when scrolled */
 .header.scrolled .mobileNav {
-  top: 85px;
+  top: 70px;
 }
 
 @keyframes slideIn {
@@ -593,7 +525,7 @@
   }
 
   .headerInner {
-    height: 66px;
+    height: 70px;
   }
 
   .header.scrolled .headerInner {
@@ -601,39 +533,20 @@
   }
 
   .mobileNav {
-    top: 66px;
+    top: 70px;
   }
 
   .header.scrolled .mobileNav {
     top: 60px;
   }
 
-  .logoMarkMid {
-    font-size: 2.5rem;
+  /* Adjust logo size for mobile */
+  .logoImage {
+    width: 180px;
   }
 
-  .header.scrolled .logoMarkMid {
-    font-size: 1.4rem;
-  }
-
-  .logoExpo,
-  .logoSlash,
-  .logoCity {
-    font-size: 0.85rem;
-  }
-
-  .header.scrolled .logoExpo,
-  .header.scrolled .logoSlash,
-  .header.scrolled .logoCity {
-    font-size: 0.6rem;
-  }
-
-  .logoMarkTop {
-    font-size: 0.55rem;
-  }
-
-  .header.scrolled .logoMarkTop {
-    font-size: 0.4rem;
+  .header.scrolled .logoImage {
+    width: 140px;
   }
 
   .logoLocation {
@@ -662,23 +575,11 @@
     display: none;
   }
 
-  .logoMarkMid {
-    font-size: 2.5rem;
+  .logoImage {
+    width: 160px;
   }
 
-  .header.scrolled .logoMarkMid {
-    font-size: 1.6rem;
-  }
-
-  .logoExpo,
-  .logoSlash,
-  .logoCity {
-    font-size: 0.85rem;
-  }
-
-  .header.scrolled .logoExpo,
-  .header.scrolled .logoSlash,
-  .header.scrolled .logoCity {
-    font-size: 0.65rem;
+  .header.scrolled .logoImage {
+    width: 130px;
   }
 }

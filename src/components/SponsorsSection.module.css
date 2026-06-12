@@ -1,0 +1,191 @@
+/* SponsorsSection.module.css */
+
+.sponsorSection {
+    background: #f5f5f5;
+    padding: 60px 0 80px;
+}
+
+.sponsorContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.sponsorMainTitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color: #111111;
+    margin-bottom: 50px;
+}
+
+.sponsorGroup {
+    margin-bottom: 60px;
+}
+
+.sponsorGroupTitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #111111;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* Slider Wrapper */
+.sponsorSliderWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Scroller */
+.sponsorScroller {
+    flex: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+.sponsorScroller::-webkit-scrollbar {
+    height: 6px;
+}
+
+.sponsorScroller::-webkit-scrollbar-track {
+    background: #e0e0e0;
+}
+
+.sponsorScroller::-webkit-scrollbar-thumb {
+    background: #005eb8;
+}
+
+.sponsorTrack {
+    display: flex;
+    gap: 60px;
+    padding: 10px 0;
+}
+
+.sponsorSlide {
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sponsorImg {
+    max-width: 160px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+}
+
+.sponsorImg:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+/* Square Buttons */
+.sponsorArrowPrev,
+.sponsorArrowNext {
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    border: 2px solid #005eb8;
+    color: #005eb8;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    border-radius: 0;
+}
+
+.sponsorArrowPrev:hover,
+.sponsorArrowNext:hover {
+    background: #005eb8;
+    color: #ffffff;
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .sponsorContainer {
+        padding: 0 20px;
+    }
+
+    .sponsorMainTitle {
+        font-size: 2.2rem;
+        margin-bottom: 35px;
+    }
+
+    .sponsorGroupTitle {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .sponsorTrack {
+        gap: 40px;
+    }
+
+    .sponsorSlide {
+        min-width: 140px;
+    }
+
+    .sponsorImg {
+        max-width: 120px;
+        max-height: 60px;
+    }
+
+    .sponsorArrowPrev,
+    .sponsorArrowNext {
+        width: 36px;
+        height: 36px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .sponsorSection {
+        padding: 40px 0 50px;
+    }
+
+    .sponsorMainTitle {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+
+    .sponsorGroupTitle {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .sponsorTrack {
+        gap: 25px;
+    }
+
+    .sponsorSlide {
+        min-width: 110px;
+    }
+
+    .sponsorImg {
+        max-width: 90px;
+        max-height: 45px;
+    }
+
+    .sponsorArrowPrev,
+    .sponsorArrowNext {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+    }
+}

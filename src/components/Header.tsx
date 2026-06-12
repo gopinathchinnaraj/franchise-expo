@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import styles from './Header.module.css';
+import Image from 'next/image';
 
 const navItems = [
   {
@@ -157,14 +158,17 @@ export default function Header() {
         {/* ── Logo ── */}
         <div className={styles.logo}>
           <Link href="/">
-            <div className={styles.logoMark}>
-              <span className={styles.logoMarkTop}>International</span>
-              <span className={styles.logoMarkMid}>Franchise</span>
-              <div className={styles.logoMarkBot}>
-                <span className={styles.logoExpo}>Expo</span>
-                <span className={styles.logoSlash}>/</span>
-                <span className={styles.logoCity}>New York</span>
-              </div>
+            <div className={styles.logo}>
+              <Link href="/">
+                <Image
+                  src="/images/franchise-expo-international-new-york.svg" // put your logo inside public folder
+                  alt="Logo"
+                  width={260}
+                  height={80}
+                  priority
+                  className={styles.logoImage}
+                />
+              </Link>
             </div>
             <div className={styles.logoDivider} />
             <div className={styles.logoDetails}>
