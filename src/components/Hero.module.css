@@ -104,29 +104,29 @@
     flex-wrap: wrap;
 }
 .logo a {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logoImage {
-    width: auto;
-    height: 80px;
-    object-fit: contain;
-    transition: all 0.3s ease;
+  width: auto;
+  height: 80px;
+  object-fit: contain;
+  transition: all 0.3s ease;
 }
 
 .header.scrolled .logoImage {
-    height: 60px;
+  height: 60px;
 }
 
 @media (max-width: 900px) {
-    .logoImage {
-        height: 55px;
-    }
+  .logoImage {
+    height: 55px;
+  }
 
-    .header.scrolled .logoImage {
-        height: 45px;
-    }
+  .header.scrolled .logoImage {
+    height: 45px;
+  }
 }
 .btnPrimary {
     display: inline-flex;

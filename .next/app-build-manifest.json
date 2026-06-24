@@ -1,10 +1,10 @@
 {
   "pages": {
-    "/connect/our-team/page": [
+    "/connect/about-us/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/connect/our-team/page.css",
-      "static/chunks/app/connect/our-team/page.js"
+      "static/css/app/connect/about-us/page.css",
+      "static/chunks/app/connect/about-us/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -12,16 +12,29 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/connect/about-us/page": [
+    "/connect/our-team/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/connect/about-us/page.css",
-      "static/chunks/app/connect/about-us/page.js"
+      "static/css/app/connect/our-team/page.css",
+      "static/chunks/app/connect/our-team/page.js"
     ],
-    "/_not-found/page": [
+    "/connect/contact-us/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/css/app/connect/contact-us/page.css",
+      "static/chunks/app/connect/contact-us/page.js"
+    ],
+    "/resources/blog/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/resources/blog/page.css",
+      "static/chunks/app/resources/blog/page.js"
+    ],
+    "/exhibitors/exhibitor-list/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/exhibitors/exhibitor-list/page.css",
+      "static/chunks/app/exhibitors/exhibitor-list/page.js"
     ]
   }
 }

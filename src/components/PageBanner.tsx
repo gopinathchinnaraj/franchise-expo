@@ -1,3 +1,4 @@
+// components/PageBanner.tsx
 import Link from 'next/link';
 import styles from './PageBanner.module.css';
 

@@ -1,14 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [],
+    domains: ['img.magnific.com', 'media.istockphoto.com', 'www.franchiseexpo.com'],
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "www.franchiseexpo.com",
+        protocol: 'https',
+        hostname: 'img.magnific.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.istockphoto.com',
       },
     ],
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

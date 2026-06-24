@@ -1,411 +1,279 @@
 .page {
     width: 100%;
+    background: #fff;
     overflow: hidden;
-    background: #f5f7fb;
 }
 
 .container {
     width: 100%;
-    max-width: 1440px;
-    margin: auto;
-    padding: 0 24px;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 16px;
 }
 
-/* HERO */
-
-.hero {
-    position: relative;
-
-    min-height: 420px;
-
-    display: flex;
-    align-items: center;
-
-    background:
-        linear-gradient(rgba(6, 145, 244, 0.82),
-            rgba(1, 149, 255, 0.88)),
-        url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2070&auto=format&fit=crop") center/cover no-repeat;
-}
-
-.overlay {
-    position: absolute;
-    inset: 0;
-
-    background:
-        radial-gradient(circle at top right,
-            rgba(0, 168, 200, 0.25),
-            transparent 40%);
-}
-
-.heroContent {
-    position: relative;
-    z-index: 2;
-
-    max-width: 760px;
-}
-
-.tag {
-    display: inline-flex;
-
-    padding: 10px 18px;
-
-    border-radius: 999px;
-
-    background: rgba(255, 255, 255, 0.12);
-
-    border: 1px solid rgba(255, 255, 255, 0.15);
-
-    color: white;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    margin-bottom: 24px;
-}
-
-.heroContent h1 {
-    font-size: 82px;
-    line-height: 1;
-
-    color: white;
-
-    margin-bottom: 24px;
-
-    font-family: "Oswald", sans-serif;
-}
-
-.heroContent p {
-    font-size: 18px;
-    line-height: 1.8;
-
-    color: rgba(255, 255, 255, 0.82);
-
-    max-width: 620px;
-}
-
-/* CONTACT CARDS */
+/* =========================
+   CONTACT CARDS
+========================= */
 
 .cardsSection {
-    padding: 100px 0 40px;
+    padding: 35px 0 25px;
 }
-
-/* ============================================
-   GRID - UPDATED
-============================================ */
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px; /* Updated from 32px */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
-
-/* ============================================
-   CARD - UPDATED (No border-radius, no shadow, no transform)
-============================================ */
 
 .card {
-    background: #f3f3f3; /* Updated background */
+    width: 280px;
+    background: #fff;
+    border: 1px solid #ececec;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    /* Removed: border-radius, box-shadow, transform */
 }
-
-/* Removed: .card:hover transform */
-
-/* ============================================
-   IMAGE WRAP - UPDATED
-============================================ */
 
 .imageWrap {
     position: relative;
     width: 100%;
-    height: 300px; /* Updated from 320px */
+    height: 205px;
     overflow: hidden;
 }
 
 .image {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-    display: block;
-    transition: 0.5s ease;
+    transition: 0.4s ease;
 }
 
 .card:hover .image {
-    transform: scale(1.06);
+    transform: scale(1.04);
 }
-
-/* ============================================
-   CATEGORY - UPDATED
-============================================ */
 
 .category {
     position: absolute;
-    left: 15px;
-    bottom: 15px;
-    background: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(4px);
-    color: #333;
-    font-size: 13px;
-    padding: 6px 12px;
-    border-radius: 20px; /* Changed from 0 to 20px */
+    left: 8px;
+    bottom: 8px;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    color: #fff;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    padding: 4px 8px;
 }
 
-/* ============================================
-   CARD CONTENT - UPDATED
-============================================ */
-
 .cardContent {
-    padding: 28px 24px 24px; /* Updated from 30px */
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+    padding: 10px;
 }
 
 .cardTitle {
-    font-size: 16px; /* Updated from 15px */
+    font-size: 10px;
     font-weight: 700;
     color: #111;
-    margin-bottom: 8px; /* Updated from 14px */
+    margin-bottom: 4px;
+    line-height: 1.4;
 }
 
 .cardContent h3 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 2rem; /* Updated from 34px */
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
     line-height: 1;
     text-transform: uppercase;
-    color: #001d3d; /* Updated from #011b2e */
-    margin-bottom: 12px; /* Updated from 10px */
+    color: #111;
+    margin-bottom: 4px;
 }
 
 .role {
-    font-size: 15px; /* Updated from 16px */
-    font-weight: 700; /* Updated from normal */
-    color: #222; /* Updated from #5f6b76 */
-    margin-bottom: 20px;
+    font-size: 11px;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .info {
-    margin-bottom: 28px; /* Updated from 24px */
+    margin-bottom: 12px;
 }
 
 .info span {
     display: block;
-    font-size: 15px;
-    line-height: 1.8;
+    font-size: 10px;
+    line-height: 1.7;
     color: #111;
     word-break: break-word;
 }
 
-/* ============================================
-   BUTTON - UPDATED (No pill shape, full width)
-============================================ */
-
 .button {
-    margin-top: auto;
-    width: 100%; /* Full width */
-    height: 52px; /* Updated from 14px 24px padding */
-    background: #0069b4;
+    width: calc(100% + 20px);
+
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: -10px;
+
+    height: 34px;
+
+    background: #0068b3;
+
     color: #fff;
+
     text-decoration: none;
-    font-weight: 700;
-    font-size: 14px;
     text-transform: uppercase;
+
+    font-size: 10px;
+    font-weight: 700;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     transition: 0.3s ease;
-    /* Removed: border-radius, padding */
 }
 
 .button:hover {
-    background: #00579a; /* Updated from #00a8c8 */
+    background: #00518d;
 }
 
-/* FORM */
+/* =========================
+   FORM SECTION
+========================= */
 
 .formSection {
-    padding: 80px 0 120px;
+    padding: 10px 0 60px;
 }
 
 .formWrapper {
-    display: grid;
-
-    grid-template-columns: 420px 1fr;
-
-    gap: 60px;
-
-    background: white;
-
-    padding: 60px;
-
-    /* border-radius: 40px; */
-
-    /* box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08); */
+    background: transparent;
+    padding: 0;
+    display: block;
 }
 
-.formLeft span {
-    color: #00a8c8;
-
-    font-size: 14px;
-    font-weight: 700;
-
-    letter-spacing: 2px;
-}
-
-.formLeft h2 {
-    font-size: 58px;
-    line-height: 1.1;
-
-    color: #011b2e;
-
-    margin: 20px 0;
-
-    font-family: "Oswald", sans-serif;
-}
-
-.formLeft p {
-    color: #5f6b76;
-
-    font-size: 16px;
-    line-height: 1.8;
+.formLeft {
+    display: none;
 }
 
 .form {
     display: flex;
     flex-direction: column;
-
-    gap: 24px;
+    gap: 8px;
 }
 
 .row {
     display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
 
-    grid-template-columns: repeat(2, 1fr);
+.formGroup {
+    width: 100%;
+}
 
-    gap: 20px;
+.label {
+    display: none;
 }
 
 .form input,
 .form textarea {
     width: 100%;
 
-    padding: 18px 20px;
+    border: 1px solid #e8e8e8;
+    background: #f4f4f4;
 
-    border: none;
+    border-radius: 0;
 
-    border-radius: 18px;
+    padding: 0 12px;
 
-    background: #f5f7fb;
-
-    font-size: 15px;
+    font-size: 12px;
+    color: #111;
 
     outline: none;
+}
 
-    transition: 0.3s ease;
+.form input {
+    height: 38px;
+}
+
+.form textarea {
+    height: 90px;
+    resize: vertical;
+    padding-top: 10px;
 }
 
 .form input:focus,
 .form textarea:focus {
-    background: #eef7fa;
-
-    box-shadow: 0 0 0 2px rgba(0, 168, 200, 0.2);
+    border-color: #0068b3;
+    background: #fff;
 }
 
-.label {
-    display: block;
-
-    margin-bottom: 18px;
-
-    color: #011b2e;
-
-    font-size: 15px;
-    font-weight: 600;
-}
+/* =========================
+   CHECKBOXES
+========================= */
 
 .checkboxGrid {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 4px;
 }
 
 .checkbox {
     display: flex;
     align-items: center;
+    gap: 8px;
 
-    gap: 12px;
-
-    font-size: 15px;
-
-    color: #5f6b76;
+    font-size: 11px;
+    color: #111;
 }
 
 .checkbox input {
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
 }
 
-.form button {
-    width: fit-content;
+/* =========================
+   SUBMIT BUTTON
+========================= */
 
-    padding: 18px 42px;
+.form button {
+    width: 80px;
+    height: 28px;
 
     border: none;
+    border-radius: 20px;
 
-    border-radius: 999px;
+    background: #0068b3;
+    color: #fff;
 
-    background: #00a8c8;
-
-    color: white;
-
-    font-size: 16px;
+    font-size: 10px;
     font-weight: 700;
+    text-transform: uppercase;
 
     cursor: pointer;
+
+    margin-top: 12px;
 
     transition: 0.3s ease;
 }
 
 .form button:hover {
-    background: #011b2e;
+    background: #00518d;
 }
 
-/* RESPONSIVE */
-
-@media (max-width: 1200px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-    }
-
-    .formWrapper {
-        grid-template-columns: 1fr;
-    }
-}
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 992px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+    .card {
+        width: calc(50% - 10px);
     }
 }
 
 @media (max-width: 768px) {
-    .hero {
-        min-height: 340px;
-    }
-
-    .heroContent h1 {
-        font-size: 46px;
-    }
-
     .grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 16px;
+    }
+
+    .card {
+        width: 100%;
     }
 
     .imageWrap {
@@ -413,45 +281,24 @@
     }
 
     .cardContent h3 {
-        font-size: 1.6rem;
-    }
-
-    .row {
-        grid-template-columns: 1fr;
-    }
-
-    .checkboxGrid {
-        grid-template-columns: 1fr;
-    }
-
-    .formWrapper {
-        padding: 32px;
-    }
-
-    .formLeft h2 {
-        font-size: 42px;
+        font-size: 18px;
     }
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+
     .imageWrap {
-        height: 200px;
+        height: 220px;
     }
 
-    .cardContent {
-        padding: 20px 16px 20px;
+    .form input {
+        height: 36px;
     }
 
-    .cardContent h3 {
-        font-size: 1.4rem;
-    }
-
-    .button {
-        height: 44px;
-        font-size: 12px;
-    }
-
-    .info span {
-        font-size: 13px;
+    .form textarea {
+        height: 80px;
     }
 }

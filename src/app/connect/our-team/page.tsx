@@ -1,12 +1,12 @@
+// app/our-team/page.tsx
 "use client";
 
 import Image from "next/image";
 import styles from "./OurTeam.module.css";
-import PageBanner from "@/components/PageBanner";
 
 const teamSections = [
     {
-        title: "Sales",
+        title: "SALES",
         members: [
             {
                 name: "Frank Fazio",
@@ -44,7 +44,7 @@ const teamSections = [
         ],
     },
     {
-        title: "Marketing",
+        title: "MARKETING",
         members: [
             {
                 name: "Linda Thompson",
@@ -66,7 +66,7 @@ const teamSections = [
         ],
     },
     {
-        title: "Customer Relations",
+        title: "CUSTOMER RELATIONS",
         members: [
             {
                 name: "Murphy Connolly",
@@ -80,7 +80,7 @@ const teamSections = [
         ],
     },
     {
-        title: "Finance",
+        title: "FINANCE",
         members: [
             {
                 name: "Ismael Iraola",
@@ -109,7 +109,7 @@ const teamSections = [
         ],
     },
     {
-        title: "Show Management",
+        title: "SHOW MANAGEMENT",
         members: [
             {
                 name: "Martin Joksimovic",
@@ -127,15 +127,27 @@ export default function OurTeam() {
     return (
         <main className={styles.page}>
             {/* HERO */}
-            <PageBanner title="Meet the Franchise Expo Team - Event Experts" />
+            <section className={styles.banner}>
+                <div className={styles.bannerOverlay}>
+                    <div className={styles.container}>
+                        <h1 className={styles.bannerTitle}>
+                            MEET THE FRANCHISE EXPO TEAM - EVENT EXPERTS
+                        </h1>
+                    </div>
+                </div>
+            </section>
 
             {/* TEAM SECTIONS */}
             {teamSections.map((section, index) => (
-                <section key={index} className={styles.teamSection}>
+                <section
+                    key={index}
+                    className={`${styles.teamSection} ${index % 2 === 0 ? styles.lightBg : styles.grayBg
+                        }`}
+                >
                     <div className={styles.container}>
-                        <div className={styles.sectionTop}>
-                            <span>OUR PEOPLE</span>
-                            <h2>{section.title}</h2>
+                        <div className={styles.sectionHeader}>
+                            <span className={styles.ourPeople}>OUR PEOPLE</span>
+                            <h2 className={styles.sectionTitle}>{section.title}</h2>
                         </div>
 
                         <div className={styles.grid}>
@@ -147,17 +159,17 @@ export default function OurTeam() {
                                             alt={member.name}
                                             fill
                                             className={styles.image}
-                                            sizes="(max-width: 768px) 100vw, (max-width: 992px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                                            sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 992px) 33vw, 25vw"
                                         />
                                     </div>
 
                                     <div className={styles.content}>
-                                        <h3>{member.name}</h3>
-                                        <p className={styles.role}>{member.role}</p>
+                                        <h3 className={styles.memberName}>{member.name}</h3>
+                                        <p className={styles.memberRole}>{member.role}</p>
                                         {member.note && (
-                                            <p className={styles.note}>{member.note}</p>
+                                            <p className={styles.memberNote}>{member.note}</p>
                                         )}
-                                        <div className={styles.info}>
+                                        <div className={styles.contactInfo}>
                                             <span>
                                                 <span className={styles.label}>E: </span>
                                                 {member.email}
@@ -169,9 +181,9 @@ export default function OurTeam() {
                                         </div>
                                         <a
                                             href={`mailto:${member.email}`}
-                                            className={styles.button}
+                                            className={styles.emailButton}
                                         >
-                                            Email Me
+                                            EMAIL ME
                                         </a>
                                     </div>
                                 </div>
