@@ -1,12 +1,18 @@
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
 .hero {
     position: relative;
     width: 100%;
     height: 520px;
     overflow: hidden;
-    background: #091c39;
+    background: #003b95;
     display: flex;
     align-items: stretch;
 }
+
+/* ── RIGHT: video panel ── */
 .heroRight {
     position: absolute;
     top: 0;
@@ -14,6 +20,7 @@
     width: 70%;
     height: 100%;
     z-index: 1;
+    background: #091c39;
 }
 
 .heroMediaMask {
@@ -23,16 +30,28 @@
     clip-path: ellipse(78% 140% at 100% 120%);
 }
 
+/*
+  KEY FIX — YouTube letterbox killer:
+  The iframe is made MUCH larger than its container
+  (300% wide × 300% tall) and centred.
+  This pushes all four black bars completely outside
+  the visible/clipped area, so only the actual video
+  content is ever seen.
+*/
 .heroVideo {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 130%;
-    height: 130%;
+    /* 16:9 → to fill height H we need width = H × (16/9)          */
+    /* We over-shoot heavily so bars are never visible               */
+    width: 300%;
+    height: 300%;
     transform: translate(-50%, -50%);
     border: none;
-   pointer-events: none;
-
+    pointer-events: none;
+    display: block;
+    /* Prevent any browser-default iframe background from showing   */
+    background: transparent;
 }
 
 .heroFade {
@@ -41,13 +60,14 @@
     z-index: 2;
     pointer-events: none;
     background: linear-gradient(to right,
-            #091c39 0%,
-            #091c39 2%,
-            rgba(9, 28, 57, 0.45) 14%,
-            rgba(9, 28, 57, 0.08) 26%,
+            #003b95 0%,
+            #003b95 2%,
+            rgba(7, 76, 180, 0.45) 14%,
+            rgba(11, 97, 226, 0.08) 26%,
             transparent 38%);
 }
 
+/* ── LEFT: text content ── */
 .heroLeft {
     position: relative;
     z-index: 3;
@@ -71,7 +91,7 @@
 
 .heroHeadline {
     font-family: 'Oswald', sans-serif;
-    font-size: clamp(3rem, 5vw, 5.2rem);
+    font-size: clamp(2.8rem, 5vw, 5.2rem);
     font-weight: 700;
     color: #ffffff;
     text-transform: uppercase;
@@ -103,31 +123,8 @@
     gap: 10px;
     flex-wrap: wrap;
 }
-.logo a {
-  display: flex;
-  align-items: center;
-}
 
-.logoImage {
-  width: auto;
-  height: 80px;
-  object-fit: contain;
-  transition: all 0.3s ease;
-}
-
-.header.scrolled .logoImage {
-  height: 60px;
-}
-
-@media (max-width: 900px) {
-  .logoImage {
-    height: 55px;
-  }
-
-  .header.scrolled .logoImage {
-    height: 45px;
-  }
-}
+/* ── BUTTONS ── */
 .btnPrimary {
     display: inline-flex;
     align-items: center;
@@ -191,24 +188,25 @@
 /* ── RESPONSIVE ── */
 @media (max-width: 1100px) {
     .heroLeft {
-        width: 56%;
+        width: 58%;
         padding: 0 32px 0 48px;
     }
 
     .heroRight {
-        width: 52%;
+        width: 56%;
     }
 }
 
 @media (max-width: 900px) {
     .hero {
         height: auto;
-        min-height: 520px;
+        min-height: 480px;
     }
 
     .heroLeft {
         width: 100%;
-        padding: 56px 24px 300px;
+        padding: 48px 24px 280px;
+        justify-content: flex-start;
     }
 
     .heroRight {
@@ -217,23 +215,45 @@
     }
 
     .heroMediaMask {
-        clip-path: ellipse(140% 85% at 100% 95%);
+        clip-path: ellipse(140% 80% at 100% 100%);
     }
 
     .heroFade {
         background: linear-gradient(to bottom,
-                #1a3a6b 0%, #1a3a6b 30%,
-                rgba(26, 58, 107, 0.5) 55%,
-                transparent 80%);
+                #091c39 0%,
+                #091c39 28%,
+                rgba(9, 28, 57, 0.6) 52%,
+                transparent 78%);
+    }
+
+    .heroHeadline {
+        font-size: 2.6rem;
+    }
+
+    .heroSub p {
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 600px) {
+    .hero {
+        min-height: 440px;
+    }
+
     .heroLeft {
-        padding: 44px 20px 270px;
+        padding: 40px 20px 260px;
+    }
+
+    .heroMeta {
+        font-size: 0.85rem;
+        letter-spacing: 0.1em;
     }
 
     .heroHeadline {
-        font-size: 2.8rem;
+        font-size: 2.2rem;
+    }
+
+    .heroSub p {
+        font-size: 0.95rem;
     }
 }

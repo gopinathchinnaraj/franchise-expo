@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import styles from '@/app/page.module.css';
+import styles from './IntroSlider.module.css';
 
 const slides = [
     'https://www.franchiseexpo.com/images/slider/cache/54c1e4c9b0de8a2285420d650a8a3cba/SPEAKING-OPPORTUNITIES.webp',
@@ -24,17 +24,13 @@ export default function IntroSlider() {
         <div className={styles.sliderWrap}>
             <div
                 className={styles.sliderTrack}
-                style={{
-                    transform: `translateX(-${current * 100}%)`,
-                }}
+                style={{ transform: `translateX(-${current * 100}%)` }}
             >
                 {slides.map((img, i) => (
                     <div
                         key={i}
                         className={styles.slide}
-                        style={{
-                            backgroundImage: `url(${img})`,
-                        }}
+                        style={{ backgroundImage: `url(${img})` }}
                     />
                 ))}
             </div>
@@ -43,9 +39,9 @@ export default function IntroSlider() {
                 {slides.map((_, i) => (
                     <button
                         key={i}
-                        className={`${styles.dot} ${current === i ? styles.activeDot : ''
-                            }`}
+                        className={`${styles.dot} ${current === i ? styles.activeDot : ''}`}
                         onClick={() => setCurrent(i)}
+                        aria-label={`Go to slide ${i + 1}`}
                     />
                 ))}
             </div>

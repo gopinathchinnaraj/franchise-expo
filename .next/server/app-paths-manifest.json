@@ -1,7 +1,6 @@
 {
-  "/connect/contact-us/page": "app/connect/contact-us/page.js",
+  "/page": "app/page.js",
+  "/conference/page": "app/conference/page.js",
   "/resources/blog/page": "app/resources/blog/page.js",
-  "/exhibitors/exhibitor-list/page": "app/exhibitors/exhibitor-list/page.js",
-  "/connect/our-team/page": "app/connect/our-team/page.js",
-  "/connect/about-us/page": "app/connect/about-us/page.js"
+  "/conference-agenda/workshops/page": "app/conference-agenda/workshops/page.js"
 }

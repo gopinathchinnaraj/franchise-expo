@@ -10,10 +10,6 @@ export default function Hero() {
             {/* ── RIGHT: video — circle-clipped on left edge ── */}
             <div className={styles.heroRight}>
                 <div className={styles.heroMediaMask}>
-                    {/*
-            YouTube iframe — positioned to fill the masked area.
-            The negative margins compensate for iframe black bars.
-          */}
                     <iframe
                         className={styles.heroVideo}
                         src="https://www.youtube.com/embed/lTKgln50Ge0?autoplay=1&mute=1&loop=1&playlist=lTKgln50Ge0&controls=0&showinfo=0&rel=0&modestbranding=1"
@@ -32,12 +28,6 @@ export default function Hero() {
                     June 4th – 5th 2027 &nbsp;|&nbsp; New York City, New York
                 </p>
 
-                {/*
-          TWO lines: "YOUR FRANCHISE" / "FUTURE STARTS HERE"
-          The <br> is not needed — font-size + column width
-          naturally wraps at "Future" on desktop.
-          But keeping it ensures consistent 2-line break.
-        */}
                 <h1 className={styles.heroHeadline}>
                     Your Franchise<br />Future Starts Here
                 </h1>

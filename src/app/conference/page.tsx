@@ -266,7 +266,7 @@ export default function ConferenceAgenda() {
 
     return (
         <>
-        <PageBanner title={"Conference"}/>
+        {/* <PageBanner title={"Conference"}/> */}
                 <div className={styles.agendaRoot}>
                      <PageBanner title={"Conference"}/>
             {/* ── Day tabs ────────────────────────────────────────── */}

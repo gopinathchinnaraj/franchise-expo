@@ -1,14 +1,11 @@
-// "use client"
+// app/page.tsx
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import styles from './page.module.css';
 
-// ✅ CORRECT import path — update this to wherever you place Hero.tsx
 import Hero from '@/components/Hero';
 import IntroSlider from '@/components/IntroSlider';
-import { useState, useEffect } from 'react';
-import { Users, Mic, Clock3 } from "lucide-react";
-import { SP } from 'next/dist/shared/lib/utils';
+import { Users, Mic, Clock3 } from 'lucide-react';
 import SponsorsSection from '@/components/sponsor';
 
 export const metadata: Metadata = {
@@ -45,29 +42,6 @@ const cards = [
   },
 ];
 
-const testimonials = [
-  {
-    quote: '"Thank you, I totally enjoyed myself while meeting just the right companies and franchisees."',
-    author: 'C. Dyer',
-    role: 'Expo Attendee',
-  },
-  {
-    quote: '"It was a great experience. I already had a general idea of what franchising businesses are, but it was great to be able to speak with owners one on one."',
-    author: 'J. Parker',
-    role: 'Expo Attendee',
-  },
-  {
-    quote: '"Loved the show! Liked seeing the many different opportunities available! Thanks for bringing this show to my area!"',
-    author: 'J. Rodriguez',
-    role: 'Expo Attendee',
-  },
-  {
-    quote: '"Every year I\'m delighted to attend this expo to meet new brands. This year was most impressive. Thank you so much!"',
-    author: 'D. Miller',
-    role: 'Expo Attendee',
-  },
-];
-
 const newsItems = [
   {
     date: '03 March 2026',
@@ -89,15 +63,12 @@ const newsItems = [
   },
 ];
 
-const platinumSponsors = ['Entrepreneur'];
-const goldSponsors = ['BeTheBoss', 'BizBuySell', 'Emma Inc.', 'F.C. Dadson', 'MetAiBlock', 'Stark & Stark'];
-const silverSponsors = ['Guidant', 'Sesimi', 'Signation Sign Group', "The Entrepreneur's Source", 'The Franchise Firm'];
-
 export default function HomePage() {
   return (
     <>
       {/* ── Hero ── */}
       <Hero />
+
       {/* ── Stats Bar ── */}
       <section className={styles.statsBar}>
         <div className={styles.statsGrid}>
@@ -106,7 +77,6 @@ export default function HomePage() {
             <div className={styles.statIcon}>
               <Users size={28} />
             </div>
-
             <div className={styles.statContent}>
               <h3>150+</h3>
               <span>EXHIBITORS</span>
@@ -117,14 +87,9 @@ export default function HomePage() {
             <div className={styles.statIcon}>
               <Mic size={28} />
             </div>
-
             <div className={styles.statContent}>
               <h3>40+</h3>
-              <span>
-                WORKSHOPS AND
-                <br />
-                SESSIONS
-              </span>
+              <span>WORKSHOPS AND<br />SESSIONS</span>
             </div>
           </div>
 
@@ -132,7 +97,6 @@ export default function HomePage() {
             <div className={styles.statIcon}>
               <Clock3 size={28} />
             </div>
-
             <div className={styles.statContent}>
               <h3>2</h3>
               <span>DAYS</span>
@@ -142,17 +106,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Intro + Image Grid ── */}
+      {/* ── Intro + Slider ── */}
       <section className={styles.introSection}>
         <div className={styles.introWrapper}>
 
           {/* LEFT */}
           <div className={styles.introLeft}>
             <h2 className={styles.introHeading}>
-              FIND THE RIGHT FRANCHISE
-              <br />
-              FOR YOU AT THE WORLD’S
-              <br />
+              FIND THE RIGHT FRANCHISE<br />
+              FOR YOU AT THE WORLD&apos;S<br />
               LEADING FRANCHISE EVENT
             </h2>
 
@@ -171,31 +133,32 @@ export default function HomePage() {
             </p>
 
             <p>
-              Register today, and let’s find your perfect match.
+              Register today, and let&apos;s find your perfect match.
             </p>
           </div>
 
-          {/* RIGHT */}
-          <div className={styles.sliderWrap}>
-            <IntroSlider />
-          </div>
+          {/* RIGHT — slider */}
+          <IntroSlider />
+
         </div>
       </section>
 
       {/* ── 3-up Feature Cards ── */}
       <section
-        className="section section--grey"
         style={{
           background: '#f5f5f5',
           paddingTop: '40px',
           paddingBottom: '80px',
         }}
       >
-        <div className="container">
-          <div className={`grid grid-3 ${styles.cardsGrid}`}>
+        <div className="container" style={{ maxWidth: '1450px', margin: '0 auto', padding: '0 60px' }}>
+          <div className={styles.cardsGrid}>
             {cards.map((card) => (
               <div key={card.title} className={`card ${styles.featureCard}`}>
-                <div className={styles.cardImg} style={{ backgroundImage: `url('${card.image}')` }} />
+                <div
+                  className={styles.cardImg}
+                  style={{ backgroundImage: `url('${card.image}')` }}
+                />
                 <div className="card-body">
                   <h3 className={`card-title ${styles.cardTitle}`}>{card.title}</h3>
                   <p className="card-text">{card.description}</p>
@@ -211,93 +174,73 @@ export default function HomePage() {
       <section className={styles.testimonialSection}>
         <div className={styles.testimonialInner}>
 
-          {/* QUOTE ICON */}
-          <div className={styles.testimonialQuote}>“</div>
+          <div className={styles.testimonialQuote}>&ldquo;</div>
 
-          {/* HEADING */}
           <h2 className={styles.testimonialHeading}>
             HEAR WHAT OUR ATTENDEES HAVE TO SAY
           </h2>
 
-          {/* TEXT */}
           <p className={styles.testimonialText}>
-            "It was a great experience. I already had a general idea of what
+            &ldquo;It was a great experience. I already had a general idea of what
             franchising business are, but it was great to be able to speak with
-            owners and representatives one on one."
+            owners and representatives one on one.&rdquo;
           </p>
 
-          {/* DOT */}
           <div className={styles.testimonialMini}>...</div>
 
-          {/* AUTHOR */}
           <p className={styles.testimonialAuthor}>J. Parker</p>
 
-          {/* ROLE */}
           <p className={styles.testimonialRole}>
             Franchise Expo South Attendee
           </p>
 
-          {/* DOTS */}
           <div className={styles.testimonialDots}>
-            <span className={`${styles.testimonialDot} ${styles.activeDot}`} />
-            <span className={styles.testimonialDot} />
-            <span className={styles.testimonialDot} />
-            <span className={styles.testimonialDot} />
+            <button className={`${styles.testimonialDot} ${styles.activeDot}`} aria-label="Slide 1" />
+            <button className={styles.testimonialDot} aria-label="Slide 2" />
+            <button className={styles.testimonialDot} aria-label="Slide 3" />
+            <button className={styles.testimonialDot} aria-label="Slide 4" />
           </div>
 
         </div>
       </section>
 
       {/* ── News ── */}
-      {/* ── NEWS ── */}
       <section className={styles.newsSection}>
         <div className={styles.newsContainer}>
 
           <div className={styles.newsTop}>
-            <h2 className={styles.newsHeading}>NEWS & BLOG</h2>
-
-            <Link href="/blog" className={styles.newsBtn}>
+            <h2 className={styles.newsHeading}>NEWS &amp; BLOG</h2>
+            <Link href="/resources/blog" className={styles.newsBtn}>
               ALL NEWS
               <span className={styles.newsBtnArrow}>›</span>
             </Link>
           </div>
 
           <div className={styles.newsGrid}>
-
-            {newsItems.map((item, i) => (
+            {newsItems.map((item) => (
               <Link
                 key={item.title}
                 href={item.href}
                 className={styles.newsCard}
               >
-
                 <div
                   className={styles.newsImage}
-                  style={{
-                    backgroundImage: `url(${item.image})`,
-                  }}
+                  style={{ backgroundImage: `url(${item.image})` }}
                 />
-
                 <div className={styles.newsContent}>
                   <p className={styles.newsDate}>{item.date}</p>
-
-                  <h3 className={styles.newsCardTitle}>
-                    {item.title}
-                  </h3>
+                  <h3 className={styles.newsCardTitle}>{item.title}</h3>
                 </div>
-
-                <div className={styles.newsReadMore}>
-                  READ MORE
-                </div>
-
+                <div className={styles.newsReadMore}>READ MORE</div>
               </Link>
             ))}
-
           </div>
+
         </div>
       </section>
-      {/* ── SPONSORS ── */}
-      <SponsorsSection/>
+
+      {/* ── Sponsors ── */}
+      <SponsorsSection />
     </>
   );
 }

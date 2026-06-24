@@ -43,21 +43,21 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header.scrolled .logo {
+/* .header.scrolled .logo {
   gap: 12px;
-}
+} */
 
 /* Logo Image - This is the key fix */
 .logoImage {
-  width: 240px;
+  width: 150px;
   height: auto;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* SQUEEZE logo image when scrolled - MAKE IT SMALLER */
-.header.scrolled .logoImage {
+/* SQUEEZE logo image when scrolled - MAKE IT SMALLER
+.header.scrolled .logo a {
   width: 200px;
-}
+} */
 
 /* Make sure the first logo div doesn't have double spacing */
 .logo a {
@@ -156,8 +156,8 @@
   padding: 8px 10px;
 
   font-family: 'Oswald', sans-serif;
-  font-size: 17.5px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 500;
 
   text-transform: uppercase;
   letter-spacing: 0.01em;
@@ -213,8 +213,8 @@
   display: block;
   padding: 9px 18px;
   font-family: 'Oswald', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.01em;
   color: #333;

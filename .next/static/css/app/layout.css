@@ -667,21 +667,21 @@ ul {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logo__j7oID {
+/* .header.scrolled .logo {
   gap: 12px;
-}
+} */
 
 /* Logo Image - This is the key fix */
 .Header_logoImage__hE07D {
-  width: 240px;
+  width: 150px;
   height: auto;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* SQUEEZE logo image when scrolled - MAKE IT SMALLER */
-.Header_header__MvnS2.Header_scrolled__s9Ifj .Header_logoImage__hE07D {
+/* SQUEEZE logo image when scrolled - MAKE IT SMALLER
+.header.scrolled .logo a {
   width: 200px;
-}
+} */
 
 /* Make sure the first logo div doesn't have double spacing */
 .Header_logo__j7oID a {
@@ -780,8 +780,8 @@ ul {
   padding: 8px 10px;
 
   font-family: 'Oswald', sans-serif;
-  font-size: 17.5px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 500;
 
   text-transform: uppercase;
   letter-spacing: 0.01em;
@@ -837,8 +837,8 @@ ul {
   display: block;
   padding: 9px 18px;
   font-family: 'Oswald', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.01em;
   color: #333;
