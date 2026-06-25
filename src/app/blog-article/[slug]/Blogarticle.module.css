@@ -1,0 +1,462 @@
+/* =========================================================
+   BLOG ARTICLE — app/blog-article/[slug]/BlogArticle.module.css
+   Matches franchiseexpo.com article page design exactly
+========================================================= */
+
+/* ── Page ── */
+.main {
+    background: #ffffff;
+    padding: 40px 0 80px;
+}
+
+/* ── Two-column row ── */
+.row {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    align-items: start;
+}
+
+/* ── Not found ── */
+.notFound {
+    max-width: 600px;
+    margin: 80px auto;
+    text-align: center;
+    padding: 0 24px;
+}
+
+/* =========================================================
+   MAIN CONTENT / ARTICLE
+========================================================= */
+.mainContent {
+    min-width: 0;
+}
+
+.article {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ── Hero image ── */
+.comContentImage {
+    margin-bottom: 20px;
+}
+
+.itemImage {
+    margin: 0 0 20px 0;
+    display: block;
+    width: 100%;
+}
+
+.itemImage img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* ── Meta / date ── */
+.articleInfo {
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+.published {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    color: #666666;
+    margin: 0;
+    font-style: italic;
+}
+
+.calIcon {
+    color: #003b95;
+    flex-shrink: 0;
+}
+
+/* ── Page header / H1 ── */
+.pageHeader {
+    margin: 0 0 24px;
+}
+
+.pageHeader h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(1.75rem, 2.8vw, 2.25rem);
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin: 0;
+    text-transform: none;
+}
+
+/* =========================================================
+   ARTICLE BODY TYPOGRAPHY
+========================================================= */
+.articleBody {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333333;
+}
+
+.articleBody p {
+    margin: 0 0 18px;
+}
+
+.articleBody h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 36px 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e4ed;
+    line-height: 1.25;
+    text-transform: none;
+}
+
+.articleBody h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #003b95;
+    margin: 28px 0 10px;
+    line-height: 1.3;
+    text-transform: none;
+}
+
+.articleBody ul,
+.articleBody ol {
+    margin: 0 0 18px;
+    padding-left: 26px;
+}
+
+.articleBody li {
+    margin-bottom: 10px;
+    line-height: 1.75;
+    color: #333333;
+}
+
+.articleBody a {
+    color: #003b95;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.articleBody a:hover {
+    color: #1cb7cf;
+}
+
+.articleBody strong {
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.articleBody img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 28px 0;
+    border-radius: 2px;
+}
+
+.articleBody blockquote {
+    border-left: 4px solid #003b95;
+    margin: 24px 0;
+    padding: 12px 20px;
+    background: #f0f4fb;
+    color: #333;
+    font-style: italic;
+}
+
+/* ── Share + Back row ── */
+.shareButtons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e4ed;
+}
+
+.shareRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.shareLabel {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-right: 4px;
+}
+
+.shareBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: #ffffff;
+    transition: opacity 0.15s ease, transform 0.14s ease;
+    flex-shrink: 0;
+}
+
+.shareBtn:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+.shareFb {
+    background: #1877f2;
+}
+
+.shareX {
+    background: #000000;
+}
+
+.shareLi {
+    background: #0a66c2;
+}
+
+.backWrap {
+    display: flex;
+}
+
+.backBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 26px;
+    background: #003b95;
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.18s ease, transform 0.14s ease;
+}
+
+.backBtn:hover {
+    background: #1cb7cf;
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+.sidebar {
+    position: sticky;
+    top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* ── Recent posts widget ── */
+.sidebarWidget {
+    background: #f8f9fc;
+    border: 1px solid #e0e4ed;
+}
+
+.widgetTitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: #003b95;
+    margin: 0;
+    padding: 12px 18px;
+}
+
+.recentList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.recentItem {
+    border-bottom: 1px solid #e8ecf4;
+}
+
+.recentItem:last-child {
+    border-bottom: none;
+}
+
+.recentLink {
+    display: flex;
+    gap: 12px;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+}
+
+.recentLink:hover {
+    background: #edf1fb;
+}
+
+.recentThumb {
+    width: 64px;
+    height: 52px;
+    flex-shrink: 0;
+    overflow: hidden;
+    background: #dde3f0;
+}
+
+.recentThumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.recentMeta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+}
+
+.recentDate {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    color: #999;
+    white-space: nowrap;
+}
+
+.recentTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.recentLink:hover .recentTitle {
+    color: #003b95;
+}
+
+/* ── CTA widget ── */
+.ctaWidget {
+    background: #003b95;
+    padding: 26px 20px;
+}
+
+.ctaTitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+    line-height: 1.3;
+}
+
+.ctaText {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.7;
+    margin: 0 0 20px;
+}
+
+.ctaBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 11px 22px;
+    background: #1cb7cf;
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    border-radius: 50px;
+    white-space: nowrap;
+    transition: background 0.18s ease, transform 0.14s ease;
+}
+
+.ctaBtn:hover {
+    background: #17a3ba;
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 1024px) {
+    .row {
+        grid-template-columns: 1fr 260px;
+        gap: 36px;
+        padding: 0 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: 28px 0 60px;
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+    .pageHeader h1 {
+        font-size: 1.6rem;
+    }
+
+    .shareButtons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .row {
+        padding: 0 16px;
+    }
+
+    .pageHeader h1 {
+        font-size: 1.4rem;
+    }
+
+    .articleBody h2 {
+        font-size: 1.2rem;
+    }
+
+    .articleBody h3 {
+        font-size: 1rem;
+    }
+}

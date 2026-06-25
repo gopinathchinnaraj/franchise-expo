@@ -46,19 +46,19 @@ const newsItems = [
   {
     date: '03 March 2026',
     title: 'The Top Advantages of Franchising Your Business',
-    href: '/blog/top-advantages-franchising',
+    href: '/blog-article/the-top-advantages-of-franchising-your-business',
     image: 'https://www.franchiseexpo.com/images/A_businessperson_holds_a_magnifying_glass_over_a_city_finding_the_advantages_of_franchising_a_business.webp',
   },
   {
     date: '03 March 2026',
     title: 'Top Franchise Opportunities: A Complete Guide',
-    href: '/blog/top-franchise-opportunities',
+    href: '/blog-article/top-franchise-opportunities-a-complete-guide',
     image: 'https://www.franchiseexpo.com/images/A_laptop_with_growth_charts_on_a_desk_for_researching_top_franchise_opportunities.webp',
   },
   {
     date: '20 February 2026',
     title: "Can I Get a Loan to Buy a Franchise? Yes, Here's How",
-    href: '/blog/franchise-loan-guide',
+    href: '/blog-article/can-i-get-a-loan-to-buy-a-franchise',
     image: 'https://www.franchiseexpo.com/images/can-i-get-a-loan-to-buy-a-franchise-yes-heres-how-927431.png',
   },
 ];

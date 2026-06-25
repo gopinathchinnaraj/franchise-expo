@@ -11,6 +11,35 @@
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
+    ],
+    "/resources/blog/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/resources/blog/page.css",
+      "static/chunks/app/resources/blog/page.js"
+    ],
+    "/attendees/attendee-info/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/attendees/attendee-info/page.css",
+      "static/chunks/app/attendees/attendee-info/page.js"
+    ],
+    "/exhibitors/exhibitor-list/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/exhibitors/exhibitor-list/page.css",
+      "static/chunks/app/exhibitors/exhibitor-list/page.js"
+    ],
+    "/blog-article/[slug]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/blog-article/[slug]/page.css",
+      "static/chunks/app/blog-article/[slug]/page.js"
+    ],
+    "/_not-found/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }
