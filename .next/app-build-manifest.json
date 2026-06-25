@@ -11,48 +11,6 @@
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
-    ],
-    "/resources/blog/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/resources/blog/page.css",
-      "static/chunks/app/resources/blog/page.js"
-    ],
-    "/conference/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/conference/page.css",
-      "static/chunks/app/conference/page.js"
-    ],
-    "/attendees/attendee-info/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/attendees/attendee-info/page.css",
-      "static/chunks/app/attendees/attendee-info/page.js"
-    ],
-    "/exhibitors/exhibitor-list/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/exhibitors/exhibitor-list/page.css",
-      "static/chunks/app/exhibitors/exhibitor-list/page.js"
-    ],
-    "/attendees/emerging-brand-pavilion/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/attendees/emerging-brand-pavilion/page.css",
-      "static/chunks/app/attendees/emerging-brand-pavilion/page.js"
-    ],
-    "/attendees/business-resource-center/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/attendees/business-resource-center/page.css",
-      "static/chunks/app/attendees/business-resource-center/page.js"
-    ],
-    "/conference-agenda/workshops/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/conference-agenda/workshops/page.css",
-      "static/chunks/app/conference-agenda/workshops/page.js"
     ]
   }
 }
