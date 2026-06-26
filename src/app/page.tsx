@@ -37,7 +37,7 @@ const cards = [
     description:
       "Looking to speak at the Franchise Expo? We'd love to have you! Find out more below.",
     cta: 'Learn More',
-    href: '/speaker-application',
+    href: '/attendees/speaker-application-form',
     image: 'https://www.franchiseexpo.com/images/west/Home/SPEAKING-OPPORTUNITIES.webp',
   },
 ];
