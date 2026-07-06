@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import styles from "./agenda.module.css";
 import PageBanner from "@/components/PageBanner";
 
 /* ── Types ──────────────────────────────────────────────── */
@@ -219,7 +218,7 @@ function AvatarInitials({ org }: { org: string }) {
     const hue = [...org].reduce((acc, c) => acc + c.charCodeAt(0), 0) % 360;
     return (
         <div
-            className={styles.avatarInitials}
+            className="w-[42px] h-[42px] rounded-full flex items-center justify-center text-[0.72rem] font-bold text-white tracking-wider shrink-0"
             style={{ background: `hsl(${hue},45%,40%)` }}
             aria-hidden="true"
         >
@@ -266,175 +265,174 @@ export default function ConferenceAgenda() {
 
     return (
         <>
-        {/* <PageBanner title={"Conference"}/> */}
-                <div className={styles.agendaRoot}>
-                     <PageBanner title={"Conference"}/>
-            {/* ── Day tabs ────────────────────────────────────────── */}
-            <div className={styles.dayTabs} role="tablist" aria-label="Select day">
-                <button
-                    role="tab"
-                    aria-selected={activeDay === "friday"}
-                    className={`${styles.dayTab} ${activeDay === "friday" ? styles.dayTabActive : ""}`}
-                    onClick={() => { setActiveDay("friday"); setTimeFilter("All Times"); }}
-                >
-                    Friday 29th May
-                </button>
-                <button
-                    role="tab"
-                    aria-selected={activeDay === "saturday"}
-                    className={`${styles.dayTab} ${activeDay === "saturday" ? styles.dayTabActive : ""}`}
-                    onClick={() => { setActiveDay("saturday"); setTimeFilter("All Times"); }}
-                >
-                    Saturday 30th May
-                </button>
-            </div>
+            <div className="w-full font-body text-[#444] bg-[#f8f9fa] rounded-lg overflow-hidden">
+                <PageBanner title="Conference" />
 
-            <div className={styles.agendaBody}>
-                {/* ── Sidebar ─────────────────────────────────────── */}
-                <aside className={styles.sidebar} aria-label="Filters">
-                    {/* Search */}
-                    <div className={styles.searchWrap}>
-                        <svg className={styles.searchIcon} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="9" cy="9" r="6" stroke="currentColor" strokeWidth="1.8" />
-                            <path d="M13.5 13.5L17 17" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                        </svg>
-                        <input
-                            type="search"
-                            placeholder="Search sessions…"
-                            value={search}
-                            onChange={(e) => setSearch(e.target.value)}
-                            className={styles.searchInput}
-                            aria-label="Search sessions"
-                        />
-                    </div>
+                {/* ── Day tabs ────────────────────────────────────────── */}
+                <div className="grid grid-cols-2 bg-[#f1f3f5] border-b-2 border-[#dde3ea]" role="tablist" aria-label="Select day">
+                    <button
+                        role="tab"
+                        aria-selected={activeDay === "friday"}
+                        className={`py-4 px-6 font-body text-[0.82rem] font-bold tracking-wider uppercase bg-transparent border-none cursor-pointer relative transition-all duration-200 hover:text-[#011b2e] hover:bg-[#011b2e]/5 ${activeDay === "friday" ? "text-white bg-[#1a3a5c] after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:right-0 after:h-[2px] after:bg-[#cc1f2e]" : "text-[#5f6b76]"}`}
+                        onClick={() => { setActiveDay("friday"); setTimeFilter("All Times"); }}
+                    >
+                        Friday 29th May
+                    </button>
+                    <button
+                        role="tab"
+                        aria-selected={activeDay === "saturday"}
+                        className={`py-4 px-6 font-body text-[0.82rem] font-bold tracking-wider uppercase bg-transparent border-none cursor-pointer relative transition-all duration-200 hover:text-[#011b2e] hover:bg-[#011b2e]/5 ${activeDay === "saturday" ? "text-white bg-[#1a3a5c] after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:right-0 after:h-[2px] after:bg-[#cc1f2e]" : "text-[#5f6b76]"}`}
+                        onClick={() => { setActiveDay("saturday"); setTimeFilter("All Times"); }}
+                    >
+                        Saturday 30th May
+                    </button>
+                </div>
 
-                    {/* Location */}
-                    <div className={styles.filterGroup}>
-                        <label className={styles.filterLabel}>Location</label>
-                        <div className={styles.selectWrap}>
-                            <select
-                                value={locationFilter}
-                                onChange={(e) => setLocationFilter(e.target.value)}
-                                className={styles.select}
-                                aria-label="Filter by location"
-                            >
-                                {LOCATIONS.map((l) => (
-                                    <option key={l} value={l}>{l}</option>
-                                ))}
-                            </select>
-                            <svg className={styles.selectChevron} viewBox="0 0 12 8" fill="none">
-                                <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                <div className="grid grid-cols-[240px_1fr] max-lg:grid-cols-1 min-h-[500px] items-start">
+                    {/* ── Sidebar ─────────────────────────────────────── */}
+                    <aside className="bg-white border-r border-[#dde3ea] max-lg:border-r-0 max-lg:border-b p-5 flex flex-col gap-4 max-lg:grid max-lg:grid-cols-2 max-sm:grid-cols-1 sticky top-0 max-h-[90vh] overflow-y-auto" aria-label="Filters">
+                        {/* Search */}
+                        <div className="relative max-lg:col-span-2">
+                            <svg className="absolute left-2.5 top-1/2 -translate-y-1/2 w-[15px] h-[15px] text-[#5f6b76] pointer-events-none" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="9" cy="9" r="6" stroke="currentColor" strokeWidth="1.8" />
+                                <path d="M13.5 13.5L17 17" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                             </svg>
+                            <input
+                                type="search"
+                                placeholder="Search sessions…"
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)}
+                                className="w-full py-2.25 pl-8 pr-3 border border-[#dde3ea] rounded-md font-body text-[0.82rem] text-[#011b2e] bg-[#f8f9fa] outline-none focus:border-[#0067b2] focus:ring-2 focus:ring-[#0067b2]/12"
+                                aria-label="Search sessions"
+                            />
                         </div>
-                    </div>
 
-                    {/* Time */}
-                    <div className={styles.filterGroup}>
-                        <label className={styles.filterLabel}>Time</label>
-                        <div className={styles.selectWrap}>
-                            <select
-                                value={timeFilter}
-                                onChange={(e) => setTimeFilter(e.target.value)}
-                                className={styles.select}
-                                aria-label="Filter by time"
-                            >
-                                {times.map((t) => (
-                                    <option key={t} value={t}>{t}</option>
-                                ))}
-                            </select>
-                            <svg className={styles.selectChevron} viewBox="0 0 12 8" fill="none">
-                                <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                            </svg>
-                        </div>
-                    </div>
-
-                    {/* Results count + clear */}
-                    <div className={styles.filterMeta}>
-                        <span className={styles.resultsCount}>
-                            Showing <strong>{filtered.length}</strong> session{filtered.length !== 1 ? "s" : ""}
-                        </span>
-                        <button
-                            className={styles.clearBtn}
-                            onClick={clearAll}
-                            disabled={!search && locationFilter === "All Locations" && timeFilter === "All Times"}
-                        >
-                            Clear all
-                        </button>
-                    </div>
-                </aside>
-
-                {/* ── Session list ─────────────────────────────────── */}
-                <div className={styles.sessionList} role="feed" aria-label="Conference sessions">
-                    {grouped.size === 0 && (
-                        <div className={styles.emptyState}>
-                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.emptyIcon}>
-                                <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="2" />
-                                <path d="M16 24h16M24 16v16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.4" />
-                            </svg>
-                            <p>No sessions match your filters.</p>
-                            <button className={styles.clearBtnAlt} onClick={clearAll}>Clear filters</button>
-                        </div>
-                    )}
-
-                    {[...grouped.entries()].map(([time, sessions]) => (
-                        <div key={time} className={styles.timeGroup}>
-                            <div className={styles.timeStamp} aria-label={`Sessions at ${time}`}>
-                                {time}
+                        {/* Location */}
+                        <div className="flex flex-col gap-1.5">
+                            <label className="text-[0.7rem] font-bold uppercase tracking-wider text-[#5f6b76]">Location</label>
+                            <div className="relative">
+                                <select
+                                    value={locationFilter}
+                                    onChange={(e) => setLocationFilter(e.target.value)}
+                                    className="w-full py-2 pl-3 pr-8 border border-[#dde3ea] rounded-md font-body text-[0.82rem] text-[#011b2e] bg-[#f8f9fa] appearance-none cursor-pointer outline-none focus:border-[#0067b2]"
+                                    aria-label="Filter by location"
+                                >
+                                    {LOCATIONS.map((l) => (
+                                        <option key={l} value={l}>{l}</option>
+                                    ))}
+                                </select>
+                                <svg className="absolute right-2.5 top-1/2 -translate-y-1/2 w-2.5 h-2.5 text-[#5f6b76] pointer-events-none" viewBox="0 0 12 8" fill="none">
+                                    <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                                </svg>
                             </div>
+                        </div>
 
-                            <div className={styles.sessionCards}>
-                                {sessions.map((s) => (
-                                    <article key={s.id} className={styles.sessionCard}>
-                                        {/* Header */}
-                                        <div className={styles.cardHeader}>
-                                            <h3 className={styles.cardTitle}>{s.title}</h3>
-                                        </div>
+                        {/* Time */}
+                        <div className="flex flex-col gap-1.5">
+                            <label className="text-[0.7rem] font-bold uppercase tracking-wider text-[#5f6b76]">Time</label>
+                            <div className="relative">
+                                <select
+                                    value={timeFilter}
+                                    onChange={(e) => setTimeFilter(e.target.value)}
+                                    className="w-full py-2 pl-3 pr-8 border border-[#dde3ea] rounded-md font-body text-[0.82rem] text-[#011b2e] bg-[#f8f9fa] appearance-none cursor-pointer outline-none focus:border-[#0067b2]"
+                                    aria-label="Filter by time"
+                                >
+                                    {times.map((t) => (
+                                        <option key={t} value={t}>{t}</option>
+                                    ))}
+                                </select>
+                                <svg className="absolute right-2.5 top-1/2 -translate-y-1/2 w-2.5 h-2.5 text-[#5f6b76] pointer-events-none" viewBox="0 0 12 8" fill="none">
+                                    <path d="M1 1l5 5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                                </svg>
+                            </div>
+                        </div>
 
-                                        {/* Meta row */}
-                                        <div className={styles.cardMeta}>
-                                            <span className={styles.metaTime}>
-                                                <svg viewBox="0 0 16 16" fill="none" className={styles.metaIcon}>
-                                                    <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.4" />
-                                                    <path d="M8 5v3.5l2 1.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-                                                </svg>
-                                                {s.time} – {s.timeEnd} · {activeDay === "friday" ? "Friday 29th May" : "Saturday 30th May"}
-                                            </span>
-                                            <span className={styles.metaRoom}>
-                                                <span
-                                                    className={styles.roomDot}
-                                                    style={{ background: s.roomColor }}
-                                                    aria-hidden="true"
-                                                />
-                                                {s.location}
-                                            </span>
-                                        </div>
+                        {/* Results count + clear */}
+                        <div className="flex flex-col gap-2 pt-2.5 border-t border-[#dde3ea] max-lg:col-span-2 max-lg:flex-row max-lg:justify-between max-lg:items-center">
+                            <span className="text-[0.78rem] text-[#5f6b76]">
+                                Showing <strong>{filtered.length}</strong> session{filtered.length !== 1 ? "s" : ""}
+                            </span>
+                            <button
+                                className="w-full py-2 font-body text-[0.78rem] font-semibold text-[#5f6b76] bg-transparent border border-[#dde3ea] rounded-md cursor-pointer text-center hover:text-[#cc1f2e] hover:border-[#cc1f2e] disabled:opacity-40 disabled:cursor-not-allowed"
+                                onClick={clearAll}
+                                disabled={!search && locationFilter === "All Locations" && timeFilter === "All Times"}
+                            >
+                                Clear all
+                            </button>
+                        </div>
+                    </aside>
 
-                                        {/* Description */}
-                                        <p className={styles.cardDesc}>{s.description}</p>
+                    {/* ── Session list ─────────────────────────────────── */}
+                    <div className="p-6 max-sm:p-4 flex flex-col gap-0 bg-[#f8f9fa] w-full" role="feed" aria-label="Conference sessions">
+                        {grouped.size === 0 && (
+                            <div className="flex flex-col items-center justify-center py-16 px-8 text-center text-[#5f6b76] gap-4">
+                                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 text-[#dde3ea]">
+                                    <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="2" />
+                                    <path d="M16 24h16M24 16v16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.4" />
+                                </svg>
+                                <p>No sessions match your filters.</p>
+                                <button className="py-2 px-5 text-[0.82rem] font-semibold text-white bg-[#0067b2] border-none rounded-md cursor-pointer transition-colors duration-200 hover:bg-[#011b2e]" onClick={clearAll}>Clear filters</button>
+                            </div>
+                        )}
 
-                                        {/* Speakers — no names */}
-                                        {s.speakers.length > 0 && (
-                                            <div className={styles.speakerRow}>
-                                                {s.speakers.map((sp, i) => (
-                                                    <div key={i} className={styles.speakerCard}>
-                                                        <AvatarInitials org={sp.org} />
-                                                        <div className={styles.speakerInfo}>
-                                                            <span className={styles.speakerRole}>{sp.role}</span>
-                                                            <span className={styles.speakerOrg}>{sp.org}</span>
-                                                        </div>
-                                                    </div>
-                                                ))}
+                        {[...grouped.entries()].map(([time, sessions]) => (
+                            <div key={time} className="grid grid-cols-[90px_1fr] max-sm:grid-cols-[72px_1fr] gap-0.5 max-sm:gap-0 px-0 pb-7 relative before:content-[''] before:absolute before:left-[89px] max-sm:before:left-[71px] before:top-7 before:bottom-0 before:w-[1px] before:bg-[#dde3ea] last:before:hidden">
+                                <div className="font-display text-base max-sm:text-[0.85rem] font-bold text-[#011b2e] pt-[1.1rem] text-right whitespace-nowrap" aria-label={`Sessions at ${time}`}>
+                                    {time}
+                                </div>
+
+                                <div className="flex flex-col gap-3">
+                                    {sessions.map((s) => (
+                                        <article key={s.id} className="bg-white border border-[#dde3ea] rounded-md p-5 max-sm:p-4 shadow-sm hover:shadow-[0_4px_20px_rgba(1,27,46,0.13)] hover:-translate-y-0.5 transition-all duration-200">
+                                            {/* Header */}
+                                            <div className="mb-2">
+                                                <h3 className="m-0 font-body text-base font-bold text-[#144380] leading-tight">{s.title}</h3>
                                             </div>
-                                        )}
-                                    </article>
-                                ))}
+
+                                            {/* Meta row */}
+                                            <div className="flex items-center flex-wrap gap-3 sm:gap-6 mb-3">
+                                                <span className="flex items-center gap-1.5 text-[0.78rem] text-[#5f6b76]">
+                                                    <svg viewBox="0 0 16 16" fill="none" className="w-[13px] h-[13px] shrink-0">
+                                                        <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.4" />
+                                                        <path d="M8 5v3.5l2 1.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+                                                    </svg>
+                                                    {s.time} – {s.timeEnd} · {activeDay === "friday" ? "Friday 29th May" : "Saturday 30th May"}
+                                                </span>
+                                                <span className="flex items-center gap-1.5 text-[0.78rem] text-[#5f6b76]">
+                                                    <span
+                                                        className="inline-block w-2.5 h-2.5 rounded-full shrink-0"
+                                                        style={{ background: s.roomColor }}
+                                                        aria-hidden="true"
+                                                    />
+                                                    {s.location}
+                                                </span>
+                                            </div>
+
+                                            {/* Description */}
+                                            <p className="m-0 mb-4 text-[0.875rem] leading-relaxed text-[#444]">{s.description}</p>
+
+                                            {/* Speakers — no names */}
+                                            {s.speakers.length > 0 && (
+                                                <div className="flex flex-wrap gap-3 pt-3 border-t border-[#dde3ea]">
+                                                    {s.speakers.map((sp, i) => (
+                                                        <div key={i} className="flex items-center gap-2.5 min-w-0 max-sm:basis-full">
+                                                            <AvatarInitials org={sp.org} />
+                                                            <div className="flex flex-col gap-0.5 min-w-0">
+                                                                <span className="text-[0.78rem] font-semibold text-[#444] leading-tight">{sp.role}</span>
+                                                                <span className="text-[0.73rem] font-bold text-[#5f6b76] leading-tight">{sp.org}</span>
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </article>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
         </>
-
     );
 }

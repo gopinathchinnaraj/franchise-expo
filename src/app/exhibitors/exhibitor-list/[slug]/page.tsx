@@ -1,9 +1,6 @@
-// app/ife/exhibitors/exhibitor-list/[slug]/page.tsx
-
 "use client";
 
-import styles from "./ExhibitorDetails.module.css";
-import { Mail,  } from "lucide-react";
+import { Mail } from "lucide-react";
 import { useState } from "react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
@@ -93,55 +90,55 @@ export default function ExhibitorDetails({ params }: { params: { slug: string } 
     const exhibitor = getExhibitor(slug);
 
     return (
-        <main className={styles.page}>
+        <main className="w-full bg-[#f5f7fb] min-h-screen">
 
             {/* HERO BANNER */}
-            <div className={styles.heroBanner} style={{ background: exhibitor.bannerBg }}>
-                <div className={styles.heroLeft}>
-                    <h1 className={styles.heroTitle}>
+            <div className="relative w-full h-[220px] max-md:h-auto overflow-hidden flex max-md:flex-col" style={{ background: exhibitor.bannerBg }}>
+                <div className="flex-1 flex items-center p-[28px_40px] max-md:p-[24px_20px_60px] z-[2]">
+                    <h1 className="font-display text-[36px] max-md:text-[26px] font-bold text-white leading-[1.1] uppercase tracking-wider">
                         {exhibitor.bannerTitle.split("\n").map((line: string, i: number) => (
                             <span key={i}>{line}<br /></span>
                         ))}
                     </h1>
                 </div>
-                <div className={styles.heroRight}>
-                    <img src={exhibitor.bannerImage} alt={exhibitor.name} className={styles.heroImage} />
+                <div className="w-[420px] max-md:w-full shrink-0 relative overflow-hidden max-md:h-[180px]">
+                    <img src={exhibitor.bannerImage} alt={exhibitor.name} className="w-full h-[220px] max-md:h-[180px] object-cover object-center block" />
                 </div>
 
                 {/* Bottom bar */}
-                <div className={styles.heroBar}>
-                    <div className={styles.logoCircle}>
-                        <span className={styles.logoCategory}>FRANCHISOR</span>
-                        <span className={styles.logoText}>{exhibitor.logo}</span>
+                <div className="absolute bottom-0 left-0 right-0 h-[52px] bg-[#1a3a5c] flex items-center justify-end px-6 z-[3]">
+                    <div className="absolute left-24 bottom-0 w-[90px] h-[90px] bg-white rounded-full border-[3px] border-white shadow-[0_2px_10px_rgba(0,0,0,0.15)] flex flex-col items-center justify-center z-10 translate-y-[40%]">
+                        <span className="text-[7px] font-bold text-[#1a3a5c] tracking-wider uppercase leading-none mb-0.5">FRANCHISOR</span>
+                        <span className="text-2xl font-black text-[#cc1f2e] font-display leading-none text-center whitespace-pre-line">{exhibitor.logo}</span>
                     </div>
-                    <div className={styles.heroBarRight}>
-                        <a href="#" className={styles.socialIcon}><FaFacebookF size={18} /></a>
-                        <a href="#" className={styles.socialIcon}><FaInstagram size={18} /></a>
-                        <span className={styles.featuredBadge}>FEATURED</span>
+                    <div className="flex items-center gap-4">
+                        <a href="#" className="text-white/80 flex items-center transition-colors duration-150 hover:text-white"><FaFacebookF size={18} /></a>
+                        <a href="#" className="text-white/80 flex items-center transition-colors duration-150 hover:text-white"><FaInstagram size={18} /></a>
+                        <span className="text-[12px] font-bold text-white tracking-wider border border-white/40 px-3.5 py-1 rounded-sm">FEATURED</span>
                     </div>
                 </div>
             </div>
 
             {/* CONTENT */}
-            <div className={styles.contentArea}>
+            <div className="max-w-[1000px] mx-auto px-6 py-6 pb-20">
 
                 {/* Stand */}
-                <div className={styles.standRow}>
-                    <span>Stand: <strong>{exhibitor.stand}</strong></span>
+                <div className="text-right text-[13px] text-[#5f6b76] mb-3">
+                    <span>Stand: <strong className="text-[#011b2e] font-bold">{exhibitor.stand}</strong></span>
                 </div>
 
-                <div className={styles.contentGrid}>
+                <div className="grid grid-cols-[1fr_260px] max-md:grid-cols-1 gap-10 max-md:gap-6 mb-8">
                     {/* LEFT */}
-                    <div className={styles.infoCol}>
-                        <h2 className={styles.exhibitorName}>{exhibitor.name}</h2>
+                    <div className="min-w-0">
+                        <h2 className="font-display text-[22px] font-bold text-[#011b2e] mb-3.5">{exhibitor.name}</h2>
                         {exhibitor.description.map((para: string, i: number) => (
-                            <p key={i} className={styles.description}>{para}</p>
+                            <p key={i} className="text-sm text-[#2d3e4f] leading-[1.65] mb-2.5">{para}</p>
                         ))}
 
                         {exhibitor.address.street && (
-                            <div className={styles.addressBlock}>
-                                <h4 className={styles.addressTitle}>Address</h4>
-                                <p className={styles.addressText}>
+                            <div className="mt-5">
+                                <h4 className="text-sm font-bold text-[#011b2e] mb-2">Address</h4>
+                                <p className="text-sm text-[#2d3e4f] leading-[1.8]">
                                     {exhibitor.address.street}<br />
                                     {exhibitor.address.city}<br />
                                     {exhibitor.address.state}<br />
@@ -153,23 +150,23 @@ export default function ExhibitorDetails({ params }: { params: { slug: string } 
                     </div>
 
                     {/* RIGHT sidebar */}
-                    <div className={styles.sidebarCol}>
-                        <button className={styles.emailBtn}>
+                    <div className="flex flex-col gap-5">
+                        <button className="flex items-center justify-center gap-2 w-full bg-[#1a3a5c] text-white border-none rounded-md py-3 px-5 text-[13px] font-bold tracking-wider cursor-pointer transition-colors duration-150 hover:bg-[#1f4570]">
                             <Mail size={16} />
                             EMAIL
                         </button>
 
-                        <div className={styles.sideSection}>
-                            <span className={styles.sideLabel}>Type</span>
-                            <span className={styles.typeBadge}>{exhibitor.type}</span>
+                        <div className="flex flex-col gap-2">
+                            <span className="text-sm font-bold text-[#011b2e]">Type</span>
+                            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1a3a5c] bg-[#e8edf4] rounded px-3 py-1.25 w-fit before:content-[''] before:inline-block before:w-2.5 before:h-2.5 before:bg-[#1a3a5c] before:rounded-sm before:shrink-0">{exhibitor.type}</span>
                         </div>
 
                         {exhibitor.exhibitorCategories.length > 0 && (
-                            <div className={styles.sideSection}>
-                                <span className={styles.sideLabel}>Exhibitor Categories</span>
-                                <div className={styles.categoryTags}>
+                            <div className="flex flex-col gap-2">
+                                <span className="text-sm font-bold text-[#011b2e]">Exhibitor Categories</span>
+                                <div className="flex flex-wrap gap-1.5">
                                     {exhibitor.exhibitorCategories.map((cat: string, i: number) => (
-                                        <span key={i} className={styles.categoryTag}>{cat}</span>
+                                        <span key={i} className="text-[11px] font-semibold text-[#2d3e4f] bg-[#e8edf4] rounded px-2.5 py-1.25 whitespace-nowrap">{cat}</span>
                                     ))}
                                 </div>
                             </div>
@@ -178,11 +175,11 @@ export default function ExhibitorDetails({ params }: { params: { slug: string } 
                 </div>
 
                 {/* TABS */}
-                <div className={styles.tabs}>
-                    {TABS.map(tab => (
+                <div className="grid grid-cols-4 max-md:grid-cols-2 border border-[#dde3ea] rounded-md overflow-hidden mb-6 bg-white">
+                    {TABS.map((tab, idx) => (
                         <button
                             key={tab}
-                            className={`${styles.tab} ${activeTab === tab ? styles.tabActive : ""}`}
+                            className={`py-3.5 px-2 text-[12px] font-bold tracking-wider text-[#5f6b76] bg-white cursor-pointer transition-all duration-150 text-center hover:bg-[#f5f7fb] hover:text-[#1a3a5c] border-b-0 border-r border-[#dde3ea] last:border-r-0 max-md:even:border-r-0 max-md:nth-child(n+3):border-t max-md:nth-child(n+3):border-t-[#dde3ea] ${activeTab === tab ? "text-[#1a3a5c] bg-white border-b-[3px] border-[#1a3a5c]" : ""}`}
                             onClick={() => setActiveTab(tab)}
                         >
                             {tab}
@@ -191,20 +188,20 @@ export default function ExhibitorDetails({ params }: { params: { slug: string } 
                 </div>
 
                 {activeTab === "PRODUCTS" && exhibitor.products.length > 0 && (
-                    <div className={styles.productsGrid}>
+                    <div className="flex gap-4 flex-wrap">
                         {exhibitor.products.map((product: any, i: number) => (
-                            <div key={i} className={styles.productCard}>
-                                <div className={styles.productImageWrap}>
-                                    <img src={product.image} alt={product.title} className={styles.productImage} />
+                            <div key={i} className="w-[120px] cursor-pointer group">
+                                <div className="w-[120px] h-[100px] rounded overflow-hidden mb-2">
+                                    <img src={product.image} alt={product.title} className="w-full h-full object-cover block transition-transform duration-200 group-hover:scale-105" />
                                 </div>
-                                <p className={styles.productTitle}>{product.title}</p>
+                                <p className="text-[11px] font-bold text-[#1a3a5c] leading-[1.4] uppercase">{product.title}</p>
                             </div>
                         ))}
                     </div>
                 )}
 
                 {(activeTab !== "PRODUCTS" || exhibitor.products.length === 0) && (
-                    <div className={styles.emptyTab}>
+                    <div className="p-10 text-center text-[#9aa6b2] text-sm bg-white rounded border border-[#dde3ea]">
                         <p>No {activeTab.toLowerCase()} available.</p>
                     </div>
                 )}

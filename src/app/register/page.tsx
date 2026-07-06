@@ -1,8 +1,6 @@
-"use client"
+"use client";
 
 import { useState } from "react"
-// @ts-ignore: Ignore CSS module type issues in this file
-import "./register.css"
 import PageBanner from "@/components/PageBanner"
 
 export default function SpeakerApplication() {
@@ -107,185 +105,182 @@ export default function SpeakerApplication() {
 
     return (
         <>
-        <PageBanner title="Speaker Application Form"/>
-            <div id="speaker-application-form" className="single-event has-banner no-nav-logo white-header event--ife">
-                {/* Banner */}
-
+            <PageBanner title="Speaker Application Form"/>
+            <div id="speaker-application-form" className="w-full max-w-[1200px] mx-auto px-5 max-md:px-4 max-sm:px-3 py-10 pb-15">
 
                 {/* Main Content */}
                 <main>
-                    <div className="row">
-                        <div className="main-content column">
-                            <article className="com-content-article item-page">
-                                <div className="com-content-article__body">
-                                    <p>Take the stage and share your thought leadership and expertise with attendees and exhibitors. If you are interested in speaking please fill out the&nbsp;form below and we will contact you.</p>
+                    <div className="flex flex-wrap -mx-3.75">
+                        <div className="flex-1 px-3.75 max-w-full">
+                            <article className="bg-white">
+                                <div className="text-base text-[#212121]">
+                                    <p className="mb-5 text-base leading-relaxed text-[#212121]">Take the stage and share your thought leadership and expertise with attendees and exhibitors. If you are interested in speaking please fill out the&nbsp;form below and we will contact you.</p>
 
-                                    <div className="com-baforms-wrapper">
+                                    <div className="mt-7.5">
                                         <form
                                             noValidate
-                                            className="ba-form-12 fields-icons-flex-start progress-navigation-style"
+                                            className="w-full bg-white p-6 max-sm:p-5 max-[480px]:p-4 border-0 rounded-none"
                                             onSubmit={handleSubmit}
                                         >
-                                            <div className="ba-form-page">
-                                                <div className="ba-page-items">
-                                                    <div className="ba-form-row">
-                                                        <div className="ba-form-column-wrapper">
-                                                            <div className="span12 ba-form-column">
+                                            <div className="w-full">
+                                                <div className="flex flex-col gap-5">
+                                                    <div className="w-full mb-0">
+                                                        <div className="w-full">
+                                                            <div className="w-full">
                                                                 {/* Full Name */}
-                                                                <div className="ba-form-field-item ba-form-input-field">
-                                                                    <div className="ba-input-wrapper">
-                                                                        <div className="ba-field-label-wrapper">
-                                                                            <span className="ba-input-label-wrapper" id="label-125">
+                                                                <div className="mb-5 w-full">
+                                                                    <div className="flex flex-col gap-1.5">
+                                                                        <div className="flex items-center gap-1">
+                                                                            <span className="text-[18px] max-md:text-base max-sm:text-sm font-bold text-[#212121] leading-9 max-md:leading-7.5 max-sm:leading-[26px]">
                                                                                 Full Name
                                                                             </span>
-                                                                            <span className="required-star">*</span>
+                                                                            <span className="text-red-500 font-bold text-[18px]">*</span>
                                                                         </div>
-                                                                        <div className="ba-field-container">
+                                                                        <div className="w-full">
                                                                             <input
                                                                                 type="text"
                                                                                 name="fullName"
                                                                                 placeholder="Full Name *"
                                                                                 value={formData.fullName}
                                                                                 onChange={handleInputChange}
+                                                                                className="w-full p-[15px] max-md:p-[12px_14px] max-sm:p-[10px_12px] bg-[#f5f8f9] border-0 rounded-none text-base max-md:text-[15px] max-sm:text-sm font-normal text-[#212121] leading-7 transition-all duration-300 outline-none focus:bg-[#edf2f7] focus:ring-inset focus:ring-2 focus:ring-[#fbbf24] placeholder:text-gray-400"
                                                                                 required
-                                                                                data-field-id="baform-1"
                                                                             />
                                                                         </div>
                                                                         {errors.fullName && (
-                                                                            <span className="error-message">{errors.fullName}</span>
+                                                                            <span className="block text-red-500 text-sm mt-1 font-medium">{errors.fullName}</span>
                                                                         )}
                                                                     </div>
                                                                 </div>
 
                                                                 {/* Company */}
-                                                                <div className="ba-form-field-item ba-form-input-field">
-                                                                    <div className="ba-input-wrapper">
-                                                                        <div className="ba-field-label-wrapper">
-                                                                            <span className="ba-input-label-wrapper" id="label-126">
+                                                                <div className="mb-5 w-full">
+                                                                    <div className="flex flex-col gap-1.5">
+                                                                        <div className="flex items-center gap-1">
+                                                                            <span className="text-[18px] max-md:text-base max-sm:text-sm font-bold text-[#212121] leading-9 max-md:leading-7.5 max-sm:leading-[26px]">
                                                                                 Company
                                                                             </span>
-                                                                            <span className="required-star">*</span>
+                                                                            <span className="text-red-500 font-bold text-[18px]">*</span>
                                                                         </div>
-                                                                        <div className="ba-field-container">
+                                                                        <div className="w-full">
                                                                             <input
                                                                                 type="text"
                                                                                 name="company"
                                                                                 placeholder="Company *"
                                                                                 value={formData.company}
                                                                                 onChange={handleInputChange}
+                                                                                className="w-full p-[15px] max-md:p-[12px_14px] max-sm:p-[10px_12px] bg-[#f5f8f9] border-0 rounded-none text-base max-md:text-[15px] max-sm:text-sm font-normal text-[#212121] leading-7 transition-all duration-300 outline-none focus:bg-[#edf2f7] focus:ring-inset focus:ring-2 focus:ring-[#fbbf24] placeholder:text-gray-400"
                                                                                 required
-                                                                                data-field-id="baform-2"
                                                                             />
                                                                         </div>
                                                                         {errors.company && (
-                                                                            <span className="error-message">{errors.company}</span>
+                                                                            <span className="block text-red-500 text-sm mt-1 font-medium">{errors.company}</span>
                                                                         )}
                                                                     </div>
                                                                 </div>
 
                                                                 {/* Phone */}
-                                                                <div className="ba-form-field-item ba-form-input-field">
-                                                                    <div className="ba-input-wrapper">
-                                                                        <div className="ba-field-label-wrapper">
-                                                                            <span className="ba-input-label-wrapper" id="label-129">
+                                                                <div className="mb-5 w-full">
+                                                                    <div className="flex flex-col gap-1.5">
+                                                                        <div className="flex items-center gap-1">
+                                                                            <span className="text-[18px] max-md:text-base max-sm:text-sm font-bold text-[#212121] leading-9 max-md:leading-7.5 max-sm:leading-[26px]">
                                                                                 Phone
                                                                             </span>
-                                                                            <span className="required-star">*</span>
+                                                                            <span className="text-red-500 font-bold text-[18px]">*</span>
                                                                         </div>
-                                                                        <div className="ba-field-container">
+                                                                        <div className="w-full">
                                                                             <input
                                                                                 type="text"
                                                                                 name="phone"
                                                                                 placeholder="Phone *"
                                                                                 value={formData.phone}
                                                                                 onChange={handleInputChange}
+                                                                                className="w-full p-[15px] max-md:p-[12px_14px] max-sm:p-[10px_12px] bg-[#f5f8f9] border-0 rounded-none text-base max-md:text-[15px] max-sm:text-sm font-normal text-[#212121] leading-7 transition-all duration-300 outline-none focus:bg-[#edf2f7] focus:ring-inset focus:ring-2 focus:ring-[#fbbf24] placeholder:text-gray-400"
                                                                                 required
-                                                                                data-field-id="baform-7"
                                                                             />
                                                                         </div>
                                                                         {errors.phone && (
-                                                                            <span className="error-message">{errors.phone}</span>
+                                                                            <span className="block text-red-500 text-sm mt-1 font-medium">{errors.phone}</span>
                                                                         )}
                                                                     </div>
                                                                 </div>
 
                                                                 {/* Email */}
-                                                                <div className="ba-form-field-item ba-form-input-field">
-                                                                    <div className="ba-input-wrapper">
-                                                                        <div className="ba-field-label-wrapper">
-                                                                            <span className="ba-input-label-wrapper" id="label-127">
+                                                                <div className="mb-5 w-full">
+                                                                    <div className="flex flex-col gap-1.5">
+                                                                        <div className="flex items-center gap-1">
+                                                                            <span className="text-[18px] max-md:text-base max-sm:text-sm font-bold text-[#212121] leading-9 max-md:leading-7.5 max-sm:leading-[26px]">
                                                                                 Email
                                                                             </span>
-                                                                            <span className="required-star">*</span>
+                                                                            <span className="text-red-500 font-bold text-[18px]">*</span>
                                                                         </div>
-                                                                        <div className="ba-field-container">
+                                                                        <div className="w-full">
                                                                             <input
                                                                                 type="email"
                                                                                 name="email"
                                                                                 placeholder="Email *"
                                                                                 value={formData.email}
                                                                                 onChange={handleInputChange}
+                                                                                className="w-full p-[15px] max-md:p-[12px_14px] max-sm:p-[10px_12px] bg-[#f5f8f9] border-0 rounded-none text-base max-md:text-[15px] max-sm:text-sm font-normal text-[#212121] leading-7 transition-all duration-300 outline-none focus:bg-[#edf2f7] focus:ring-inset focus:ring-2 focus:ring-[#fbbf24] placeholder:text-gray-400"
                                                                                 required
-                                                                                data-validation="email"
-                                                                                data-field-id="baform-3"
                                                                             />
                                                                         </div>
                                                                         {errors.email && (
-                                                                            <span className="error-message">{errors.email}</span>
+                                                                            <span className="block text-red-500 text-sm mt-1 font-medium">{errors.email}</span>
                                                                         )}
                                                                     </div>
                                                                 </div>
 
                                                                 {/* Events Checkbox */}
-                                                                <div className="ba-form-field-item ba-form-checkbox-field show-label">
-                                                                    <fieldset className="ba-input-wrapper">
-                                                                        <legend className="ba-field-label-wrapper">
-                                                                            <span className="ba-input-label-wrapper">Which event(s) are you interested in participating in?</span>
+                                                                <div className="mb-5 w-full mt-2.5">
+                                                                    <fieldset className="flex flex-col gap-2.5">
+                                                                        <legend className="flex items-center gap-1">
+                                                                            <span className="text-[18px] max-md:text-base max-sm:text-sm font-bold text-[#212121] leading-9 max-md:leading-7.5 max-sm:leading-[26px]">Which event(s) are you interested in participating in?</span>
                                                                         </legend>
-                                                                        <div className="ba-field-container">
-                                                                            <div className="ba-form-checkbox-group-wrapper">
+                                                                        <div className="w-full">
+                                                                            <div className="flex flex-col gap-2 bg-[#f5f8f9] p-4 max-md:p-3 max-sm:p-2.5">
                                                                                 {events.map((event) => (
-                                                                                    <div key={event} className="ba-form-checkbox-wrapper last-row-checkbox-wrapper">
-                                                                                        <div className="ba-checkbox-wrapper">
-                                                                                            <span className="ba-checkbox-title">
+                                                                                    <div key={event} className="flex items-center py-1 max-md:py-0.75">
+                                                                                        <div className="flex items-center gap-3 w-full cursor-pointer">
+                                                                                            <span className="flex-1 text-base max-sm:text-sm text-[#212121] font-normal">
                                                                                                 <span className="ba-form-checkbox-title">{event}</span>
                                                                                             </span>
-                                                                                            <label className="ba-form-checkbox" aria-label={event}>
+                                                                                            <label className="flex items-center gap-2 cursor-pointer relative pl-7 min-h-[24px]" aria-label={event}>
                                                                                                 <input
                                                                                                     type="checkbox"
                                                                                                     name="events[]"
                                                                                                     value={event}
                                                                                                     checked={formData.events.includes(event)}
                                                                                                     onChange={() => handleCheckboxChange(event)}
-                                                                                                    data-field-id="baform-11"
+                                                                                                    className="absolute opacity-0 w-0 h-0"
                                                                                                 />
-                                                                                                <span></span>
+                                                                                                <span className={`absolute left-0 top-0 w-5 h-5 bg-white border-2 border-gray-300 rounded transition-all duration-200 hover:border-[#fbbf24] ${formData.events.includes(event) ? "bg-[#fbbf24] border-[#fbbf24] after:content-['✓'] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:text-[#212121] after:text-sm after:font-bold" : ""}`}></span>
                                                                                             </label>
                                                                                         </div>
                                                                                     </div>
                                                                                 ))}
                                                                             </div>
                                                                             {errors.events && (
-                                                                                <span className="error-message">{errors.events}</span>
+                                                                                <span className="block text-red-500 text-sm mt-1 font-medium">{errors.events}</span>
                                                                             )}
                                                                         </div>
                                                                     </fieldset>
                                                                 </div>
 
                                                                 {/* Target Audience */}
-                                                                <div className="ba-form-field-item ba-form-dropdown-field show-label">
-                                                                    <div className="ba-input-wrapper">
-                                                                        <div className="ba-field-label-wrapper">
-                                                                            <span className="ba-input-label-wrapper" id="label-132">
+                                                                <div className="mb-5 w-full">
+                                                                    <div className="flex flex-col gap-1.5">
+                                                                        <div className="flex items-center gap-1">
+                                                                            <span className="text-[18px] max-md:text-base max-sm:text-sm font-bold text-[#212121] leading-9 max-md:leading-7.5 max-sm:leading-[26px]">
                                                                                 Target audience
                                                                             </span>
                                                                         </div>
-                                                                        <div className="ba-field-container">
+                                                                        <div className="w-full">
                                                                             <select
                                                                                 name="targetAudience"
                                                                                 value={formData.targetAudience}
                                                                                 onChange={handleInputChange}
-                                                                                data-field-id="baform-10"
+                                                                                className="w-full p-[15px] max-md:p-[12px_14px] max-sm:p-[10px_12px] bg-[#f5f8f9] border-0 rounded-none text-base max-md:text-[15px] max-sm:text-sm font-normal text-[#212121] leading-7 transition-all duration-300 outline-none focus:bg-[#edf2f7] focus:ring-inset focus:ring-2 focus:ring-[#fbbf24] appearance-none bg-[url('data:image/svg+xml,%3Csvg_xmlns=%22http://www.w3.org/2000/svg%22_width=%2212%22_height=%2212%22_viewBox=%220_0_12_12%22%3E%3Cpath_fill=%22%236b7280%22_d=%22M6_8L1_3h10z%22/%3E%3C/svg%3E')] bg-no-repeat bg-[right_15px_center] pr-10 cursor-pointer"
                                                                             >
                                                                                 <option hidden value="">Target audience</option>
                                                                                 <option value="Attendees">Attendees</option>
@@ -299,18 +294,18 @@ export default function SpeakerApplication() {
                                                     </div>
 
                                                     {/* Submit Button */}
-                                                    <div className="ba-form-row">
-                                                        <div className="ba-form-column-wrapper">
-                                                            <div className="span12 ba-form-column">
-                                                                <div className="ba-form-field-item ba-form-submit-field">
-                                                                    <div className="ba-form-submit-wrapper">
-                                                                        <div className="ba-form-submit-btn-wrapper">
+                                                    <div className="w-full mb-0">
+                                                        <div className="w-full">
+                                                            <div className="w-full">
+                                                                <div className="mt-5">
+                                                                    <div className="flex justify-start max-md:justify-center">
+                                                                        <div className="w-full">
                                                                             <button
                                                                                 type="submit"
-                                                                                className="ba-form-submit-btn"
+                                                                                className="inline-flex items-center justify-center py-5 px-[60px] max-md:p-[16px_40px] max-sm:p-[14px_24px] bg-[#fbbf24] text-white text-[18px] max-md:text-base max-sm:text-[15px] font-bold leading-none border-0 rounded-none cursor-pointer transition-all duration-300 text-decoration-none min-w-[200px] max-md:min-w-[160px] max-sm:min-w-[140px] max-md:w-full hover:bg-[#212121] hover:text-white hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
                                                                                 disabled={isSubmitting}
                                                                             >
-                                                                                <span className="ba-form-submit-title">
+                                                                                <span>
                                                                                     {isSubmitting ? "Submitting..." : "Submit"}
                                                                                 </span>
                                                                             </button>
@@ -323,20 +318,11 @@ export default function SpeakerApplication() {
 
                                                     {/* Success Message */}
                                                     {isSubmitted && (
-                                                        <div className="ba-form-success-message">
-                                                            <p>Thank you! Your application has been submitted successfully.</p>
+                                                        <div className="mt-5 p-[16px_20px] bg-green-50 border border-green-300 rounded-none text-green-800 font-medium">
+                                                            <p className="margin-0 text-base">Thank you! Your application has been submitted successfully.</p>
                                                         </div>
                                                     )}
                                                 </div>
-                                            </div>
-
-                                            <div className="ba-form-footer">
-                                                <input type="hidden" name="form-id" value="12" />
-                                                <input type="hidden" name="task" value="form.sendMessage" />
-                                                <input type="hidden" name="submit-btn" value="0" />
-                                                <input type="hidden" name="page-title" value="Speaker Application Form" />
-                                                <input type="hidden" name="page-url" value="/ife/attendees/speaker-application-form" />
-                                                <input type="hidden" name="page-id" value="323" />
                                             </div>
                                         </form>
                                     </div>
@@ -347,6 +333,5 @@ export default function SpeakerApplication() {
                 </main>
             </div>
         </>
-       
     )
 }

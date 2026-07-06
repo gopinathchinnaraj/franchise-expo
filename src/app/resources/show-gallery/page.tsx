@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-import styles from "./ShowGallery.module.css";
 import PageBanner from "@/components/PageBanner";
 
 const galleryImages = [
@@ -51,32 +50,32 @@ export default function ShowGallery() {
     };
 
     return (
-        <main className={styles.page}>
+        <main className="w-full overflow-hidden bg-[#f5f7fb]">
 
             {/* HERO */}
             <PageBanner title="Gallery" />
 
             {/* GALLERY */}
-            <section className={styles.gallerySection}>
-                <div className={styles.container}>
+            <section className="py-[110px] max-md:py-20 px-0">
+                <div className="w-full max-w-[1440px] mx-auto px-6">
 
-                    <div className={styles.topContent}>
+                    <div className="text-center max-w-[820px] mx-auto mb-[70px]">
                        
                     </div>
 
-                    <div className={styles.grid}>
+                    <div className="grid grid-cols-4 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-7">
                         {galleryImages.map((image, index) => (
                             <div
                                 key={index}
-                                className={styles.card}
+                                className="relative overflow-hidden bg-white shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-transform duration-400 hover:-translate-y-2.5 cursor-pointer group"
                                 onClick={() => openLightbox(index)}
                             >
-                                <div className={styles.imageWrapper}>
+                                <div className="relative w-full h-[320px] max-md:h-[280px] overflow-hidden">
                                     <Image
                                         src={image}
                                         alt={`Gallery ${index + 1}`}
                                         fill
-                                        className={styles.image}
+                                        className="object-cover transition-transform duration-500 group-hover:scale-108"
                                     />
                                 </div>
                             </div>
@@ -89,13 +88,13 @@ export default function ShowGallery() {
             {/* LIGHTBOX MODAL */}
             {lightboxOpen && (
                 <div
-                    className={styles.lightbox}
+                    className="fixed inset-0 bg-black/95 z-[9999] flex items-center justify-center cursor-pointer transition-opacity duration-200"
                     onClick={closeLightbox}
                     onKeyDown={handleKeyDown}
                     tabIndex={0}
                 >
                     <button
-                        className={styles.closeBtn}
+                        className="absolute top-6 right-6 max-md:top-4 max-md:right-4 bg-white/10 hover:bg-white/20 border-none rounded-full w-12 h-12 max-md:w-10 max-md:h-10 flex items-center justify-center cursor-pointer text-white transition-all duration-200 hover:scale-105 z-10"
                         onClick={closeLightbox}
                         aria-label="Close"
                     >
@@ -103,37 +102,37 @@ export default function ShowGallery() {
                     </button>
 
                     <button
-                        className={`${styles.navBtn} ${styles.prevBtn}`}
+                        className="absolute top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 border-none rounded-full w-14 h-14 max-md:w-10 max-md:h-10 flex items-center justify-center cursor-pointer text-white transition-all duration-200 hover:-translate-y-1/2 hover:scale-105 z-10 left-6 max-md:left-3"
                         onClick={(e) => {
                             e.stopPropagation();
                             goToPrevious();
                         }}
                         aria-label="Previous image"
                     >
-                        <ChevronLeft size={40} />
+                        <ChevronLeft size={40} className="max-md:w-6 max-md:h-6" />
                     </button>
 
                     <button
-                        className={`${styles.navBtn} ${styles.nextBtn}`}
+                        className="absolute top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 border-none rounded-full w-14 h-14 max-md:w-10 max-md:h-10 flex items-center justify-center cursor-pointer text-white transition-all duration-200 hover:-translate-y-1/2 hover:scale-105 z-10 right-6 max-md:right-3"
                         onClick={(e) => {
                             e.stopPropagation();
                             goToNext();
                         }}
                         aria-label="Next image"
                     >
-                        <ChevronRight size={40} />
+                        <ChevronRight size={40} className="max-md:w-6 max-md:h-6" />
                     </button>
 
-                    <div className={styles.lightboxContent} onClick={(e) => e.stopPropagation()}>
-                        <div className={styles.lightboxImageWrapper}>
+                    <div className="relative max-w-[90vw] max-h-[90vh] cursor-default" onClick={(e) => e.stopPropagation()}>
+                        <div className="relative w-[90vw] h-[85vh] min-w-[300px] min-h-[200px]">
                             <Image
                                 src={galleryImages[currentIndex]}
                                 alt={`Gallery ${currentIndex + 1}`}
                                 fill
-                                className={styles.lightboxImage}
+                                className="object-contain w-full h-full"
                             />
                         </div>
-                        <div className={styles.counter}>
+                        <div className="absolute -bottom-10 max-md:-bottom-[35px] left-1/2 -translate-x-1/2 text-white/70 text-[14px] max-md:text-xs font-medium bg-black/60 px-3.5 py-1.5 rounded-full whitespace-nowrap">
                             {currentIndex + 1} / {galleryImages.length}
                         </div>
                     </div>

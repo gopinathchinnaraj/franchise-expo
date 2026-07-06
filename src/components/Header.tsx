@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import styles from './Header.module.css';
 import Image from 'next/image';
 
 const navItems = [
@@ -152,42 +151,52 @@ export default function Header() {
   }, [mobileOpen]);
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
-      <div className={styles.headerInner}>
+    <header className={`sticky top-0 z-50 bg-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'shadow-[0_4px_20px_rgba(0,0,0,0.1)]' : 'shadow-[0_1px_0_rgba(0,0,0,0.08),0_2px_12px_rgba(0,0,0,0.06)]'}`}>
+      <div className={`max-w-[1880px] mx-auto px-[22px] flex items-center justify-between transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'h-[75px] gap-2.5' : 'h-[95px] gap-3.5'}`}>
 
         {/* ── Logo ── */}
-        <div className={styles.logo}>
-          <Link href="/">
+        <div className="flex items-center gap-4 shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">
+          <Link href="/" className={`flex items-center shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'gap-3' : 'gap-4'}`}>
             <Image
               src="/images/franchise-expo-international-new-york.svg"
               alt="Logo"
-              width={260}
-              height={80}
+              width={280}
+              height={90}
               priority
-              className={styles.logoImage}
+              className={`transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] h-auto ${isScrolled ? 'w-[170px] max-[900px]:w-[140px] max-[600px]:w-[130px]' : 'w-[200px] max-[900px]:w-[180px] max-[600px]:w-[160px]'}`}
             />
           </Link>
-          <div className={styles.logoDivider} />
-          <div className={styles.logoDetails}>
-            <span className={styles.logoLocation}>New York City, New York</span>
-            <span className={styles.logoDates}>June 4th – 5th 2027</span>
+          <div className={`w-[1px] bg-[#e0e0e0] shrink-0 transition-[height] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] max-[900px]:hidden ${isScrolled ? 'h-10' : 'h-14'}`} />
+          <div className="flex flex-col justify-center shrink-0">
+            <div className={`flex items-center gap-1.5 max-[900px]:hidden transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'mb-0.5' : 'mb-1.5'}`}>
+              <span className={`font-display font-bold uppercase tracking-wider text-[#666666] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'text-[8px]' : 'text-[10px]'}`}>Supported By</span>
+              <img
+                src="https://www.franchiseexpo.com/images/us-commercial-service.svg"
+                alt="U.S. Commercial Service"
+                className={`w-auto object-contain transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'h-[16px]' : 'h-[24px]'}`}
+              />
+            </div>
+            <div className={`flex flex-col shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] min-w-[180px] max-[900px]:min-w-[auto] max-[600px]:hidden ${isScrolled ? 'gap-0.5' : 'gap-1'}`}>
+              <span className={`font-display font-normal text-[#333333] uppercase leading-[1.1] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'text-[0.82rem] max-[900px]:text-[0.65rem]' : 'text-[0.9rem] max-[900px]:text-[0.7rem]'}`}>New York City, New York</span>
+              <span className={`font-display font-semibold text-[#222222] uppercase leading-[1.1] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'text-[0.88rem] max-[900px]:text-[0.7rem]' : 'text-[0.95rem] max-[900px]:text-[0.75rem]'}`}>June 4th – 5th 2027</span>
+            </div>
           </div>
         </div>
 
         {/* ── Desktop Nav ── */}
-        <nav className={styles.nav}>
-          <ul className={styles.navList}>
+        <nav className="flex-1 flex justify-center max-[900px]:hidden">
+          <ul className="flex items-center gap-0 list-none m-0 p-0">
             {navItems.map((item) => (
               <li
                 key={item.label}
-                className={styles.navItem}
+                className="relative"
                 onMouseEnter={() => handleMouseEnter(item.label)}
                 onMouseLeave={handleMouseLeave}
               >
-                <Link href={item.href} className={styles.navLink}>
+                <Link href={item.href} className={`flex items-center gap-1 font-display text-[15px] font-medium uppercase tracking-wider text-[#111111] no-underline whitespace-nowrap leading-none transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:text-primary ${isScrolled ? 'py-1.5 px-2' : 'py-2 px-2.5'}`}>
                   {item.label}
                   {item.children && (
-                    <span className={styles.chevron}>
+                    <span className="inline-flex items-center text-base text-[#1d2357] mt-[-1px] transition-transform duration-200">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 16.379 9.336"
@@ -204,13 +213,13 @@ export default function Header() {
                 </Link>
                 {item.children && openDropdown === item.label && (
                   <ul
-                    className={styles.dropdown}
+                    className="absolute top-[calc(100%+4px)] left-0 bg-white rounded-md shadow-[0_8px_28px_rgba(0,0,0,0.13)] min-w-[230px] list-none p-1.5 m-0 border border-black/7 z-50"
                     onMouseEnter={handleDropdownMouseEnter}
                     onMouseLeave={handleDropdownMouseLeave}
                   >
                     {item.children.map((child) => (
                       <li key={child.label}>
-                        <Link href={child.href} className={styles.dropdownLink}>
+                        <Link href={child.href} className="block py-[9px] px-[18px] font-display text-[15px] font-medium uppercase tracking-wider text-[#333] no-underline transition-all duration-200 hover:text-primary hover:pl-[24px]">
                           {child.label}
                         </Link>
                       </li>
@@ -223,61 +232,61 @@ export default function Header() {
         </nav>
 
         {/* ── CTA Buttons ── */}
-        <div className={styles.headerCtas}>
+        <div className="flex gap-1.5 shrink-0 max-[1200px]:hidden">
           <Link
             href="/register"
-            className={`${styles.ctaBtn} ${styles.ctaBtnPrimary}`}
+            className={`group relative inline-flex items-center justify-start rounded-full bg-[#005eb8] text-white no-underline font-display font-medium uppercase leading-none shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:opacity-88 hover:-translate-y-[1px] ${isScrolled ? 'h-[36px] min-w-[130px] text-[clamp(0.65rem,0.6vw,0.8rem)] pl-3.5 pr-[38px]' : 'h-[42px] min-w-[150px] text-[clamp(0.72rem,0.7vw,0.9rem)] pl-4 pr-11'}`}
           >
             Register to Attend
-            <span className={styles.ctaBtnArrow}>›</span>
+            <span className={`absolute right-1 top-1/2 -translate-y-1/2 rounded-full bg-[#d9d9d9] flex items-center justify-center text-[#1d2357] font-normal border-[#1d2357] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:bg-white group-hover:scale-[1.02] ${isScrolled ? 'w-[28px] h-[28px] text-[1rem] border-[1.5px]' : 'w-[34px] h-[34px] text-[1.3rem] border-2'}`}>›</span>
           </Link>
           <Link
             href="/exhibitors/why-exhibit"
-            className={`${styles.ctaBtn} ${styles.ctaBtnSecondary}`}
+            className={`group relative inline-flex items-center justify-start rounded-full bg-[#005eb8] text-white no-underline font-display font-medium uppercase leading-none shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:opacity-88 hover:-translate-y-[1px] ${isScrolled ? 'h-[36px] min-w-[130px] text-[clamp(0.65rem,0.6vw,0.8rem)] pl-3.5 pr-[38px]' : 'h-[42px] min-w-[150px] text-[clamp(0.72rem,0.7vw,0.9rem)] pl-4 pr-11'}`}
           >
             Exhibit / Sponsor
-            <span className={styles.ctaBtnArrow}>›</span>
+            <span className={`absolute right-1 top-1/2 -translate-y-1/2 rounded-full bg-[#d9d9d9] flex items-center justify-center text-[#1d2357] font-normal border-[#1d2357] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:bg-white group-hover:scale-[1.02] ${isScrolled ? 'w-[28px] h-[28px] text-[1rem] border-[1.5px]' : 'w-[34px] h-[34px] text-[1.3rem] border-2'}`}>›</span>
           </Link>
         </div>
 
         {/* ── Hamburger ── */}
         <button
-          className={styles.hamburger}
+          className={`hidden max-[900px]:flex flex-col bg-none border-none cursor-pointer p-1 ml-auto z-[101] transition-[gap] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'gap-[4px]' : 'gap-[5px]'}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
         >
-          <span className={mobileOpen ? styles.hamburgerOpen : ''} />
-          <span className={mobileOpen ? styles.hamburgerOpen : ''} />
-          <span className={mobileOpen ? styles.hamburgerOpen : ''} />
+          <span className={`block h-[2px] rounded-[2px] transition-all duration-250 ${mobileOpen ? 'bg-[#1cb7cf]' : 'bg-[#011b2e]'} ${isScrolled ? 'w-[22px]' : 'w-6'}`} />
+          <span className={`block h-[2px] rounded-[2px] transition-all duration-250 ${mobileOpen ? 'bg-[#1cb7cf]' : 'bg-[#011b2e]'} ${isScrolled ? 'w-[22px]' : 'w-6'}`} />
+          <span className={`block h-[2px] rounded-[2px] transition-all duration-250 ${mobileOpen ? 'bg-[#1cb7cf]' : 'bg-[#011b2e]'} ${isScrolled ? 'w-[22px]' : 'w-6'}`} />
         </button>
       </div>
 
       {/* ── Mobile Nav ── */}
       {mobileOpen && (
-        <div className={styles.mobileNav}>
-          <ul className={styles.mobileNavList}>
+        <div className={`fixed left-0 right-0 bottom-0 bg-white border-t border-black/7 overflow-y-auto z-50 animate-[slideIn_0.3s_ease] transition-[top] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'top-[60px]' : 'top-[70px]'}`}>
+          <ul className="list-none p-0 m-0">
             {navItems.map((item) => (
-              <li key={item.label} className={styles.mobileNavItem}>
+              <li key={item.label} className="border-b border-black/6">
                 <button
-                  className={styles.mobileNavToggle}
+                  className="w-full flex justify-between items-center py-[15px] px-6 bg-transparent border-none font-body text-[0.82rem] font-bold uppercase tracking-wider text-[#011b2e] cursor-pointer transition-colors duration-200 hover:bg-[#1cb7cf]/5"
                   onClick={() =>
                     setOpenDropdown(openDropdown === item.label ? null : item.label)
                   }
                   aria-expanded={openDropdown === item.label}
                 >
                   {item.label}
-                  <span className={styles.mobileNavToggleIcon}>
+                  <span className="text-[1.2rem] font-semibold text-[#1cb7cf]">
                     {openDropdown === item.label ? '−' : '+'}
                   </span>
                 </button>
                 {openDropdown === item.label && item.children && (
-                  <ul className={styles.mobileDropdown}>
+                  <ul className="bg-[#f6f8fa] list-none p-0 m-0 animate-[fadeIn_0.2s_ease]">
                     {item.children.map((child) => (
                       <li key={child.label}>
                         <Link
                           href={child.href}
-                          className={styles.mobileDropdownLink}
+                          className="block py-[11px] px-8 font-body text-[0.8rem] text-[#444] no-underline font-medium uppercase transition-all duration-150 hover:text-[#1cb7cf] hover:bg-[#1cb7cf]/4"
                           onClick={() => setMobileOpen(false)}
                         >
                           {child.label}
@@ -288,17 +297,17 @@ export default function Header() {
                 )}
               </li>
             ))}
-            <li className={styles.mobileCtas}>
+            <li className="p-[18px] px-6 flex flex-col gap-2">
               <Link
                 href="/register"
-                className={`${styles.mobileCtaBtn} ${styles.mobileCtaBtnPrimary}`}
+                className="flex items-center justify-center w-full py-3.5 px-5 rounded-[50px] font-display text-[0.8rem] font-semibold uppercase tracking-widest no-underline text-center transition-all duration-200 bg-[#1cb7cf] text-white hover:bg-[#159eb3]"
                 onClick={() => setMobileOpen(false)}
               >
                 Register to Attend
               </Link>
               <Link
                 href="/exhibitors/why-exhibit"
-                className={`${styles.mobileCtaBtn} ${styles.mobileCtaBtnSecondary}`}
+                className="flex items-center justify-center w-full py-3.5 px-5 rounded-[50px] font-display text-[0.8rem] font-semibold uppercase tracking-widest no-underline text-center transition-all duration-200 bg-[#011b2e] text-white hover:bg-[#022a44]"
                 onClick={() => setMobileOpen(false)}
                 style={{ marginTop: 8 }}
               >

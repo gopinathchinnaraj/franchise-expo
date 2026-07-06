@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import styles from './IntroSlider.module.css';
 
 const slides = [
     'https://www.franchiseexpo.com/images/slider/cache/54c1e4c9b0de8a2285420d650a8a3cba/SPEAKING-OPPORTUNITIES.webp',
@@ -21,25 +20,25 @@ export default function IntroSlider() {
     }, []);
 
     return (
-        <div className={styles.sliderWrap}>
+        <div className="relative w-full overflow-hidden rounded-[2px]">
             <div
-                className={styles.sliderTrack}
+                className="flex transition-transform duration-700 ease-in-out w-full"
                 style={{ transform: `translateX(-${current * 100}%)` }}
             >
                 {slides.map((img, i) => (
                     <div
                         key={i}
-                        className={styles.slide}
+                        className="min-w-full h-[410px] bg-cover bg-center shrink-0 max-md:h-[380px] max-sm:h-[260px]"
                         style={{ backgroundImage: `url(${img})` }}
                     />
                 ))}
             </div>
 
-            <div className={styles.dots}>
+            <div className="flex justify-center gap-3.5 mt-5">
                 {slides.map((_, i) => (
                     <button
                         key={i}
-                        className={`${styles.dot} ${current === i ? styles.activeDot : ''}`}
+                        className={`w-3.5 h-3.5 max-sm:w-[11px] max-sm:h-[11px] rounded-full border-none p-0 cursor-pointer transition-colors duration-250 ${current === i ? 'bg-[#0077cc]' : 'bg-[#d2d2d2]'}`}
                         onClick={() => setCurrent(i)}
                         aria-label={`Go to slide ${i + 1}`}
                     />

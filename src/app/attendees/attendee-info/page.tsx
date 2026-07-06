@@ -1,10 +1,7 @@
-"use client";
+'use client';
 
 import { useState } from 'react';
 import PageBanner from '@/components/PageBanner';
-import styles from './page.module.css';
-
-// Metadata removed - it cannot be used with "use client"
 
 const attendeeCards = [
   {
@@ -49,12 +46,12 @@ export default function AttendeeInfoPage() {
         ctaText="Register to Attend"
       />
 
-      <section className="section">
-        <div className="container">
+      <section className="py-20 px-5">
+        <div className="max-w-[1280px] mx-auto px-6">
           {/* Intro paragraph */}
-          <div className={styles.introPara}>
-            <p>
-              Whether you're an aspiring entrepreneur ready to take control of your future or a current
+          <div className="max-w-full mx-auto mb-[70px] text-start">
+            <p className="text-base font-semibold leading-[1.9] text-[#444]">
+              Whether you&apos;re an aspiring entrepreneur ready to take control of your future or a current
               business owner exploring expansion through franchising, the Franchise Expo is your gateway
               to success. This premier event provides the tools, resources, and connections needed to
               navigate the world of franchising confidently. Discover a wide range of franchise
@@ -63,11 +60,11 @@ export default function AttendeeInfoPage() {
           </div>
 
           {/* 4-up flip cards */}
-          <div className={`grid grid-4 ${styles.cardsGrid}`}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             {attendeeCards.map((card, index) => (
               <div
                 key={index}
-                className={`${styles.infoCard} ${flipped[index] ? styles.flipped : ''}`}
+                className="group relative overflow-hidden h-[360px] max-lg:h-[320px] max-md:h-[300px] max-sm:h-[260px] block no-underline bg-black w-full cursor-pointer"
                 onClick={() => toggleFlip(index)}
                 onKeyDown={(event) => {
                   if (event.key === 'Enter' || event.key === ' ') {
@@ -79,20 +76,16 @@ export default function AttendeeInfoPage() {
                 tabIndex={0}
                 aria-pressed={flipped[index]}
               >
-                <div className={styles.cardInner}>
-                  <div className={`${styles.cardFace} ${styles.cardFront}`}>
-                    <div 
-                      className={styles.cardImg}
-                      style={{ backgroundImage: `url(${card.image})` }}
-                    />
-                  </div>
+                <div
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-600 ease-out group-hover:scale-105 after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-t after:from-black/45 after:via-black/12 after:via-[45%] after:to-black/3"
+                  style={{ backgroundImage: `url(${card.image})` }}
+                />
 
-                  <div className={`${styles.cardFace} ${styles.cardBack}`}>
-                    <div className={styles.cardBody}>
-                      <h5 className={styles.cardTitle}>{card.title}</h5>
-                      <p className={styles.cardText}>{card.description}</p>
-                    </div>
+                <div className={`absolute left-0 bottom-0 w-full h-full bg-[#18B7D0] px-6 pb-6 max-lg:px-5 max-lg:pb-5 max-md:px-4 max-md:pb-4 z-10 flex flex-col items-center justify-start transition-transform duration-[550ms] ease-out before:content-[''] before:absolute before:-top-2.5 before:left-1/2 before:-translate-x-1/2 before:border-x-8 before:border-x-transparent before:border-b-[10px] before:border-b-[#144380] ${flipped[index] ? 'translate-y-0' : 'translate-y-[calc(100%-80px)] max-lg:translate-y-[calc(100%-72px)] max-md:translate-y-[calc(100%-66px)] max-sm:translate-y-[calc(100%-58px)] group-hover:translate-y-0'}`}>
+                  <div className="h-20 max-lg:h-[72px] max-md:h-[66px] max-sm:h-[58px] w-full flex items-center justify-center shrink-0">
+                    <h5 className="font-display text-[1.35rem] !leading-[1.15] font-bold uppercase text-center text-white m-0 !p-0 px-2 max-lg:text-[1.2rem] max-md:text-[1.05rem] max-sm:text-[0.9rem]">{card.title}</h5>
                   </div>
+                  <p className={`mt-4 text-white text-[0.92rem] max-lg:text-[0.88rem] max-md:text-[0.85rem] max-sm:text-[0.82rem] leading-[1.75] max-md:leading-[1.65] max-sm:leading-[1.6] transition-all duration-[450ms] ease-out text-center w-full ${flipped[index] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0'}`}>{card.description}</p>
                 </div>
               </div>
             ))}

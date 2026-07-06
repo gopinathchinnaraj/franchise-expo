@@ -1,7 +1,6 @@
 "use client";
 
 import PageBanner from "@/components/PageBanner";
-import styles from "./ExhibitorList.module.css";
 import {
     Search,
     ChevronDown,
@@ -13,11 +12,9 @@ import {
     ShoppingCart,
     Video,
     MapPin,
-    Building2,
 } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 
 const alphabet = ["#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
@@ -123,7 +120,6 @@ export default function ExhibitorList() {
         const initials = getInitials(name);
         return (
             <div
-                className={styles.dummyLogo}
                 style={{
                     backgroundColor: bgColor,
                     width: size,
@@ -133,8 +129,9 @@ export default function ExhibitorList() {
                     alignItems: 'center',
                     justifyContent: 'center',
                 }}
+                className="shrink-0 text-white font-bold font-display"
             >
-                <span className={styles.dummyLogoText} style={{ fontSize: size * 0.4 }}>
+                <span style={{ fontSize: size * 0.4 }}>
                     {initials}
                 </span>
             </div>
@@ -142,95 +139,96 @@ export default function ExhibitorList() {
     };
 
     return (
-        <main className={styles.page}>
+        <main className="w-full bg-[#f0f2f5]">
             <PageBanner title="Exhibitor List" />
 
-            <section className={styles.exhibitorSection}>
-                <div className={styles.layout}>
+            <section className="py-8 px-6 pb-20 max-sm:py-5 max-sm:px-4 max-sm:pb-[60px]">
+                <div className="max-w-[1400px] mx-auto flex gap-5 items-start max-lg:flex-col">
 
                     {/* SIDEBAR */}
-                    <aside className={styles.sidebar}>
-                        <div className={styles.sideSearch}>
-                            <Search size={16} />
+                    <aside className="w-[185px] shrink-0 flex flex-col gap-0 max-lg:w-full">
+                        <div className="flex items-center gap-2 bg-white border border-[#dde3ea] rounded-md p-2 mb-3">
+                            <Search size={16} className="text-[#9aa6b2] shrink-0" />
                             <input
                                 type="text"
                                 placeholder="Search"
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
+                                className="flex-1 border-none outline-none text-[13px] text-[#011b2e] bg-transparent min-w-0"
                             />
                             {searchQuery && (
-                                <button onClick={() => setSearchQuery("")}><X size={14} /></button>
+                                <button onClick={() => setSearchQuery("")} className="bg-transparent border-none cursor-pointer p-0 text-[#9aa6b2] flex items-center"><X size={14} /></button>
                             )}
                         </div>
 
-                        <div className={styles.alphabetGrid}>
+                        <div className="grid grid-cols-4 max-lg:grid-cols-8 gap-0.5 bg-white border border-[#dde3ea] rounded-md p-1.5 mb-4">
                             {alphabet.map(letter => (
                                 <button
                                     key={letter}
                                     onClick={() => setActiveLetter(activeLetter === letter ? null : letter)}
-                                    className={`${styles.letterBtn} ${activeLetter === letter ? styles.active : ""}`}
+                                    className={`bg-transparent border-none py-1.25 px-0.5 text-[13px] font-medium text-[#011b2e] cursor-pointer rounded transition-all duration-150 hover:bg-[#f0f2f5] text-center leading-none ${activeLetter === letter ? "bg-[#1a3a5c] text-white hover:bg-[#1a3a5c]" : ""}`}
                                 >
                                     {letter}
                                 </button>
                             ))}
-                            <button className={styles.clearLetterBtn} onClick={() => setActiveLetter(null)}>
+                            <button className="bg-transparent border-none py-1.25 px-0.5 text-[11px] font-semibold text-[#1a3a5c] cursor-pointer rounded text-center col-span-2 hover:underline" onClick={() => setActiveLetter(null)}>
                                 CLEAR
                             </button>
                         </div>
 
-                        <div className={styles.sideFilterGroup}>
-                            <label>Type</label>
-                            <div className={styles.selectWrapper}>
-                                <select value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
+                        <div className="flex flex-col gap-1.5 mb-3.5">
+                            <label className="text-[12px] font-semibold text-[#011b2e]">Type</label>
+                            <div className="relative">
+                                <select value={selectedType} onChange={(e) => setSelectedType(e.target.value)} className="appearance-none w-full bg-white border border-[#dde3ea] rounded-md py-2 pl-2.5 pr-7 text-[13px] text-[#011b2e] cursor-pointer">
                                     {types.map(t => <option key={t}>{t}</option>)}
                                 </select>
-                                <ChevronDown size={14} />
+                                <ChevronDown size={14} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#9aa6b2] pointer-events-none" />
                             </div>
                         </div>
 
-                        <div className={styles.sideFilterGroup}>
-                            <label>Exhibitor Categories</label>
-                            <div className={styles.selectWrapper}>
-                                <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+                        <div className="flex flex-col gap-1.5 mb-3.5">
+                            <label className="text-[12px] font-semibold text-[#011b2e]">Exhibitor Categories</label>
+                            <div className="relative">
+                                <select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)} className="appearance-none w-full bg-white border border-[#dde3ea] rounded-md py-2 pl-2.5 pr-7 text-[13px] text-[#011b2e] cursor-pointer">
                                     {categories.map(c => <option key={c}>{c}</option>)}
                                 </select>
-                                <ChevronDown size={14} />
+                                <ChevronDown size={14} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#9aa6b2] pointer-events-none" />
                             </div>
                         </div>
 
-                        <div className={styles.filterLogicRow}>
-                            <span className={styles.filtersLabel}>Filters:</span>
+                        <div className="flex items-center gap-1.5 mb-3 flex-wrap">
+                            <span className="text-[13px] font-medium text-[#011b2e]">Filters:</span>
                             <button
-                                className={`${styles.logicBtn} ${filterLogic === "AND" ? styles.logicActive : ""}`}
+                                className={`py-1 px-3 text-[12px] font-semibold border border-[#dde3ea] rounded bg-white cursor-pointer transition-all duration-150 text-[#5f6b76] ${filterLogic === "AND" ? "bg-[#1a3a5c] text-white border-[#1a3a5c]" : ""}`}
                                 onClick={() => setFilterLogic("AND")}
                             >AND</button>
                             <button
-                                className={`${styles.logicBtn} ${filterLogic === "OR" ? styles.logicActive : ""}`}
+                                className={`py-1 px-3 text-[12px] font-semibold border border-[#dde3ea] rounded bg-white cursor-pointer transition-all duration-150 text-[#5f6b76] ${filterLogic === "OR" ? "bg-[#1a3a5c] text-white border-[#1a3a5c]" : ""}`}
                                 onClick={() => setFilterLogic("OR")}
                             >OR</button>
-                            <span className={styles.infoIcon}>ℹ</span>
+                            <span className="w-[18px] h-[18px] bg-[#1a3a5c] text-white rounded-full inline-flex items-center justify-center text-[11px] font-bold cursor-pointer shrink-0">ℹ</span>
                         </div>
 
-                        <div className={styles.sideShowing}>
-                            <span>Showing: <strong>{filteredExhibitors.length} results</strong></span>
+                        <div className="text-[13px] text-[#5f6b76] mb-2">
+                            <span>Showing: <strong className="text-[#011b2e]">{filteredExhibitors.length} results</strong></span>
                         </div>
 
                         {hasActiveFilters && (
-                            <button onClick={clearFilters} className={styles.clearAllBtn}>CLEAR ALL</button>
+                            <button onClick={clearFilters} className="bg-transparent border-none text-[12px] font-bold text-[#5f6b76] cursor-pointer text-left p-0 mb-4 tracking-wider hover:underline">CLEAR ALL</button>
                         )}
 
-                        <div className={styles.sideView}>
-                            <span className={styles.viewLabel}>View</span>
-                            <div className={styles.viewToggleGroup}>
+                        <div className="flex items-center gap-2 flex-wrap">
+                            <span className="text-[13px] text-[#5f6b76]">View</span>
+                            <div className="flex gap-1">
                                 <button
-                                    className={`${styles.viewBtn} ${viewMode === "grid" ? styles.viewActive : ""}`}
+                                    className={`w-9 h-9 flex items-center justify-center border border-[#dde3ea] rounded-md bg-white cursor-pointer text-[#9aa6b2] transition-all duration-150 hover:bg-[#f0f2f5] ${viewMode === "grid" ? "bg-[#1a3a5c] border-[#1a3a5c] text-white" : ""}`}
                                     onClick={() => setViewMode("grid")}
                                     title="Grid view"
                                 >
                                     <Grid size={18} />
                                 </button>
                                 <button
-                                    className={`${styles.viewBtn} ${viewMode === "list" ? styles.viewActive : ""}`}
+                                    className={`w-9 h-9 flex items-center justify-center border border-[#dde3ea] rounded-md bg-white cursor-pointer text-[#9aa6b2] transition-all duration-150 hover:bg-[#f0f2f5] ${viewMode === "list" ? "bg-[#1a3a5c] border-[#1a3a5c] text-white" : ""}`}
                                     onClick={() => setViewMode("list")}
                                     title="List view"
                                 >
@@ -238,7 +236,7 @@ export default function ExhibitorList() {
                                 </button>
                             </div>
                             <button
-                                className={`${styles.viewListBtn} ${viewMode === "list" ? styles.viewListActive : ""}`}
+                                className={`text-[13px] font-medium bg-transparent border-none cursor-pointer p-0 ${viewMode === "list" ? "text-[#1a3a5c] font-semibold" : "text-[#9aa6b2]"}`}
                                 onClick={() => setViewMode("list")}
                             >
                                 View List
@@ -247,55 +245,55 @@ export default function ExhibitorList() {
                     </aside>
 
                     {/* MAIN CONTENT */}
-                    <div className={styles.mainContent}>
+                    <div className="flex-1 min-w-0 w-full">
 
                         {/* LIST VIEW */}
                         {viewMode === "list" && (
-                            <div className={styles.listView}>
+                            <div className="flex flex-col gap-0">
                                 {filteredExhibitors.map((item, index) => {
                                     const slug = toSlug(item.name);
                                     const isExpanded = expandedSlug === slug;
                                     return (
-                                        <div key={index} className={styles.listItem}>
+                                        <div key={index} className="flex flex-col">
                                             {/* ROW */}
                                             <div
-                                                className={`${styles.listRow} ${isExpanded ? styles.listRowExpanded : ""}`}
+                                                className={`flex items-center bg-[#1a3a5c] px-4 h-[52px] gap-3 border-b border-white/8 cursor-pointer transition-colors duration-150 hover:bg-[#1f4570] ${index === 0 ? "rounded-t-md" : ""} ${index === filteredExhibitors.length - 1 && !isExpanded ? "rounded-b-md border-b-0" : ""} ${isExpanded ? "bg-[#1f4570] border-b-0" : ""}`}
                                                 onClick={() => toggleExpand(item.name)}
                                             >
-                                                <span className={styles.featuredBadge}>FEATURED</span>
-                                                <span className={styles.listName}>{item.name}</span>
-                                                <div className={styles.listIcons}>
+                                                <span className="text-[11px] font-bold text-white bg-[#2a4f78] px-2.5 py-1 rounded-sm tracking-wider whitespace-nowrap shrink-0">FEATURED</span>
+                                                <span className="flex-1 text-[15px] max-sm:text-[13px] font-semibold text-white font-display min-w-0 overflow-hidden text-ellipsis whitespace-nowrap">{item.name}</span>
+                                                <div className="flex items-center gap-1.5 text-white/60 shrink-0">
                                                     {item.hasIcons.monitor && <Monitor size={16} />}
                                                     {item.hasIcons.cart && <ShoppingCart size={16} />}
                                                     {item.hasIcons.video && <Video size={16} />}
                                                 </div>
-                                                <div className={styles.listStand}>
-                                                    <span className={styles.standLabel}>Stand:</span>
-                                                    <span className={styles.standValue}>{item.stand}</span>
+                                                <div className="flex items-center gap-1 shrink-0">
+                                                    <span className="text-[13px] text-white/60">Stand:</span>
+                                                    <span className="text-[13px] font-semibold text-white">{item.stand}</span>
                                                 </div>
-                                                <span className={styles.expandIcon}>
+                                                <span className="text-white/70 flex items-center shrink-0">
                                                     {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                                                 </span>
                                             </div>
 
                                             {/* DROPDOWN CARD - WITH DUMMY LOGO */}
                                             {isExpanded && (
-                                                <div className={styles.dropdownPanel}>
-                                                    <div className={styles.dropdownCard}>
-                                                        <div className={styles.dropdownLogoBox}>
-                                                            <DummyLogo name={item.name} size={80} />
+                                                <div className={`bg-[#f0f4f8] border border-[#dde3ea] border-t-0 p-4 ${index === filteredExhibitors.length - 1 ? "rounded-b-md" : ""}`}>
+                                                    <div className="flex items-center gap-4 bg-white border border-[#dde3ea] rounded-lg p-4">
+                                                        <div className="w-16 h-16 bg-[#e8edf4] rounded-lg flex items-center justify-center shrink-0">
+                                                            <DummyLogo name={item.name} size={50} />
                                                         </div>
-                                                        <div className={styles.dropdownInfo}>
-                                                            <span className={styles.dropdownCategory}>{item.category}</span>
-                                                            <h3 className={styles.dropdownName}>{item.name}</h3>
-                                                            <div className={styles.dropdownStand}>
-                                                                <MapPin size={13} />
+                                                        <div className="flex-1 flex flex-col gap-1 min-w-0">
+                                                            <span className="text-[10px] font-bold text-[#9aa6b2] tracking-wider uppercase">{item.category}</span>
+                                                            <h3 className="text-base font-bold text-[#011b2e] font-display m-0">{item.name}</h3>
+                                                            <div className="flex items-center gap-1 text-[13px] text-[#5f6b76]">
+                                                                <MapPin size={13} className="text-[#1a3a5c] shrink-0" />
                                                                 <span>Stand: {item.stand}</span>
                                                             </div>
-                                                            <span className={styles.dropdownType}>{item.type}</span>
+                                                            <span className="inline-block text-[11px] font-bold text-[#1a3a5c] bg-[#e8edf4] rounded px-2 py-0.5 w-fit mt-0.5">{item.type}</span>
                                                         </div>
                                                         <button
-                                                            className={styles.viewDetailsBtn}
+                                                            className="bg-[#1a3a5c] text-white border-none rounded-md px-5 py-2.5 text-[13px] font-bold cursor-pointer whitespace-nowrap shrink-0 transition-colors duration-150 hover:bg-[#1f4570]"
                                                             onClick={(e) => {
                                                                 e.stopPropagation();
                                                                 navigateTo(item.name);
@@ -314,39 +312,39 @@ export default function ExhibitorList() {
 
                         {/* GRID VIEW - WITH DUMMY LOGO */}
                         {viewMode === "grid" && (
-                            <div className={styles.gridView}>
+                            <div className="grid grid-cols-6 max-xl:grid-cols-4 max-lg:grid-cols-3 max-sm:grid-cols-2 gap-3">
                                 {filteredExhibitors.map((item, index) => (
                                     <div
                                         key={index}
-                                        className={styles.gridCard}
+                                        className="bg-white rounded-md border border-[#dde3ea] overflow-hidden flex flex-col cursor-pointer transition-shadow duration-150 hover:shadow-lg"
                                         onClick={() => navigateTo(item.name)}
                                     >
-                                        <div className={styles.cardCategory}>{item.category}</div>
-                                        <div className={styles.cardLogo}>
-                                            <DummyLogo name={item.name} size={70} />
+                                        <div className="bg-[#f0f2f5] text-[10px] font-bold text-[#5f6b76] tracking-wider px-2.5 py-1 text-center">{item.category}</div>
+                                        <div className="h-[90px] flex items-center justify-center bg-white p-3">
+                                            <DummyLogo name={item.name} size={60} />
                                         </div>
-                                        <div className={styles.cardBody}>
-                                            <h3 className={styles.cardName}>{item.name}</h3>
-                                            <div className={styles.cardStandRow}>
-                                                <span className={styles.cardStandLabel}>Stand:</span>
-                                                <span className={styles.cardStandValue}>{item.stand}</span>
+                                        <div className="p-2.5 flex-1">
+                                            <h3 className="text-[13px] font-bold text-[#011b2e] mb-1 font-display leading-[1.3]">{item.name}</h3>
+                                            <div className="flex items-center gap-1 mb-1.5">
+                                                <span className="text-[12px] text-[#5f6b76]">Stand:</span>
+                                                <span className="text-[12px] font-semibold text-[#011b2e]">{item.stand}</span>
                                             </div>
-                                            <div className={styles.cardIcons}>
+                                            <div className="flex items-center gap-1.5 text-[#9aa6b2]">
                                                 {item.hasIcons.monitor && <Monitor size={14} />}
                                                 {item.hasIcons.cart && <ShoppingCart size={14} />}
                                                 {item.hasIcons.video && <Video size={14} />}
                                             </div>
                                         </div>
-                                        <div className={styles.cardFeaturedBadge}>FEATURED</div>
+                                        <div className="bg-[#1a3a5c] text-white text-center text-[11px] font-bold tracking-wider py-1.5">FEATURED</div>
                                     </div>
                                 ))}
                             </div>
                         )}
 
                         {filteredExhibitors.length === 0 && (
-                            <div className={styles.noResults}>
-                                <p>No exhibitors found matching your criteria.</p>
-                                <button onClick={clearFilters}>Clear Filters</button>
+                            <div className="text-center p-15 bg-white rounded-md">
+                                <p className="text-[#5f6b76] mb-5">No exhibitors found matching your criteria.</p>
+                                <button onClick={clearFilters} className="bg-[#1a3a5c] border-none px-6 py-2.5 rounded-full font-semibold cursor-pointer text-white">Clear Filters</button>
                             </div>
                         )}
                     </div>

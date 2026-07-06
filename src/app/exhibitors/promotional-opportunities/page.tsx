@@ -1,7 +1,4 @@
-"use client";
-
 import PageBanner from "@/components/PageBanner";
-import styles from "./PromotionalOpportunities.module.css";
 
 const opportunities = [
     {
@@ -68,18 +65,17 @@ const opportunities = [
 
 export default function PromotionalOpportunities() {
     return (
-        <main className={styles.page}>
+        <main className="w-full overflow-hidden bg-white">
 
             {/* HERO */}
-            
             <PageBanner title="Promotional Opportunities"/>
 
             {/* INTRO */}
-            <section className={styles.introSection}>
-                <div className={styles.container}>
+            <section className="pt-[90px] pb-10">
+                <div className="w-full max-w-[1440px] mx-auto px-6">
 
-                    <div className={styles.introContent}>
-                        <p>
+                    <div className="max-w-full">
+                        <p className="font-body text-[18px] max-sm:text-base font-medium leading-[1.9] text-[#444444] mb-5">
                             MFV Expositions’ franchise events provide the greatest
                             variety of opportunities to grow your business.
                             Make face-to-face connections with highly qualified
@@ -94,28 +90,28 @@ export default function PromotionalOpportunities() {
             </section>
 
             {/* CARDS */}
-            <section className={styles.cardsSection}>
-                <div className={styles.container}>
+            <section className="pb-20">
+                <div className="w-full max-w-[1440px] mx-auto px-6">
 
-                    <div className={styles.cardsGrid}>
+                    <div className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-[70px] max-sm:gap-6">
                         {opportunities.map((item, index) => (
-                            <div className={styles.card} key={index}>
+                            <div className="group relative h-[360px] overflow-hidden cursor-pointer bg-[#eee]" key={index}>
                                 <img
                                     src={item.image}
                                     alt={item.title}
-                                    className={styles.cardImage}
+                                    className="w-full h-full object-cover block"
                                 />
 
-                                <div className={styles.overlay}>
-                                    <div className={styles.triangle}></div>
+                                <div className="absolute left-0 bottom-0 w-full h-[110px] bg-[#00529b] p-7 transition-all duration-[450ms] ease-out group-hover:h-[70%]">
+                                    <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-[10px] border-b-[#00529b]"></div>
 
-                                    <h3>{item.title}</h3>
+                                    <h3 className="font-display text-[34px] max-sm:text-2xl leading-[1.1] uppercase text-white m-0">{item.title}</h3>
 
-                                    <div className={styles.hiddenContent}>
-                                        <p>{item.description}</p>
+                                    <div className="opacity-0 mt-5 translate-y-[30px] transition-all duration-400 ease-out group-hover:opacity-100 group-hover:translate-y-0">
+                                        <p className="text-white text-[18px] leading-[1.7] mb-4">{item.description}</p>
 
                                         {item.note && (
-                                            <span>{item.note}</span>
+                                            <span className="text-white italic font-bold text-[18px]">{item.note}</span>
                                         )}
                                     </div>
                                 </div>
@@ -127,17 +123,17 @@ export default function PromotionalOpportunities() {
             </section>
 
             {/* CONTACT */}
-            <section className={styles.contactSection}>
-                <div className={styles.container}>
-                    <div className={styles.contactCard}>
+            <section className="pb-[100px]">
+                <div className="w-full max-w-[1440px] mx-auto px-6">
+                    <div className="bg-[#f3f3f3] p-[55px_70px] max-sm:p-[50px_24px]">
 
-                        <h3>GET IN TOUCH</h3>
+                        <h3 className="font-display text-[58px] max-sm:text-[34px] leading-none uppercase text-[#011b2e] mb-7">GET IN TOUCH</h3>
 
-                        <p>
+                        <p className="text-[22px] max-sm:text-base leading-[1.5] text-[#011b2e] font-medium m-0">
                             If you're interested in participating,
                             <br />
                             please reach out to{" "}
-                            <a href="mailto:Linda.Thompson@comexposium.com">
+                            <a href="mailto:Linda.Thompson@comexposium.com" className="text-[#00539f] no-underline font-medium hover:underline">
                                 Linda.Thompson@comexposium.com
                             </a>
                         </p>

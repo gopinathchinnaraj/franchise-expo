@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import styles from "./ContactUs.module.css";
 import PageBanner from "@/components/PageBanner";
 
 const contactCards = [
@@ -74,43 +73,43 @@ export default function ContactUs() {
     };
 
     return (
-        <main className={styles.page}>
+        <main className="w-full bg-white overflow-hidden">
             {/* HERO */}
             <PageBanner title="Contact Us" />
 
             {/* CONTACT CARDS */}
-            <section className={styles.cardsSection}>
-                <div className={styles.container}>
-                    <div className={styles.grid}>
+            <section className="py-[35px] pb-[25px]">
+                <div className="w-full max-w-[1180px] mx-auto px-4 max-sm:px-3">
+                    <div className="flex flex-wrap gap-5 max-md:gap-4">
                         {contactCards.map((item, index) => (
-                            <div key={index} className={styles.card}>
-                                <div className={styles.imageWrap}>
+                            <div key={index} className="w-[280px] max-lg:w-[calc(50%-10px)] max-md:w-full bg-white border border-[#ececec] overflow-hidden group">
+                                <div className="relative w-full h-[205px] max-md:h-[240px] max-sm:h-[220px] overflow-hidden">
                                     <Image
                                         src={item.image}
                                         alt={item.name}
                                         fill
-                                        className={styles.image}
+                                        className="object-cover transition-transform duration-400 group-hover:scale-105"
                                     />
-                                    <span className={styles.category}>
+                                    <span className="absolute left-2 bottom-2 bg-black/45 text-white text-[10px] font-semibold p-[4px_8px]">
                                         {item.category}
                                     </span>
                                 </div>
 
-                                <div className={styles.cardContent}>
-                                    <p className={styles.cardTitle}>
+                                <div className="p-2.5">
+                                    <p className="text-[10px] font-bold text-[#111] mb-1 leading-normal">
                                         {item.title}
                                     </p>
-                                    <h3>{item.name}</h3>
-                                    <p className={styles.role}>
+                                    <h3 className="font-display text-[20px] max-md:text-[18px] leading-none uppercase text-[#111] mb-1">{item.name}</h3>
+                                    <p className="text-[11px] text-[#333] mb-2.5">
                                         {item.role}
                                     </p>
-                                    <div className={styles.info}>
-                                        <span>E: {item.email}</span>
-                                        <span>T: {item.phone}</span>
+                                    <div className="mb-3">
+                                        <span className="block text-[10px] leading-[1.7] text-[#111] break-words">E: {item.email}</span>
+                                        <span className="block text-[10px] leading-[1.7] text-[#111] break-words">T: {item.phone}</span>
                                     </div>
                                     <a
                                         href={`mailto:${item.email}`}
-                                        className={styles.button}
+                                        className="w-[calc(100%+20px)] -ml-2.5 -mr-2.5 -mb-2.5 h-[34px] bg-[#0068b3] text-white no-underline uppercase text-[10px] font-bold flex items-center justify-center transition-colors duration-300 hover:bg-[#00518d]"
                                     >
                                         Email Me
                                     </a>
@@ -122,10 +121,10 @@ export default function ContactUs() {
             </section>
 
             {/* CONTACT FORM */}
-            <section className={styles.formSection}>
-                <div className={styles.container}>
-                    <div className={styles.formWrapper}>
-                        <div className={styles.formLeft}>
+            <section className="py-2.5 pb-[60px]">
+                <div className="w-full max-w-[1180px] mx-auto px-4 max-sm:px-3">
+                    <div className="bg-transparent p-0 block">
+                        <div className="hidden">
                             <span>GET IN TOUCH</span>
                             <h2>We'd Love to Hear From You</h2>
                             <p>
@@ -134,70 +133,75 @@ export default function ContactUs() {
                             </p>
                         </div>
 
-                        <form className={styles.form} onSubmit={handleSubmit}>
-                            <div className={styles.row}>
-                                <div className={styles.formGroup}>
-                                    <label className={styles.label}>Full Name *</label>
+                        <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
+                            <div className="grid grid-cols-1 gap-2">
+                                <div className="w-full">
+                                    <label className="hidden">Full Name *</label>
                                     <input
                                         type="text"
-                                        placeholder="Enter your full name"
+                                        placeholder="Full Name *"
                                         value={formData.fullName}
                                         onChange={(e) =>
                                             setFormData({ ...formData, fullName: e.target.value })
                                         }
+                                        className="w-full border border-[#e8e8e8] bg-[#f4f4f4] rounded-none px-3 text-xs text-[#111] outline-none focus:border-[#0068b3] focus:bg-white h-[38px] max-sm:h-[36px]"
                                         required
                                     />
                                 </div>
-                                <div className={styles.formGroup}>
-                                    <label className={styles.label}>Company *</label>
+                                <div className="w-full">
+                                    <label className="hidden">Company *</label>
                                     <input
                                         type="text"
-                                        placeholder="Enter your company name"
+                                        placeholder="Company *"
                                         value={formData.company}
                                         onChange={(e) =>
                                             setFormData({ ...formData, company: e.target.value })
                                         }
+                                        className="w-full border border-[#e8e8e8] bg-[#f4f4f4] rounded-none px-3 text-xs text-[#111] outline-none focus:border-[#0068b3] focus:bg-white h-[38px] max-sm:h-[36px]"
                                         required
                                     />
                                 </div>
                             </div>
 
-                            <div className={styles.row}>
-                                <div className={styles.formGroup}>
-                                    <label className={styles.label}>Phone *</label>
+                            <div className="grid grid-cols-1 gap-2">
+                                <div className="w-full">
+                                    <label className="hidden">Phone *</label>
                                     <input
                                         type="tel"
-                                        placeholder="Enter your phone number"
+                                        placeholder="Phone *"
                                         value={formData.phone}
                                         onChange={(e) =>
                                             setFormData({ ...formData, phone: e.target.value })
                                         }
+                                        className="w-full border border-[#e8e8e8] bg-[#f4f4f4] rounded-none px-3 text-xs text-[#111] outline-none focus:border-[#0068b3] focus:bg-white h-[38px] max-sm:h-[36px]"
                                         required
                                     />
                                 </div>
-                                <div className={styles.formGroup}>
-                                    <label className={styles.label}>Email *</label>
+                                <div className="w-full">
+                                    <label className="hidden">Email *</label>
                                     <input
                                         type="email"
-                                        placeholder="Enter your email address"
+                                        placeholder="Email *"
                                         value={formData.email}
                                         onChange={(e) =>
                                             setFormData({ ...formData, email: e.target.value })
                                         }
+                                        className="w-full border border-[#e8e8e8] bg-[#f4f4f4] rounded-none px-3 text-xs text-[#111] outline-none focus:border-[#0068b3] focus:bg-white h-[38px] max-sm:h-[36px]"
                                         required
                                     />
                                 </div>
                             </div>
 
-                            <div className={styles.formGroup}>
-                                <label className={styles.label}>Which expos are you interested in?</label>
-                                <div className={styles.checkboxGrid}>
+                            <div className="w-full">
+                                <label className="hidden">Which expos are you interested in?</label>
+                                <div className="flex flex-col gap-1.5 mt-1">
                                     {events.map((event) => (
-                                        <label key={event} className={styles.checkbox}>
+                                        <label key={event} className="flex items-center gap-2 text-[11px] text-[#111]">
                                             <input
                                                 type="checkbox"
                                                 checked={formData.interests.includes(event)}
                                                 onChange={() => handleCheckboxChange(event)}
+                                                className="w-3.5 h-3.5"
                                             />
                                             <span>{event}</span>
                                         </label>
@@ -205,19 +209,20 @@ export default function ContactUs() {
                                 </div>
                             </div>
 
-                            <div className={styles.formGroup}>
-                                <label className={styles.label}>Do you have any comments?</label>
+                            <div className="w-full">
+                                <label className="hidden">Do you have any comments?</label>
                                 <textarea
                                     rows={4}
-                                    placeholder="Tell us more about your inquiry..."
+                                    placeholder="Do you have any comments?"
                                     value={formData.comments}
                                     onChange={(e) =>
                                         setFormData({ ...formData, comments: e.target.value })
                                     }
+                                    className="w-full border border-[#e8e8e8] bg-[#f4f4f4] rounded-none px-3 text-xs text-[#111] outline-none focus:border-[#0068b3] focus:bg-white h-[90px] max-sm:h-[80px] resize-y pt-2.5"
                                 />
                             </div>
 
-                            <button type="submit">SUBMIT</button>
+                            <button type="submit" className="w-20 h-7 border-none rounded-2xl bg-[#0068b3] text-white text-[10px] font-bold uppercase cursor-pointer mt-3 transition-colors duration-300 hover:bg-[#00518d]">SUBMIT</button>
                         </form>
                     </div>
                 </div>
