@@ -234,27 +234,27 @@ export default function Header() {
         {/* ── CTA Buttons ── */}
         <div className="flex gap-4 shrink-0 max-[1200px]:hidden">
           <Link 
-  href="/register" 
-  className={`group inline-flex items-center justify-between rounded-full bg-[#005eb8] text-white no-underline font-display uppercase tracking-wide shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-[1px] gap-6 pl-8 pr-2 ${ 
-    isScrolled 
-      ? 'h-[47px] min-w-[220px] text-[15px] leading-[1.3]' 
-      : 'h-[57px] min-w-[240px] text-[15px] leading-[1.4]' 
-  }`} 
-> 
-  <span className="block text-left whitespace-pre-line font-bold"> 
-    {`REQUEST ATTENDEE\nINFORMATION`} 
-  </span> 
-
-  <span className={`rounded-full bg-[#ebebeb] flex items-center justify-center text-[#121c4e] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:bg-white shrink-0 ${ 
-    isScrolled 
-      ? 'w-[34px] h-[34px]' 
-      : 'w-[44px] h-[44px]' 
-  }`} > 
-    <svg className="w-[45%] h-[45%] stroke-[#121c4e] stroke-[2.5] fill-none" viewBox="0 0 24 24"> 
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /> 
-    </svg> 
-  </span> 
-</Link>
+            href="/register" 
+            className={`group inline-flex items-center justify-between rounded-full bg-[#005eb8] text-white no-underline font-display uppercase tracking-wide shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-[1px] gap-6 pl-8 pr-2 ${ 
+              isScrolled 
+                ? 'h-[47px] min-w-[220px] text-[15px] leading-[1.3]' 
+                : 'h-[57px] min-w-[240px] text-[15px] leading-[1.4]' 
+            }`} 
+          > 
+            <span className="block text-left whitespace-pre-line"> 
+              {`REQUEST ATTENDEE\nINFORMATION`} 
+            </span> 
+          
+            <span className={`rounded-full bg-[#ebebeb] flex items-center justify-center text-[#121c4e] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:bg-white shrink-0 ${ 
+              isScrolled 
+                ? 'w-[34px] h-[34px]' 
+                : 'w-[44px] h-[44px]' 
+            }`} > 
+              <svg className="w-[45%] h-[45%] stroke-[#121c4e] stroke-[2.5] fill-none" viewBox="0 0 24 24"> 
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /> 
+              </svg> 
+            </span> 
+          </Link>
 
             
           <Link
