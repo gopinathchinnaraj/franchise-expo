@@ -10,7 +10,7 @@ import {
 
 export default function SocialFixed() {
     return (
-        <div className="fixed top-1/2 right-[18px] max-md:right-[10px] -translate-y-1/2 flex flex-col gap-[14px] max-md:gap-[10px] z-[9999]">
+        <div className="fixed top-1/2 right-[18px] max-md:right-[10px] -translate-y-1/2 flex flex-col gap-[14px] max-md:gap-[10px] z-[9999] max-[1023px]:hidden">
 
             <Link
                 href="https://www.linkedin.com/company/mfvexpo/"
