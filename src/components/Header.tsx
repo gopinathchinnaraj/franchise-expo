@@ -240,7 +240,7 @@ export default function Header() {
           {/* ── CTA Buttons ── */}
           <div className="flex gap-4 shrink-0 ml-6 max-[1525px]:ml-3">
             <Link
-              href="/register"
+              href="/register?tab=visitor"
               className={`group inline-flex items-center justify-between rounded-full bg-[#005eb8] text-[#ffffff] no-underline font-display uppercase tracking-wide shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-[1px] gap-4 max-[1525px]:gap-2 ${
                 isScrolled
                   ? 'h-[47px] min-w-[200px] min-[1825px]:min-w-[280px] max-[1525px]:min-w-[170px] text-[15px] max-[1525px]:text-[13px] leading-[1.3] pl-6 max-[1525px]:pl-4 pr-2'
@@ -262,7 +262,7 @@ export default function Header() {
             </Link>
 
             <Link
-              href="/exhibitors/why-exhibit"
+              href="/register?tab=exhibitor"
               className={`group relative inline-flex items-center justify-start rounded-full bg-[#034694] text-white no-underline font-display uppercase tracking-wide shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-[1px] ${
                 isScrolled
                   ? 'h-[47px] min-w-[130px] min-[1825px]:min-w-[190px] max-[1525px]:min-w-[110px] text-[15px] max-[1525px]:text-[13px] leading-[1.2] pl-6 max-[1525px]:pl-4 pr-[54px] max-[1525px]:pr-[46px]'
@@ -379,7 +379,7 @@ export default function Header() {
           <div className="flex flex-col items-center gap-4 py-8 px-6 shrink-0">
             {/* Request Attendee Information */}
             <Link
-              href="/register"
+              href="/register?tab=visitor"
               className="group w-full max-w-[420px] inline-flex items-center justify-between h-[56px] pl-7 pr-[6px] rounded-full bg-[#005eb8] text-white no-underline font-display text-[13px] uppercase tracking-wider transition-all duration-300 hover:bg-[#004f99] hover:-translate-y-[1px]"
               onClick={() => setMobileOpen(false)}
             >
@@ -393,7 +393,7 @@ export default function Header() {
 
             {/* Exhibit / Sponsor */}
             <Link
-              href="/exhibitors/why-exhibit"
+              href="/register?tab=exhibitor"
               className="group w-full max-w-[420px] inline-flex items-center justify-between h-[56px] pl-7 pr-[6px] rounded-full bg-[#034694] text-white no-underline font-display text-[13px] uppercase tracking-wider transition-all duration-300 hover:bg-[#02366e] hover:-translate-y-[1px]"
               onClick={() => setMobileOpen(false)}
             >

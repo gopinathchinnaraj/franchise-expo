@@ -108,7 +108,7 @@ export async function getOrCreateUTMInCMS(utmData: any): Promise<CMSUTMCampaign 
     if (existing) return existing;
 
     // 2. Try to create — if it races and another tab/request already created it, fetch again
-    const FALLBACK_URL = 'https://www.franchiseexpo.com/';
+    const FALLBACK_URL = 'https://franchise-expo-tau.vercel.app/';
 
     function toAbsoluteUrl(raw: string | undefined): string {
         if (!raw) return FALLBACK_URL;

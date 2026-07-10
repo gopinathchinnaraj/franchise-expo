@@ -1,381 +1,116 @@
+// src/app/register/page.tsx
 "use client";
 
-import { useState } from "react"
-import PageBanner from "@/components/PageBanner"
-import { useUTMData } from "@/hooks/useUTMTracker"
-import { submitContactForm, PROJECT_ID_VAR } from "@/lib/graphql-client"
+import { Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import PageBanner from "@/components/PageBanner";
+import { TabKey, TAB_QUERY_PARAM, TAB_HERO_METADATA, getCleanTab } from "./tabConfig";
 
-export default function SpeakerApplication() {
-    const { utmData, campaign } = useUTMData();
-    const [formData, setFormData] = useState({
-        fullName: "",
-        company: "",
-        phone: "",
-        email: "",
-        events: [] as string[],
-        targetAudience: "",
-    })
+// Info Content components (Left Sticky Column)
+import VisitorContent from "./content/VisitorContent";
+import DelegateContent from "./content/DelegateContent";
+import ExhibitorContent from "./content/ExhibitorContent";
+import SpeakerContent from "./content/SpeakerContent";
+import EnquiryContent from "./content/EnquiryContent";
 
-    const [isSubmitting, setIsSubmitting] = useState(false)
-    const [isSubmitted, setIsSubmitted] = useState(false)
-    const [errors, setErrors] = useState<Record<string, string>>({})
+// Form components (Right Scroll Column)
+import VisitorForm from "./forms/VisitorForm";
+import DelegateForm from "./forms/DelegateForm";
+import ExhibitorForm from "./forms/ExhibitorForm";
+import SpeakerForm from "./forms/SpeakerForm";
+import EnquiryForm from "./forms/EnquiryForm";
 
-    const events = [
-        "International Franchise Expo",
-        "Franchise Expo South",
-        "Franchise Expo Cincinnati",
-        "Franchise Expo West",
-        "Franchise Expo Dallas",
-    ]
+const TABS: { key: TabKey; label: string }[] = [
+  { key: "visitor", label: "Visitor Registration" },
+  { key: "delegate", label: "Delegate Pass" },
+  { key: "exhibitor", label: "Exhibit / Sponsor" },
+  { key: "speaker", label: "Apply to Speak" },
+  { key: "enquiry", label: "General Enquiry" },
+];
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-        const { name, value } = e.target
-        setFormData({ ...formData, [name]: value })
-        if (errors[name]) {
-            setErrors({ ...errors, [name]: "" })
-        }
-    }
+function RegisterPageContent() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
-    const handleCheckboxChange = (event: string) => {
-        setFormData(prev => {
-            const events = prev.events.includes(event)
-                ? prev.events.filter(e => e !== event)
-                : [...prev.events, event]
-            return { ...prev, events }
-        })
-        if (errors.events) {
-            setErrors({ ...errors, events: "" })
-        }
-    }
+  // Read active tab key from URL query param, default to "visitor"
+  const rawTab = searchParams.get(TAB_QUERY_PARAM);
+  const activeTab = getCleanTab(rawTab);
 
-    const validateForm = () => {
-        const newErrors: Record<string, string> = {}
+  const handleTabChange = (tab: TabKey) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set(TAB_QUERY_PARAM, tab);
+    router.push(`/register?${params.toString()}`, { scroll: false });
+  };
 
-        if (!formData.fullName.trim()) {
-            newErrors.fullName = "Full name is required"
-        }
-        if (!formData.company.trim()) {
-            newErrors.company = "Company name is required"
-        }
-        if (!formData.phone.trim()) {
-            newErrors.phone = "Phone number is required"
-        }
-        if (!formData.email.trim()) {
-            newErrors.email = "Email is required"
-        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-            newErrors.email = "Please enter a valid email address"
-        }
-        if (formData.events.length === 0) {
-            newErrors.events = "Please select at least one event"
-        }
+  const hero = TAB_HERO_METADATA[activeTab];
 
-        setErrors(newErrors)
-        return Object.keys(newErrors).length === 0
-    }
+  return (
+    <>
+      {/* Dynamic SEO banner with subtitle */}
+      <PageBanner title={hero.title} subtitle={hero.subtitle} />
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault()
+      <div className="w-full max-w-[1200px] mx-auto px-5 py-12 pb-20">
+        
+        {/* Tab switcher navigation bar */}
+        <div className="w-full border-b border-gray-200 mb-10 overflow-x-auto no-scrollbar scroll-smooth">
+          <div className="flex gap-2 min-w-max pb-1">
+            {TABS.map((tab) => {
+              const isActive = tab.key === activeTab;
+              return (
+                <button
+                  key={tab.key}
+                  type="button"
+                  onClick={() => handleTabChange(tab.key)}
+                  className={`py-3 px-5 text-sm font-semibold border-b-2 font-display uppercase tracking-wider transition-all duration-200 cursor-pointer whitespace-nowrap ${
+                    isActive
+                      ? "border-[#005eb8] text-[#005eb8]"
+                      : "border-transparent text-black hover:text-[#005eb8]/80"
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
 
-        if (!validateForm()) {
-            return
-        }
+        {/* Responsive Sticky Split Column Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-10 items-start">
+          
+          {/* Sticky Left Column (Height fit is critical for sticky positioning) */}
+          <div className="lg:sticky lg:top-24 h-fit">
+            {activeTab === "visitor" && <VisitorContent />}
+            {activeTab === "delegate" && <DelegateContent />}
+            {activeTab === "exhibitor" && <ExhibitorContent />}
+            {activeTab === "speaker" && <SpeakerContent />}
+            {activeTab === "enquiry" && <EnquiryContent />}
+          </div>
 
-        setIsSubmitting(true)
+          {/* Scrolling Right Column (Form container) */}
+          <div className="w-full bg-[#f8fafc] rounded-2xl">
+            {activeTab === "visitor" && <VisitorForm />}
+            {activeTab === "delegate" && <DelegateForm />}
+            {activeTab === "exhibitor" && <ExhibitorForm />}
+            {activeTab === "speaker" && <SpeakerForm />}
+            {activeTab === "enquiry" && <EnquiryForm />}
+          </div>
 
-        const payload = {
-            email: formData.email,
-            formType: "speaker-application",
-            name: formData.fullName,
-            company: formData.company,
-            phone: formData.phone,
-            message: `Events interested: ${formData.events.join(", ")}. Target Audience: ${formData.targetAudience}`,
-            
-            utmSource: utmData?.utm_source || "",
-            utmMedium: utmData?.utm_medium || "",
-            utmCampaign: utmData?.utm_campaign || "",
-            utmTerm: utmData?.utm_term || "",
-            utmContent: utmData?.utm_content || "",
-            utmId: utmData?.utm_id || "",
-            referrer: utmData?.referrer || "",
-            landingPage: utmData?.landingPage || "",
-            utmTimestamp: utmData?.timestamp || "",
-            
-            cmsCampaignId: campaign?.id || "",
-            cmsCampaignName: campaign?.name || "",
-            cmsCampaignSource: campaign?.utm_source || "",
-            cmsCampaignMedium: campaign?.utm_medium || "",
-        };
+        </div>
 
-        try {
-            if (!PROJECT_ID_VAR.projectId) {
-                throw new Error("CMS Project ID is missing.");
-            }
+      </div>
+    </>
+  );
+}
 
-            // 1. Submit to CMS GraphQL API
-            const result = await submitContactForm(PROJECT_ID_VAR.projectId, payload);
-            if (result.errors) {
-                throw new Error(result.errors[0]?.message || "Failed to submit lead to CMS.");
-            }
-
-            // 2. Submit to parallel REST API (fallback notification)
-            const restUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
-            await fetch(`${restUrl}/contact`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(payload),
-            }).catch((err) => console.warn("Parallel REST submit failed:", err));
-
-            console.log("Form submitted successfully:", payload)
-            setIsSubmitted(true)
-
-            setTimeout(() => {
-                setFormData({
-                    fullName: "",
-                    company: "",
-                    phone: "",
-                    email: "",
-                    events: [],
-                    targetAudience: "",
-                })
-                setIsSubmitted(false)
-            }, 5000)
-        } catch (error: any) {
-            console.error("Error submitting form:", error)
-            setErrors({ submit: error.message || "Failed to submit form. Please try again." })
-        } finally {
-            setIsSubmitting(false)
-        }
-    }
-
-    return (
-        <>
-            <PageBanner title="Speaker Application Form"/>
-            <div id="speaker-application-form" className="w-full max-w-[1200px] mx-auto px-5 max-md:px-4 max-sm:px-3 py-10 pb-15">
-
-                {/* Main Content */}
-                <main>
-                    <div className="flex flex-wrap -mx-3.75">
-                        <div className="flex-1 px-3.75 max-w-full">
-                            <article className="bg-white">
-                                <div className="text-base text-[#212121]">
-                                    <p className="mb-5 text-base leading-relaxed text-[#212121]">Take the stage and share your thought leadership and expertise with attendees and exhibitors. If you are interested in speaking please fill out the&nbsp;form below and we will contact you.</p>
-
-                                    <div className="mt-7.5">
-                                        <form
-                                            noValidate
-                                            className="w-full bg-white p-6 max-sm:p-5 max-[480px]:p-4 border-0 rounded-none"
-                                            onSubmit={handleSubmit}
-                                        >
-                                            <div className="w-full">
-                                                <div className="flex flex-col gap-5">
-                                                    <div className="w-full mb-0">
-                                                        <div className="w-full">
-                                                            <div className="w-full">
-                                                                {/* Full Name */}
-                                                                <div className="mb-5 w-full">
-                                                                    <div className="flex flex-col gap-1.5">
-                                                                        <div className="flex items-center gap-1">
-                                                                            <span className="text-[18px] max-md:text-base max-sm:text-sm font-bold text-[#212121] leading-9 max-md:leading-7.5 max-sm:leading-[26px]">
-                                                                                Full Name
-                                                                            </span>
-                                                                            <span className="text-red-500 font-bold text-[18px]">*</span>
-                                                                        </div>
-                                                                        <div className="w-full">
-                                                                            <input
-                                                                                type="text"
-                                                                                name="fullName"
-                                                                                placeholder="Full Name *"
-                                                                                value={formData.fullName}
-                                                                                onChange={handleInputChange}
-                                                                                className="w-full p-[15px] max-md:p-[12px_14px] max-sm:p-[10px_12px] bg-[#f5f8f9] border-0 rounded-none text-base max-md:text-[15px] max-sm:text-sm font-normal text-[#212121] leading-7 transition-all duration-300 outline-none focus:bg-[#edf2f7] focus:ring-inset focus:ring-2 focus:ring-[#fbbf24] placeholder:text-gray-400"
-                                                                                required
-                                                                            />
-                                                                        </div>
-                                                                        {errors.fullName && (
-                                                                            <span className="block text-red-500 text-sm mt-1 font-medium">{errors.fullName}</span>
-                                                                        )}
-                                                                    </div>
-                                                                </div>
-
-                                                                {/* Company */}
-                                                                <div className="mb-5 w-full">
-                                                                    <div className="flex flex-col gap-1.5">
-                                                                        <div className="flex items-center gap-1">
-                                                                            <span className="text-[18px] max-md:text-base max-sm:text-sm font-bold text-[#212121] leading-9 max-md:leading-7.5 max-sm:leading-[26px]">
-                                                                                Company
-                                                                            </span>
-                                                                            <span className="text-red-500 font-bold text-[18px]">*</span>
-                                                                        </div>
-                                                                        <div className="w-full">
-                                                                            <input
-                                                                                type="text"
-                                                                                name="company"
-                                                                                placeholder="Company *"
-                                                                                value={formData.company}
-                                                                                onChange={handleInputChange}
-                                                                                className="w-full p-[15px] max-md:p-[12px_14px] max-sm:p-[10px_12px] bg-[#f5f8f9] border-0 rounded-none text-base max-md:text-[15px] max-sm:text-sm font-normal text-[#212121] leading-7 transition-all duration-300 outline-none focus:bg-[#edf2f7] focus:ring-inset focus:ring-2 focus:ring-[#fbbf24] placeholder:text-gray-400"
-                                                                                required
-                                                                            />
-                                                                        </div>
-                                                                        {errors.company && (
-                                                                            <span className="block text-red-500 text-sm mt-1 font-medium">{errors.company}</span>
-                                                                        )}
-                                                                    </div>
-                                                                </div>
-
-                                                                {/* Phone */}
-                                                                <div className="mb-5 w-full">
-                                                                    <div className="flex flex-col gap-1.5">
-                                                                        <div className="flex items-center gap-1">
-                                                                            <span className="text-[18px] max-md:text-base max-sm:text-sm font-bold text-[#212121] leading-9 max-md:leading-7.5 max-sm:leading-[26px]">
-                                                                                Phone
-                                                                            </span>
-                                                                            <span className="text-red-500 font-bold text-[18px]">*</span>
-                                                                        </div>
-                                                                        <div className="w-full">
-                                                                            <input
-                                                                                type="text"
-                                                                                name="phone"
-                                                                                placeholder="Phone *"
-                                                                                value={formData.phone}
-                                                                                onChange={handleInputChange}
-                                                                                className="w-full p-[15px] max-md:p-[12px_14px] max-sm:p-[10px_12px] bg-[#f5f8f9] border-0 rounded-none text-base max-md:text-[15px] max-sm:text-sm font-normal text-[#212121] leading-7 transition-all duration-300 outline-none focus:bg-[#edf2f7] focus:ring-inset focus:ring-2 focus:ring-[#fbbf24] placeholder:text-gray-400"
-                                                                                required
-                                                                            />
-                                                                        </div>
-                                                                        {errors.phone && (
-                                                                            <span className="block text-red-500 text-sm mt-1 font-medium">{errors.phone}</span>
-                                                                        )}
-                                                                    </div>
-                                                                </div>
-
-                                                                {/* Email */}
-                                                                <div className="mb-5 w-full">
-                                                                    <div className="flex flex-col gap-1.5">
-                                                                        <div className="flex items-center gap-1">
-                                                                            <span className="text-[18px] max-md:text-base max-sm:text-sm font-bold text-[#212121] leading-9 max-md:leading-7.5 max-sm:leading-[26px]">
-                                                                                Email
-                                                                            </span>
-                                                                            <span className="text-red-500 font-bold text-[18px]">*</span>
-                                                                        </div>
-                                                                        <div className="w-full">
-                                                                            <input
-                                                                                type="email"
-                                                                                name="email"
-                                                                                placeholder="Email *"
-                                                                                value={formData.email}
-                                                                                onChange={handleInputChange}
-                                                                                className="w-full p-[15px] max-md:p-[12px_14px] max-sm:p-[10px_12px] bg-[#f5f8f9] border-0 rounded-none text-base max-md:text-[15px] max-sm:text-sm font-normal text-[#212121] leading-7 transition-all duration-300 outline-none focus:bg-[#edf2f7] focus:ring-inset focus:ring-2 focus:ring-[#fbbf24] placeholder:text-gray-400"
-                                                                                required
-                                                                            />
-                                                                        </div>
-                                                                        {errors.email && (
-                                                                            <span className="block text-red-500 text-sm mt-1 font-medium">{errors.email}</span>
-                                                                        )}
-                                                                    </div>
-                                                                </div>
-
-                                                                {/* Events Checkbox */}
-                                                                <div className="mb-5 w-full mt-2.5">
-                                                                    <fieldset className="flex flex-col gap-2.5">
-                                                                        <legend className="flex items-center gap-1">
-                                                                            <span className="text-[18px] max-md:text-base max-sm:text-sm font-bold text-[#212121] leading-9 max-md:leading-7.5 max-sm:leading-[26px]">Which event(s) are you interested in participating in?</span>
-                                                                        </legend>
-                                                                        <div className="w-full">
-                                                                            <div className="flex flex-col gap-2 bg-[#f5f8f9] p-4 max-md:p-3 max-sm:p-2.5">
-                                                                                {events.map((event) => (
-                                                                                    <div key={event} className="flex items-center py-1 max-md:py-0.75">
-                                                                                        <div className="flex items-center gap-3 w-full cursor-pointer">
-                                                                                            <span className="flex-1 text-base max-sm:text-sm text-[#212121] font-normal">
-                                                                                                <span className="ba-form-checkbox-title">{event}</span>
-                                                                                            </span>
-                                                                                            <label className="flex items-center gap-2 cursor-pointer relative pl-7 min-h-[24px]" aria-label={event}>
-                                                                                                <input
-                                                                                                    type="checkbox"
-                                                                                                    name="events[]"
-                                                                                                    value={event}
-                                                                                                    checked={formData.events.includes(event)}
-                                                                                                    onChange={() => handleCheckboxChange(event)}
-                                                                                                    className="absolute opacity-0 w-0 h-0"
-                                                                                                />
-                                                                                                <span className={`absolute left-0 top-0 w-5 h-5 bg-white border-2 border-gray-300 rounded transition-all duration-200 hover:border-[#fbbf24] ${formData.events.includes(event) ? "bg-[#fbbf24] border-[#fbbf24] after:content-['✓'] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:text-[#212121] after:text-sm after:font-bold" : ""}`}></span>
-                                                                                            </label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                ))}
-                                                                            </div>
-                                                                            {errors.events && (
-                                                                                <span className="block text-red-500 text-sm mt-1 font-medium">{errors.events}</span>
-                                                                            )}
-                                                                        </div>
-                                                                    </fieldset>
-                                                                </div>
-
-                                                                {/* Target Audience */}
-                                                                <div className="mb-5 w-full">
-                                                                    <div className="flex flex-col gap-1.5">
-                                                                        <div className="flex items-center gap-1">
-                                                                            <span className="text-[18px] max-md:text-base max-sm:text-sm font-bold text-[#212121] leading-9 max-md:leading-7.5 max-sm:leading-[26px]">
-                                                                                Target audience
-                                                                            </span>
-                                                                        </div>
-                                                                        <div className="w-full">
-                                                                            <select
-                                                                                name="targetAudience"
-                                                                                value={formData.targetAudience}
-                                                                                onChange={handleInputChange}
-                                                                                className="w-full p-[15px] max-md:p-[12px_14px] max-sm:p-[10px_12px] bg-[#f5f8f9] border-0 rounded-none text-base max-md:text-[15px] max-sm:text-sm font-normal text-[#212121] leading-7 transition-all duration-300 outline-none focus:bg-[#edf2f7] focus:ring-inset focus:ring-2 focus:ring-[#fbbf24] appearance-none bg-[url('data:image/svg+xml,%3Csvg_xmlns=%22http://www.w3.org/2000/svg%22_width=%2212%22_height=%2212%22_viewBox=%220_0_12_12%22%3E%3Cpath_fill=%22%236b7280%22_d=%22M6_8L1_3h10z%22/%3E%3C/svg%3E')] bg-no-repeat bg-[right_15px_center] pr-10 cursor-pointer"
-                                                                            >
-                                                                                <option hidden value="">Target audience</option>
-                                                                                <option value="Attendees">Attendees</option>
-                                                                                <option value="Franchisors">Franchisors</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    {/* Submit Button */}
-                                                    <div className="w-full mb-0">
-                                                        <div className="w-full">
-                                                            <div className="w-full">
-                                                                <div className="mt-5">
-                                                                    <div className="flex justify-start max-md:justify-center">
-                                                                        <div className="w-full">
-                                                                            <button
-                                                                                type="submit"
-                                                                                className="inline-flex items-center justify-center py-5 px-[60px] max-md:p-[16px_40px] max-sm:p-[14px_24px] bg-[#fbbf24] text-white text-[18px] max-md:text-base max-sm:text-[15px] font-bold leading-none border-0 rounded-none cursor-pointer transition-all duration-300 text-decoration-none min-w-[200px] max-md:min-w-[160px] max-sm:min-w-[140px] max-md:w-full hover:bg-[#212121] hover:text-white hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
-                                                                                disabled={isSubmitting}
-                                                                            >
-                                                                                <span>
-                                                                                    {isSubmitting ? "Submitting..." : "Submit"}
-                                                                                </span>
-                                                                            </button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    {/* Success Message */}
-                                                    {isSubmitted && (
-                                                        <div className="mt-5 p-[16px_20px] bg-green-50 border border-green-300 rounded-none text-green-800 font-medium">
-                                                            <p className="margin-0 text-base">Thank you! Your application has been submitted successfully.</p>
-                                                        </div>
-                                                    )}
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </main>
-            </div>
-        </>
-    )
+export default function RegisterPage() {
+  return (
+    <Suspense fallback={
+      <div className="w-full min-h-[50vh] flex flex-col items-center justify-center p-12">
+        <div className="w-10 h-10 border-4 border-[#005eb8] border-t-transparent rounded-full animate-spin"></div>
+        <p className="font-body text-sm text-gray-500 mt-4">Loading registration...</p>
+      </div>
+    }>
+      <RegisterPageContent />
+    </Suspense>
+  );
 }
