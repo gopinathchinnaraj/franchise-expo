@@ -64,33 +64,62 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const lastScrollYRef = useRef(0);
 
-  // Handle scroll effect with hysteresis to prevent flickering/jitter
+  // Handle scroll effect, hysteresis, and mobile headroom slide hide/show
   useEffect(() => {
     const handleScroll = () => {
-      // Don't implement scroll motion on mobile screens <= 575px
-      const isMobile = window.matchMedia('(max-width: 575px)').matches;
-      if (isMobile) {
-        setIsScrolled(false);
+      if (mobileOpen) {
+        setShowHeader(true);
         return;
       }
       const currentScrollY = window.scrollY;
-      setIsScrolled((prev) => {
-        if (currentScrollY > 80) return true;
-        if (currentScrollY < 20) return false;
-        return prev;
-      });
+      const isMobileHeaderBehavior = window.matchMedia('(max-width: 574px)').matches;
+
+      // Mobile headroom logic (hide on scroll down, show on scroll up in span of 10-20px)
+      if (isMobileHeaderBehavior) {
+        const diff = currentScrollY - lastScrollYRef.current;
+        // Scroll down by > 15px and past initial header area
+        if (diff > 15 && currentScrollY > 100) {
+          setShowHeader(false);
+        }
+        // Scroll up by > 15px
+        else if (diff < -15) {
+          setShowHeader(true);
+        }
+      } else {
+        // Larger screens always show the header
+        setShowHeader(true);
+      }
+
+      // Check standard scroll shrink effect (only on screens > 575px)
+      const isMobile = window.matchMedia('(max-width: 575px)').matches;
+      if (isMobile) {
+        setIsScrolled(false);
+      } else {
+        setIsScrolled((prev) => {
+          if (currentScrollY > 80) return true;
+          if (currentScrollY < 20) return false;
+          return prev;
+        });
+      }
+
+      lastScrollYRef.current = currentScrollY;
     };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleScroll);
+    
     // Run on initial mount
     handleScroll();
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleScroll);
     };
-  }, []);
+  }, [mobileOpen]);
 
   // Cleanup timeouts on unmount
   useEffect(() => {
@@ -154,20 +183,22 @@ export default function Header() {
       {/* Spacer to prevent layout shift of content under the fixed header */}
       <div className="h-[135px] max-[575px]:h-[170px] max-[375px]:h-[160px]" />
       <header
-        className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] max-[575px]:transition-none ${isScrolled
+        className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+          showHeader ? 'translate-y-0' : 'translate-y-[-100%]'
+        } ${isScrolled
           ? 'shadow-[0_4px_20px_rgba(0,0,0,0.1)] max-[575px]:shadow-[0_1px_0_rgba(0,0,0,0.08),0_2px_12px_rgba(0,0,0,0.06)]'
           : 'shadow-[0_1px_0_rgba(0,0,0,0.08),0_2px_12px_rgba(0,0,0,0.06)]'
           }`}
       >
 
         <div
-          className={`max-w-[1880px] mx-auto px-[22px] max-[375px]:px-[14px] flex items-center justify-between transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] max-[575px]:transition-none ${isScrolled
+          className={`max-w-[1880px] mx-auto px-[22px] max-[375px]:px-[14px] flex items-center justify-between transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled
             ? 'h-[110px] max-[375px]:h-[80px] max-[575px]:h-[170px] max-[375px]:h-[160px] gap-2.5 max-[575px]:gap-3.5'
             : 'h-[135px] max-[575px]:h-[170px] max-[375px]:h-[160px] gap-3.5'
             }`}
         >
 
-          <div className="flex flex-col min-[576px]:flex-row min-[576px]:items-center gap-2 min-[576px]:gap-4 shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] max-[575px]:transition-none">
+          <div className="flex flex-col min-[576px]:flex-row min-[576px]:items-center gap-2 min-[576px]:gap-4 shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">
             <Link
               href="/"
               className={`flex items-center shrink-0 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'gap-3' : 'gap-4'}`}
@@ -178,7 +209,7 @@ export default function Header() {
                 width={280}
                 height={90}
                 priority
-                className={`transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] h-auto max-[575px]:transition-none ${isScrolled
+                className={`transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] h-auto ${isScrolled
                   ? 'w-[170px] max-[1525px]:w-[145px] max-[1439px]:w-[155px] max-[600px]:w-[145px] max-[375px]:w-[130px] max-[575px]:w-[195px] max-[375px]:w-[170px]'
                   : 'w-[205px] max-[1525px]:w-[165px] max-[1439px]:w-[205px] max-[959px]:w-[220px] max-[600px]:w-[195px] max-[375px]:w-[170px]'
                   }`}
@@ -312,10 +343,10 @@ export default function Header() {
             <span className="font-display font-medium uppercase tracking-[0.14em] text-[#011b2e] text-[13px] max-[480px]:hidden select-none">
               MAIN MENU
             </span>
-            <div className={`flex flex-col transition-[gap] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] max-[575px]:transition-none ${isScrolled ? 'gap-[4px] max-[575px]:gap-[5px]' : 'gap-[5px]'}`}>
-              <span className={`block h-[2px] rounded-[2px] transition-all duration-250 max-[575px]:transition-none ${mobileOpen ? 'bg-[#1cb7cf]' : 'bg-[#011b2e]'} ${isScrolled ? 'w-[22px] max-[575px]:w-6' : 'w-6'}`} />
-              <span className={`block h-[2px] rounded-[2px] transition-all duration-250 max-[575px]:transition-none ${mobileOpen ? 'bg-[#1cb7cf]' : 'bg-[#011b2e]'} ${isScrolled ? 'w-[22px] max-[575px]:w-6' : 'w-6'}`} />
-              <span className={`block h-[2px] rounded-[2px] transition-all duration-250 max-[575px]:transition-none ${mobileOpen ? 'bg-[#1cb7cf]' : 'bg-[#011b2e]'} ${isScrolled ? 'w-[22px] max-[575px]:w-6' : 'w-6'}`} />
+            <div className={`flex flex-col transition-[gap] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'gap-[4px] max-[575px]:gap-[5px]' : 'gap-[5px]'}`}>
+              <span className={`block h-[2px] rounded-[2px] transition-all duration-250 ${mobileOpen ? 'bg-[#1cb7cf]' : 'bg-[#011b2e]'} ${isScrolled ? 'w-[22px] max-[575px]:w-6' : 'w-6'}`} />
+              <span className={`block h-[2px] rounded-[2px] transition-all duration-250 ${mobileOpen ? 'bg-[#1cb7cf]' : 'bg-[#011b2e]'} ${isScrolled ? 'w-[22px] max-[575px]:w-6' : 'w-6'}`} />
+              <span className={`block h-[2px] rounded-[2px] transition-all duration-250 ${mobileOpen ? 'bg-[#1cb7cf]' : 'bg-[#011b2e]'} ${isScrolled ? 'w-[22px] max-[575px]:w-6' : 'w-6'}`} />
             </div>
           </button>
         </div>
