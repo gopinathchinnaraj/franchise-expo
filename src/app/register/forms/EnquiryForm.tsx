@@ -32,9 +32,18 @@ const REQUEST_TYPE_OPTIONS = [
   "General Enquiry",
 ];
 
+const PHONE_CODES = [
+  { code: "+91", flag: "🇮🇳" },
+  { code: "+971", flag: "🇦🇪" },
+  { code: "+1", flag: "🇺🇸" },
+  { code: "+44", flag: "🇬🇧" },
+  { code: "+65", flag: "🇸🇬" },
+];
+
 const initialFormState = {
   fullName: "",
   email: "",
+  phoneCode: "+1",
   phone: "",
   company: "",
   jobTitle: "",
@@ -45,7 +54,7 @@ const initialFormState = {
 
 const labelClass = "block text-sm font-semibold text-[#011b2e] mb-1.5 font-body";
 const inputClass =
-  "w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1cb7cf]/50 focus:border-[#1cb7cf] transition-all font-body text-sm";
+  "w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#005eb8]/20 focus:border-[#005eb8] transition-all font-body text-sm bg-white";
 
 export default function EnquiryForm() {
   const { utmData, campaign } = useUTMData();
@@ -87,7 +96,7 @@ export default function EnquiryForm() {
       formType: "contact-us", // maps to leadType OTHER
       name: form.fullName,
       company: form.company,
-      phone: form.phone,
+      phone: `${form.phoneCode} ${form.phone}`.trim(),
       jobTitle: form.jobTitle,
       message: `Request Type: ${form.requestType}. Industry: ${form.industry}. Message: ${form.message}`,
       
@@ -198,15 +207,29 @@ export default function EnquiryForm() {
               <label htmlFor="enquiry-phone" className={labelClass}>
                 Phone Number <span className="text-red-500">*</span>
               </label>
-              <input
-                id="enquiry-phone"
-                name="phone"
-                type="tel"
-                placeholder="+1 000 000 0000"
-                value={form.phone}
-                onChange={handleChange}
-                className={`${inputClass} ${errors.phone ? "border-red-400" : ""}`}
-              />
+              <div className="flex rounded-lg border border-gray-300 overflow-hidden focus-within:ring-2 focus-within:ring-[#005eb8]/20 focus-within:border-[#005eb8] transition-all bg-white">
+                <select
+                  name="phoneCode"
+                  value={form.phoneCode}
+                  onChange={handleChange}
+                  className="bg-[#f8fafc] px-3.5 py-3 border-r border-gray-300 text-gray-700 text-sm focus:outline-none cursor-pointer"
+                >
+                  {PHONE_CODES.map((p) => (
+                    <option key={p.code} value={p.code}>
+                      {p.flag} {p.code}
+                    </option>
+                  ))}
+                </select>
+                <input
+                  id="enquiry-phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="000 000 0000"
+                  value={form.phone}
+                  onChange={handleChange}
+                  className="flex-1 px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none"
+                />
+              </div>
               {errors.phone && <p className="text-red-500 text-xs mt-1 font-medium">{errors.phone}</p>}
             </div>
           </div>

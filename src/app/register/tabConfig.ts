@@ -1,6 +1,6 @@
 // src/app/register/tabConfig.ts
 
-export type TabKey = "visitor" | "delegate" | "exhibitor" | "speaker" | "enquiry";
+export type TabKey = "enquiry" | "delegate" | "exhibitor" | "speaker" | "visitor";
 
 export const TAB_QUERY_PARAM = "tab";
 
@@ -10,9 +10,9 @@ export interface TabHeroData {
 }
 
 export const TAB_HERO_METADATA: Record<TabKey, TabHeroData> = {
-  visitor: {
-    title: "Register as a Visitor",
-    subtitle: "Join us at the Expo to explore franchise opportunities, attend seminars, and network.",
+  enquiry: {
+    title: "General Enquiry",
+    subtitle: "Have questions about the Expo? Send us a message and our team will assist you.",
   },
   delegate: {
     title: "Register as a Delegate",
@@ -26,23 +26,23 @@ export const TAB_HERO_METADATA: Record<TabKey, TabHeroData> = {
     title: "Apply to Speak",
     subtitle: "Share your expertise, insights, and industry success stories with our audience.",
   },
-  enquiry: {
-    title: "General Enquiry",
-    subtitle: "Have questions about the Expo? Send us a message and our team will assist you.",
+  visitor: {
+    title: "Register as a Visitor",
+    subtitle: "Join us at the Expo to explore franchise opportunities, attend seminars, and network.",
   },
 };
 
 // Helper validator to guard active states
 export function isValidTab(tab: string | null): tab is TabKey {
-  return tab !== null && ["visitor", "delegate", "exhibitor", "speaker", "enquiry"].includes(tab);
+  return tab !== null && ["enquiry", "delegate", "exhibitor", "speaker", "visitor"].includes(tab);
 }
 
 // Clean and extract the base tab name (handles trailing slashes, secondary query indicators, etc.)
 export function getCleanTab(tab: string | null): TabKey {
-  if (!tab) return "visitor";
+  if (!tab) return "enquiry";
   const cleaned = tab.split('/')[0].split('?')[0].split('&')[0].trim().toLowerCase();
-  if (["visitor", "delegate", "exhibitor", "speaker", "enquiry"].includes(cleaned)) {
+  if (["enquiry", "delegate", "exhibitor", "speaker", "visitor"].includes(cleaned)) {
     return cleaned as TabKey;
   }
-  return "visitor";
+  return "enquiry";
 }

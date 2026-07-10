@@ -10,7 +10,7 @@ export default function Hero() {
             <div className="absolute top-0 right-0 w-[70%] max-[1100px]:w-[56%] h-full z-10 bg-[#15407d] max-[900px]:w-full max-[900px]:h-full">
                 <div className="absolute inset-0 overflow-hidden [clip-path:ellipse(78%_140%_at_100%_120%)] max-[900px]:[clip-path:ellipse(140%_80%_at_100%_100%)]">
                     <iframe
-                        className="absolute top-1/2 left-1/2 w-[300%] h-[300%] -translate-x-1/2 -translate-y-1/2 border-none pointer-events-none block bg-transparent"
+                        className="absolute top-1/2 left-1/2 w-[300%] h-[300%] max-[900px]:w-[450%] max-[900px]:h-[450%] -translate-x-1/2 -translate-y-1/2 border-none pointer-events-none block bg-transparent"
                         src="https://www.youtube.com/embed/lTKgln50Ge0?autoplay=1&mute=1&loop=1&playlist=lTKgln50Ge0&controls=0&showinfo=0&rel=0&modestbranding=1"
                         title="Franchise Expo Hero Video"
                         allow="autoplay; fullscreen"

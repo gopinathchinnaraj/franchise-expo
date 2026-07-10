@@ -53,7 +53,7 @@ export function UTMDebugger() {
     }
 
     return (
-        <div className="fixed bottom-4 right-4 z-[9999] bg-gray-900 text-white p-4 rounded-lg shadow-xl max-w-sm text-xs border border-gray-700 font-mono">
+        <div className="hidden xl:block fixed bottom-4 right-4 z-[9999] bg-gray-900 text-white p-4 rounded-lg shadow-xl max-w-sm text-xs border border-gray-700 font-mono">
             <div className="flex justify-between items-center mb-2 border-b border-gray-800 pb-1">
                 <span className="font-bold">📊 UTM Parameters Debugger</span>
                 <button

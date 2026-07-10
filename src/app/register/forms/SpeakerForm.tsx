@@ -45,7 +45,7 @@ const initialFormState = {
 
 const labelClass = "block text-sm font-semibold text-[#011b2e] mb-1.5 font-body";
 const inputClass =
-  "w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1cb7cf]/50 focus:border-[#1cb7cf] transition-all font-body text-sm";
+  "w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#005eb8]/20 focus:border-[#005eb8] transition-all font-body text-sm bg-white";
 
 export default function SpeakerForm() {
   const { utmData, campaign } = useUTMData();
@@ -232,7 +232,7 @@ export default function SpeakerForm() {
               <label htmlFor="speaker-phone" className={labelClass}>
                 Phone Number
               </label>
-              <div className="flex rounded-lg border border-gray-300 overflow-hidden focus-within:ring-2 focus-within:ring-[#1cb7cf]/50 focus-within:border-[#1cb7cf] transition-all bg-white">
+              <div className="flex rounded-lg border border-gray-300 overflow-hidden focus-within:ring-2 focus-within:ring-[#005eb8]/20 focus-within:border-[#005eb8] transition-all bg-white">
                 <select
                   name="phoneCode"
                   value={form.phoneCode}
