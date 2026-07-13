@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import SocialFixed from '@/components/SocialFixed/SocialFixed';
+import LayoutWrapper from '@/components/LayoutWrapper';
 import Script from 'next/script';
 import { ClientProviders } from '@/components/ClientProviders';
 
@@ -81,10 +79,9 @@ export default function RootLayout({
       </head>
       <body>
         <ClientProviders>
-          <SocialFixed />
-          <Header />
-          <main> {children}</main>
-          <Footer />
+          <LayoutWrapper>
+            {children}
+          </LayoutWrapper>
         </ClientProviders>
       </body>
     </html>
