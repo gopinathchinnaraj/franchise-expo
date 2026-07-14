@@ -22,7 +22,7 @@ const AdminQRScanner = () => {
     checkedIn: 0,
     pending: 0
   });
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://diemex-backend.onrender.com';
+  const API_URL = (process.env.NEXT_PUBLIC_API_URL || '').replace(/\/+$/, '').replace(/\/api$/, '') + '/api';
 
   useEffect(() => {
     fetchStats();

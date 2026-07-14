@@ -35,7 +35,7 @@ interface StatsData {
   totalUpdates: number;
 }
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || '').replace(/\/+$/, '').replace(/\/api$/, '') + '/api';
 
 export default function AdminWaterConnectionPage() {
   const [config, setConfig] = useState<WaterConnectionConfig | null>(null);

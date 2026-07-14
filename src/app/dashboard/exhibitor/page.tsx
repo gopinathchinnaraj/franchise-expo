@@ -30,7 +30,7 @@ import {
 } from './types';
 
 // API Configuration
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || '').replace(/\/+$/, '').replace(/\/api$/, '');
 
 export default function ExhibitorDashboard() {
   const [activeTab, setActiveTab] = useState<'profile' | 'products' | 'brands' | 'brochures' | 'booth'>('profile');

@@ -22,7 +22,7 @@ export interface AuthData {
   user: User;
 }
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || '').replace(/\/+$/, '').replace(/\/api$/, '') + '/api';
 
 // Helper to get auth header
 const getAuthHeader = () => {

@@ -27,7 +27,7 @@ interface ApiResponse {
   message?: string;
 }
 
-const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL ;
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || '').replace(/\/+$/, '').replace(/\/api$/, '') + '/api';
 
 export default function AdminSecurityGuardPage() {
   const [config, setConfig] = useState<SecurityGuardConfig | null>(null);

@@ -50,7 +50,7 @@ interface CalculationResult {
   totalCost: number;
 }
 
-const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || '').replace(/\/+$/, '').replace(/\/api$/, '') + '/api';
 const FALLBACK_CONFIG: HousekeepingConfig = {
   id: 'local-1',
   chargesPerShift: 2000,

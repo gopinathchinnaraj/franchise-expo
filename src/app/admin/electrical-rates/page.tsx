@@ -34,7 +34,7 @@ interface FormData {
   description: string;
 }
 
-const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || '').replace(/\/+$/, '').replace(/\/api$/, '') + '/api';
 export default function AdminElectricalRatesPage() {
   const [rates, setRates] = useState<ElectricalRate[]>([]);
   const [loading, setLoading] = useState<boolean>(true);

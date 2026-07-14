@@ -129,7 +129,7 @@ export default function WhyExhibit() {
             }
 
             // 2. Submit to parallel REST API (fallback notification)
-            const restUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+            const restUrl = (process.env.NEXT_PUBLIC_API_URL || '').replace(/\/+$/, '').replace(/\/api$/, '') + '/api';
             await fetch(`${restUrl}/contact`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },

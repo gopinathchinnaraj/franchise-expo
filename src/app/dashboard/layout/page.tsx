@@ -86,7 +86,7 @@ const fetchMasterFloorPlan = async (silent = false) => {
     const token = localStorage.getItem('exhibitor_token');
     console.log("TOKEN:", token);
     
-    const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+    const apiBaseUrl = (process.env.NEXT_PUBLIC_API_URL || '').replace(/\/+$/, '').replace(/\/api$/, '') + '/api';
     const response = await fetch(
       `${apiBaseUrl}/floor-plan`,
       {

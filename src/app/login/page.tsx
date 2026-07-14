@@ -118,8 +118,7 @@ export default function LoginPage() {
               <strong>Debug mode enabled.</strong>
               <br />
               API URL:{" "}
-              {process.env.NEXT_PUBLIC_API_URL ||
-                "http://localhost:5000/api"}
+              {(process.env.NEXT_PUBLIC_API_URL || "").replace(/\/+$/, '').replace(/\/api$/, '') + '/api'}
             </div>
           )}
         </div>
